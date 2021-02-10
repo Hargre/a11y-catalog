@@ -1,0 +1,9 @@
+<nav>
+    <ul>
+        {%- for page in collections.pages -%}
+        <li class="li--nav">
+            <a href="{{ page.url }}">{{ page.data.title }}</a>
+        </li>
+        {%- endfor -%}
+    </ul>
+</nav>

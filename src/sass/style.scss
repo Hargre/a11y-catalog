@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&family=Roboto:wght@400;700&display=swap');
+
+$content-typeface: 'Roboto', sans-serif;
+$titles-typeface: 'Roboto Slab', serif;
+
+html,body {
+    height: 100vh;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $content-typeface;
+    font-weight: normal;
+    background-color: #fffafa;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    margin: 0 auto;
+    max-width: 50rem;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.main {
+    display: flex;
+    flex-grow: 1;
+}
+
+h1, h2, h3, p {
+    line-height: 1.5;
+}
+
+h1 {
+    font-family: $titles-typeface;
+    font-size: 5.2rem;
+    font-weight: 300;
+    line-height: 1.5;
+    margin: 6rem auto 3rem auto;
+}
+
+h2 {
+    font-family: $titles-typeface;
+    font-size: 3.2rem;
+    font-weight: 300;
+}
+
+h3 {
+    font-size: 2.4rem;
+    font-weight: 300;
+}
+
+p {
+    font-size: 1.4rem;
+    line-height: 1.5;
+}
+
+ul {
+    list-style: none;
+}
+
+header {
+    background-color: #40B0A6;
+    min-height: 5.4rem;
+    border-bottom: 1px solid #E1BE6A;
+}
+
+a {
+    color: #0072B2;
+    &:focus {
+        outline: 2px solid #005180;
+    }
+}
+
+
+nav {
+    background-color: #EBF2F2;
+    min-width: 20rem;
+    border-right: 1px solid #E1BE6A;
+}
+
+.li--nav {
+    font-size: 1.6rem;
+
+    & > a {
+        color: #004A40;
+        &:focus {
+            outline: 2px dashed #004A40;
+        }
+    }
+}
