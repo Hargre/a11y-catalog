@@ -8,12 +8,10 @@
     <link rel="stylesheet" href="{{ '/css/style.css' | url }}">
 </head>
 <body>
+    <header class="header">
+    </header>
     <div class="content">
-        <header>
-        </header>
-        <div class="main">
-            {{ content | safe }}
-        </div>
+        {{ content | safe }}
     </div>
 </body>
 </html>
