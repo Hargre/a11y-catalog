@@ -11,6 +11,13 @@
     padding: 2rem;
     padding-right: 5rem;
   }
+
+  & > ul ul {
+    padding-left: 1rem;
+    & li {
+      font-size: 1.2rem;
+    }
+  }
 }
 
 .nav__navitem {

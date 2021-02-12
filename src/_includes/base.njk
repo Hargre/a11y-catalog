@@ -1,17 +1,22 @@
 <!DOCTYPE html>
 <html lang="pt">
-{%- set pageTitle %}{% if title %}{{ title }} | {% endif %}{{ meta.siteName }}{% endset -%}
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{pageTitle}}</title>
-    <link rel="stylesheet" href="{{ '/css/style.css' | url }}">
-</head>
-<body>
-    <header class="header">
-    </header>
+  {%- set pageTitle %}{% if title %}{{
+    title
+  }}
+  | {% endif %}{{
+    meta.siteName
+  }}{% endset -%}
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ pageTitle }}</title>
+    <link rel="stylesheet" href="{{ '/css/style.css' | url }}" />
+  </head>
+  <body>
+    <a href="#main" id="skip-to-content">Pular para o conteúdo</a>
+    <header class="header"></header>
     <div class="content">
-        {{ content | safe }}
+      {{ content | safe }}
     </div>
-</body>
+  </body>
 </html>

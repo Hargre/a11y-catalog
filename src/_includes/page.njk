@@ -3,12 +3,12 @@ layout: base.njk
 ---
 
 {% include 'sitenav.njk' %}
-<main class="content__main">
-    <article>
-        <h1>{{ title }}</h1>
-        <p>
-            {{ description }}
-        </p>
-        {{ content | safe }}
-    </article>
+<main id="main" class="content__main">
+  <article>
+    <h1>{{ title }}</h1>
+    <p>
+      {{ description }}
+    </p>
+    {{ content | safe }}
+  </article>
 </main>

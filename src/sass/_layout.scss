@@ -7,6 +7,19 @@ body {
   flex-direction: column;
 }
 
+#skip-to-content {
+  z-index: -1;
+  position: absolute;
+  color: $color-primary--dark;
+  background-color: $color-background;
+  padding: 0.5rem;
+  vertical-align: center;
+
+  &:focus {
+    z-index: 2;
+  }
+}
+
 .header {
   background-color: $color-primary;
   min-height: 5.4rem;
