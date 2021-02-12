@@ -10,3 +10,33 @@ Exemplo de parágrafo. Lorem ipsum dolor sit amet consectetur adipisicing elit. 
 ### Exemplo de H3
 
 Outro parágrafo. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione nesciunt odit.
+
+
+```html
+<body>
+    <div id="root"></div>
+</body>
+```
+
+```css
+#root {
+    width: 80%;
+    margin: 0 auto;
+}
+```
+
+```js
+// Exemplo de código
+function fizzBuzz(num) {
+    if (num % 15 == 0) {
+        return "FizzBuzz";
+    }
+    if (num % 3 == 0) {
+        return "Fizz";
+    }
+    if (num % 5 == 0) {
+        return "Buzz"
+    }
+    return num;
+}
+```
