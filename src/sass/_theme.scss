@@ -1,7 +1,11 @@
-$color-primary: #40B0A6;
-$color-primary--light: #EBF2F2;
-$color-primary--dark: #004A40;
-$color-accent: #E1BE6A;
+$color-primary: #40b0a6;
+$color-primary--light: #ebf2f2;
+$color-primary--dark: #004a40;
+$color-accent: #e1be6a;
 $color-text: #333;
-$color-background:  #fffafa;
-$color-link: #0072B2;
+$color-background: #fffafa;
+$color-link: #0072b2;
+
+img {
+  border: 1px solid $color-text;
+}

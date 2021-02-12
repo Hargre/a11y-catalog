@@ -1,6 +1,11 @@
 .nav {
   background-color: #ebf2f2;
   border-right: 1px solid $color-accent;
+  position: sticky;
+  position: -webkit-sticky;
+  align-self: flex-start;
+  top: 0;
+  height: 100vh;
 
   & > ul {
     padding: 2rem;
@@ -16,5 +21,13 @@
     &:focus {
       outline: 2px dashed $color-primary--dark;
     }
+  }
+}
+
+@media (max-width: 800px) {
+  .nav {
+    position: static;
+    align-self: initial;
+    height: unset;
   }
 }
