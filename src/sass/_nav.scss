@@ -31,10 +31,46 @@
   }
 }
 
+#nav-visibility {
+  display: none;
+}
+
+.nav-visibility__toggle {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  cursor: pointer;
+  right: 0;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 0.5rem;
+
+  &:focus {
+    outline: 2px dashed $color-background;
+  }
+}
+
+.nav-visibility__toggle-line {
+  display: inline-block;
+  background-color: white;
+  height: 4px;
+  width: 35px;
+  margin-bottom: 5px;
+}
+
 @media (max-width: 800px) {
   .nav {
     position: static;
     align-self: initial;
     height: unset;
+    display: none;
+  }
+
+  #nav-visibility:checked ~ .nav {
+    display: block;
+  }
+
+  .nav-visibility__toggle {
+    display: flex;
   }
 }

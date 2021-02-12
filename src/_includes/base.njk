@@ -14,9 +14,41 @@
   </head>
   <body>
     <a href="#main" id="skip-to-content">Pular para o conteúdo</a>
-    <header class="header"></header>
+    <header class="header">
+      <label
+        id="nav-visibility-label"
+        tabindex="0"
+        class="nav-visibility__toggle"
+        for="nav-visibility"
+        title="Abrir/Fechar Menu"
+      >
+        <span class="nav-visibility__toggle-line"></span>
+        <span class="nav-visibility__toggle-line"></span>
+        <span class="nav-visibility__toggle-line"></span>
+      </label>
+    </header>
     <div class="content">
+      <input type="checkbox" id="nav-visibility" />
+
       {{ content | safe }}
     </div>
+    <script>
+      var menuToggle = document.querySelector("#nav-visibility-label");
+      var menu = document.querySelector("#nav-visibility");
+
+      var enterKeyCode = 13;
+
+      menuToggle.addEventListener("keyup", function (event) {
+        if (event.keyCode == enterKeyCode) {
+          var menuOpen = menu.checked;
+
+          if (menuOpen) {
+            menu.checked = false;
+          } else {
+            menu.checked = true;
+          }
+        }
+      });
+    </script>
   </body>
 </html>
