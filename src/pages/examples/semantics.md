@@ -57,5 +57,7 @@ Nesse caso, um leitor de tela informaria ao usuário os cabeçalhos, e permitiri
 
 Os links a seguir contém a implementação dos trechos de código apresentados. Tente acessar cada página com um leitor de tela ativado e preste atenção nas diferenças. Note também como é possível alcançar o botão através do teclado em apenas um dos exemplos.
 
+Os leitores de tela permitem agilizar a navegação com atalhos para grupos específicos de elementos. Por exemplo, apertar a tecla `H` com o NVDA ativo fará com que o próximo cabeçalho na página seja lido. De forma similar, `Ctrl H` lê o cabeçalho anterior. Confira o atalho equivalente do seu leitor de tela e veja a diferença de resultados entre os exemplos.
+
 - [Exemplo incorreto de semântica]({{ '/examples/semantics/incorrect' | url }})
 - [Exemplo correto de semântica]({{ '/examples/semantics/correct' | url }})
