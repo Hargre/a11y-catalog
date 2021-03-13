@@ -26,4 +26,14 @@ Para os demais componentes, se define que a relação de contraste deve ser de 3
 
 ## Alternativas ao Uso de Cores 
 
-Outra consideração importante é de não utilizar a cor de um elemento como a única forma visual de transmitir uma informação. Dessa forma, usuários que tenham dificuldade para distinguir entre certas cores não são prejudicados. Como exemplo, considere uma página que exibe uma lista de tarefas. Cada tarefa possui ainda um ícone, que informa se a tarefa foi realizada ou não com sucesso. Em tarefa bem sucedida o ícone é verde, em caso de falha, vermelho.
+Outra consideração importante é de não utilizar a cor de um elemento como a única forma visual de transmitir uma informação. Dessa forma, usuários que tenham dificuldade para distinguir entre certas cores não são prejudicados. Como exemplo, considere uma página que exibe uma lista de tarefas. Cada tarefa possui ainda um indicador visual, que informa se a tarefa foi realizada ou não com sucesso. Em tarefa bem sucedida o indicador é verde, em caso de falha, vermelho. Essa lista poderia inicialmente ser projetada como na imagem a seguir:
+
+[imagem]
+
+Agora, considere como essa mesma tela seria visualizada por um usuário com [...], um tipo de daltonismo em que tons de verde e de vermelho se confundem:
+
+[imagem]
+
+Uma solução simples seria adicionar ao indicador um ícone, ou até mesmo texto para cada status, permitindo identificar se uma tarefa foi ou não concluída sem depender unicamente da cor da tarefa.
+
+Esse mesmo tipo de pensamento se aplica a elementos gráficos mais complexos, como gráficos, por exemplo.
