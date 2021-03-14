@@ -20,7 +20,9 @@ Como já mencionado no [artigo sobre semântica no HTML]({{ '../semantics' | url
 
 ### Criar uma estrutura lógica de tópicos
 
-As tags de cabeçalhos devem ser utilizadas com a intenção de descrever os blocos de conteúdo seguintes, de forma a gerar uma espécie de resumo do conteúdo da página. Uma forma de pensar é de associar eles com o table of contents de um documento de texto. Essa característica também deve ser utilizada para a apresentação de hierarquia entre tópicos. Por isso, é importante que as tags sejam utilizadas respeitando essa hierarquia, sem pular níveis. Uma forma de visualizar isso é através do WAVE. [adicionar exemplo do WAVE].
+As tags de cabeçalhos devem ser utilizadas com a intenção de descrever os blocos de conteúdo seguintes, de forma a gerar uma espécie de resumo do conteúdo da página. Uma forma de pensar é de associar eles com o table of contents de um documento de texto. Essa característica também deve ser utilizada para a apresentação de hierarquia entre tópicos. Por isso, é importante que as tags sejam utilizadas respeitando essa hierarquia, sem pular níveis. Uma forma de visualizar isso é através do WAVE.
+
+![Estrutura de cabeçalhos no WAVE]({{ '/images/heading-structure.png' | url }})
 
 Pensar nessa estrutura é mais simples para páginas que apresentem conteúdo principalmente textual, mas pode ser adaptada para qualquer tipo de site. Por exemplo, [adicionar exemplo menos óbvio].
 
@@ -50,5 +52,3 @@ Sempre que possível, o texto de um link deve conter contexto o suficiente por s
 No entanto, isso pode ser um grande inconveniente para outros usuários. Usuários de leitores de tela podem precisar ouvir uma longa sequência de elementos até alcançar o assunto principal. Usuários com deficiências motoras podem precisar pressionar repetidamente botões ou teclas dezenas ou centenas de vezes até atingir o ponto desejado na página.
 
 Uma forma simples de lidar com esse problema é criar um link no início da página, antes da seção de conteúdo repetido, que permita direcionar o usuário diretamente ao início do conteúdo principal. Isso pode ser visto em prática nesse próprio website! Recarregue a página e aperte `Tab`. Um link de "pular para o conteúdo" deve aparecer no canto superior esquerdo da tela. Ele foi implementado de forma a não aparecer por padrão, sendo visível apenas quando tiver foco do teclado e sendo anunciado por leitores de tela.
-
-[adicionar exemplos]
