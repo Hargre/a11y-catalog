@@ -121,7 +121,7 @@ Atualmente esse atributo é reconhecido corretamente pela [grande maioria dos na
 
 O atributo `aria-required=true` informa a leitores de tela que o campo é obrigatório. Ao marcar o campo com `required`, a maioria dos navegadores ativa esse atributo implicitamente. Mas utilizá-lo explicitamente pode ser útil por questões de compatibilidade.
 
-Também se modificou a label do controle com o texto `(obrigatório)`, para informar usuários com visão. Nesses casos, um padrão mais comum é de usar um asterisco (*) para informar a necessidade do campo. Não existem maiores problemas em fazer o uso desse caracter, mas alguns cuidados podem ser tomados para não prejudicar a acessibilidade. 
+Também se modificou a label do controle com o texto `(obrigatório)`, para informar usuários com visão. Nesses casos, um padrão mais comum é de usar um asterisco (*) para informar a necessidade do campo. Não existem maiores problemas em fazer o uso desse caracter, mas alguns cuidados podem ser tomados para não prejudicar a acessibilidade.
 
 Alguns leitores de tela ignoram caracteres especiais por padrão, outros podem anunciar o caracter literalmente (lendo algo como "email asterisco"). Nesse caso, uma possível solução seria utilizar o atributo `aria-hidden=true`, que faz com que um elemento não seja anunciado por tecnologias assistivas, embora ainda apareça visualmente na tela.
 
@@ -133,6 +133,28 @@ Alguns leitores de tela ignoram caracteres especiais por padrão, outros podem a
 </form>
 ```
 
-### Outras validações client-side
-
 ### Informando validações server-side
+
+Independente das validações realizadas do lado do cliente, é essencial que os dados enviados em um form também sejam validados do lado do servidor. Quando isso acontece, novos erros podem ser identificados, e devem ser apresentados ao usuário.
+
+De forma geral, existem duas técnicas principais para a apresentação de erros após o envio de um formulário: exibir todos os erros agrupados, no topo da página, ou exibir cada erro junto ao input ou controle que exige revisão. Cada uma possui vantagens e desvantagens, e sua escolha varia de acordo com o contexto.
+
+Do ponto de vista da acessibilidade, algumas técnicas devem ser levadas em conta, independente da abordagem. As mensagens de erro devem estar relacionadas a seus respectivos inputs através do atributo `aria-describedby`. Dessa forma, ao navegar por um input, o leitor de tela informará o usuário do erro descrito, independente de sua posição real na página. Além disso, os campos podem ser marcados com o atributo `invalid`.
+
+<fieldset>
+<legend>Erros</legend>
+<ul>
+  <li id="error-password"> Senha deve conter pelo menos um caracter especial. </li>
+  <li id="error-date"> Ano de nascimento deve ser superior a 1900. </li>
+</ul>
+</fieldset>
+<form>
+<div>
+  <label for="password">Senha</label>
+  <input id="password" type="password" aria-describedby="error-password" invalid>
+</div>
+<div>
+  <label for="birthday">Data de nascimento</label>
+  <input id="birthday" type="date" aria-describedby="error-date" invalid>
+</div>
+</form>
