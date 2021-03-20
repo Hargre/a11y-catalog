@@ -84,3 +84,55 @@ Vale ainda mencionar que essa técnica não se aplica apenas a grupos de checkbo
 ## Validações e Mensagens de Erro
 
 ### Informando campos obrigatórios
+
+Utilizando funcionalidades modernas do HTML, marcar campos como obrigatórios e realizar validação client-side de forma acessível é simples. Basta apenas marcar um campo com o atributo `required`.
+
+<form>
+<label for="email">E-mail: </label>
+<input type="text" id="email" required>
+<input type="submit" value="Enviar">
+</form>
+
+```html
+<form>
+<label for="email">E-mail: </label>
+<input type="text" id="email" required>
+<input type="submit" value="Enviar">
+</form>
+```
+
+Ao navegar pelo campo, um usuário de leitor de tela será informado que o campo é obrigatório. Ao tentar submeter o formulário sem preenchê-lo, será informado novamente. Para usuários com visão, uma mensagem padrão do navegador também é informada automaticamente.
+
+Atualmente esse atributo é reconhecido corretamente pela [grande maioria dos navegadores](https://caniuse.com/mdn-api_htmlinputelement_required). Ainda assim, o exemplo acima pode ser ligeiramente melhorado, para garantir compatibilidade com mais dispositivos.
+
+<form>
+<label for="email-1">E-mail (obrigatório): </label>
+<input type="text" id="email-1" required aria-required="true">
+<input type="submit" value="Enviar">
+</form>
+
+```html
+<form>
+<label for="email">E-mail (obrigatório): </label>
+<input type="text" id="email" required aria-required="true">
+<input type="submit" value="Enviar">
+</form>
+```
+
+O atributo `aria-required=true` informa a leitores de tela que o campo é obrigatório. Ao marcar o campo com `required`, a maioria dos navegadores ativa esse atributo implicitamente. Mas utilizá-lo explicitamente pode ser útil por questões de compatibilidade.
+
+Também se modificou a label do controle com o texto `(obrigatório)`, para informar usuários com visão. Nesses casos, um padrão mais comum é de usar um asterisco (*) para informar a necessidade do campo. Não existem maiores problemas em fazer o uso desse caracter, mas alguns cuidados podem ser tomados para não prejudicar a acessibilidade. 
+
+Alguns leitores de tela ignoram caracteres especiais por padrão, outros podem anunciar o caracter literalmente (lendo algo como "email asterisco"). Nesse caso, uma possível solução seria utilizar o atributo `aria-hidden=true`, que faz com que um elemento não seja anunciado por tecnologias assistivas, embora ainda apareça visualmente na tela.
+
+```html
+<form>
+<label for="email">E-mail <span aria-hidden="true">(*)</span>: </label>
+<input type="text" id="email" required aria-required="true">
+<input type="submit" value="Enviar">
+</form>
+```
+
+### Outras validações client-side
+
+### Informando validações server-side
