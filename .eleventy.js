@@ -12,7 +12,10 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
   eleventyConfig.addPlugin(tableOfContentsPlugin);
 
-  eleventyConfig.setLibrary("md", markdownIt().use(markdownItAnchor));
+  eleventyConfig.setLibrary(
+    "md",
+    markdownIt({ html: true }
+  ).use(markdownItAnchor));
 
 
   return {

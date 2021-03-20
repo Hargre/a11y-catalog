@@ -36,4 +36,51 @@ Sem esse atributo, tem-se o mesmo problema do formulário inicial, com os campos
 
 ### Placeholders não são suficientes
 
-É comum encontrar páginas que utilizam apenas o atributo `placeholder` para descrever um campo. Essa prática não é recomendada, tanto por questões de acessibilidade quanto de usabilidade geral. Como já mencionado no exemplo acima, é essencial utilizar de tags `label` para descrever apropriadamente o propósito de cada controle no formulário. 
+É comum encontrar páginas que utilizam apenas o atributo `placeholder` para descrever um campo. Essa prática não é recomendada, tanto por questões de acessibilidade quanto de usabilidade geral. Como já mencionado no exemplo acima, é essencial utilizar de tags `label` para descrever apropriadamente o propósito de cada controle no formulário.
+
+### Agrupar Controles Relacionados
+
+Muitos formulários possuem rótulos que se aplicam a um conjunto de controles, descrevendo melhor aquela seção em particular. Isso pode ser visto frequentemente em controles como checkboxes e radio buttons.
+
+<fieldset>
+<legend>Idiomas</legend>
+<div>
+  <label for="english">Inglês</label>
+  <input type="checkbox" id="english">
+</div>
+<div>
+  <label for="portuguese">Português</label>
+  <input type="checkbox" id="portuguese">
+</div>
+<div>
+  <label for="spanish">Espanhol</label>
+  <input type="checkbox" id="spanish">
+</div>
+</fieldset>
+<br>
+
+Grupos de controles relacionados devem ser contidos dentro de uma tag `fieldset`. A descrição desse fieldset deve ser rotulada pela tag `legend`. Para cada controle dentro do fieldset, as regras de `label` já descritas ainda se aplicam.
+
+```html
+<fieldset>
+<legend>Idiomas</legend>
+<div>
+  <label for="english">Inglês</label>
+  <input type="checkbox" id="english">
+</div>
+<div>
+  <label for="portuguese">Português</label>
+  <input type="checkbox" id="portuguese">
+</div>
+<div>
+  <label for="spanish">Espanhol</label>
+  <input type="checkbox" id="spanish">
+</div>
+</fieldset>
+```
+
+Vale ainda mencionar que essa técnica não se aplica apenas a grupos de checkboxes e radio buttons. Qualquer grupo de controles relacionados pode ser contido em um fieldset para facilitar a compreensão e organização do formulário.
+
+## Validações e Mensagens de Erro
+
+### Informando campos obrigatórios
