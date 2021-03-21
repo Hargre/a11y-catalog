@@ -10,6 +10,7 @@ $h2-max-size: 3.2rem;
 $h2-min-size: 2.8rem;
 
 $h3-size: 2.4rem;
+$h4-size: 1.6rem;
 
 $text-size: 1.4rem;
 
@@ -37,6 +38,10 @@ h2 {
 
 h3 {
   font-size: $h3-size;
+}
+
+h4 {
+  font-size: $h4-size;
 }
 
 p {

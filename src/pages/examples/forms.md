@@ -14,9 +14,9 @@ Os elementos de entrada básicos do HTML são acessíveis por padrão, se utiliz
 
 A imagem a seguir mostra dois formulários visualmente idênticos, lado a lado. Apesar disso, os dois possuem diferenças importantes de implementação.
 
-[imagem de exemplo]
+![Exemplo de formulário inacessível e acessível]({{ '/images/form_example.png' | url}})
 
-No primeiro formulário, os rótulos para cada campo foram criados utilizando tags `div`. Já o segundo foi implementado utilizando tags `label`. No primeiro caso, um leitor de tela informaria os rótulos e a existência dos campos do formulário, mas não apresentaria nenhuma relação entre eles. Dependendo da forma com que cada elemento é declarado no HTML, pode ser muito difícil identificar corretamente qual campo corresponde a que descrição. Ao utilizar `label` esse problema não existe. Acesse a página de exemplo com um leitor de tela ligado e confira a diferença em cada caso.
+No primeiro formulário, os rótulos para cada campo foram criados utilizando tags `div`. Já o segundo foi implementado utilizando tags `label`. No primeiro caso, um leitor de tela informaria os rótulos e a existência dos campos do formulário, mas não apresentaria nenhuma relação entre eles. Dependendo da forma com que cada elemento é declarado no HTML, pode ser muito difícil identificar corretamente qual campo corresponde a que descrição. Ao utilizar `label` esse problema não existe. Acesse a [página de exemplo]({{ '/examples/forms/forms_comparison' | url}}) com um leitor de tela ligado e confira a diferença em cada caso.
 
 Para rotular corretamente os campos, é importante ainda utilizar o atributo `for`, indicando para o id do respectivo controle. Um exemplo correto seria:
 
@@ -139,7 +139,7 @@ Independente das validações realizadas do lado do cliente, é essencial que os
 
 De forma geral, existem duas técnicas principais para a apresentação de erros após o envio de um formulário: exibir todos os erros agrupados, no topo da página, ou exibir cada erro junto ao input ou controle que exige revisão. Cada uma possui vantagens e desvantagens, e sua escolha varia de acordo com o contexto.
 
-Do ponto de vista da acessibilidade, algumas técnicas devem ser levadas em conta, independente da abordagem. As mensagens de erro devem estar relacionadas a seus respectivos inputs através do atributo `aria-describedby`. Dessa forma, ao navegar por um input, o leitor de tela informará o usuário do erro descrito, independente de sua posição real na página. Além disso, os campos podem ser marcados com o atributo `invalid`.
+Do ponto de vista da acessibilidade, algumas técnicas devem ser levadas em conta, independente da abordagem. As mensagens de erro devem estar relacionadas a seus respectivos inputs através do atributo `aria-describedby`. Dessa forma, ao navegar por um input, o leitor de tela informará o usuário do erro descrito, independente de sua posição real na página. Além disso, os campos podem ser marcados com o atributo `aria-invalid`.
 
 <fieldset>
 <legend>Erros</legend>
@@ -158,3 +158,25 @@ Do ponto de vista da acessibilidade, algumas técnicas devem ser levadas em cont
   <input id="birthday" type="date" aria-describedby="error-date" invalid>
 </div>
 </form>
+
+#### Erros descritos ao topo da página
+
+Ao descrever todos os erros agrupados no topo da página, é importante que cada mensagem de erro seja um link, apontando para o input relacionado. Também é importante que ao link ser ativado, o controle associado fique sob foco. Para isso é necessário um pouco de JavaScript:
+
+```js
+const errorLink = document.querySelector('a#error');
+const referencedControl = document.querySelector('#some_input');
+
+errorLink.onclick = (event) => {
+  referencedControl.focus();
+  return event.preventDefault();
+}
+```
+
+[Exemplo de form com erros ao topo da página]({{ '/examples/forms/errors_top' | url }})
+
+#### Erros descritos ao lado dos controles
+
+Neste caso, as instruções gerais já são praticamente suficientes. Para que o usuário se oriente com mais facilidade, no entanto, é útil que o foco da página seja direcionado ao primeiro controle com uma mensagem de erro.
+
+[Exemplo de form com erros ao lado dos controles]({{ '/examples/forms/errors_inline' | url }})

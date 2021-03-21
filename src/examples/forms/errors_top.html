@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <fieldset>
+        <legend>Erros</legend>
+        <ul>
+            <li> <a id="error-password" style="color: red;" href="#password">A senha deve conter pelo menos um caracter especial.</a></li>
+            <li><a id="error-birthday" style="color: red;" href="#birthday">A idade deve ser igual ou superior a 18 anos.</a></li>
+        </ul>
+    </fieldset>
+    <form>
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email">
+
+        <label for="password">Senha</label>
+        <input type="password" name="password" id="password" aria-describedby="error-password" aria-invalid="true">
+
+        <label for="birthday">Data de nascimento</label>
+        <input type="date" name="birthday" id="birthday" aria-describedby="error-birthday" invalid>
+
+        <button type="submit">Enviar</button>
+    </form>
+    <script>
+        const errorLinks = document.querySelectorAll('a');
+        errorLinks.forEach((link) => {
+            link.onclick = (e) => {
+                const refId = link.attributes.href.value.split('#').join('');
+                const refEl = document.getElementById(refId);
+                refEl.focus();
+                return e.preventDefault();
+            };
+        })
+    </script>
+</body>
+</html>
