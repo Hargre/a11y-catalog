@@ -21,9 +21,10 @@
     <button type="submit">Enviar dados</button>
   </form>
 
-  <div hidden id="modal-container">
+  <div hidden id="modal-container" role="dialog" aria-modal="true" aria-labelledby="modal__confirm-label">
     <div class="overlay"></div>
     <div class="modal">
+      <h1 id="modal__confirm-label">Confirmar Ação</h1>
       <p>Dentro da modal</p>
       <button id="modal__cancel-button">Cancelar</button>
       <button id="modal__confirm-button">Confirmar</button>
@@ -32,6 +33,7 @@
 </body>
 <script>
   const TAB_KEY = 9;
+  const ESC_KEY = 27;
 
   const openButton = document.getElementById('open');
   const modal = document.getElementById('modal-container');
@@ -39,6 +41,11 @@
   const confirmButton = document.getElementById('modal__confirm-button');
 
   let lastFocused;
+
+  function closeModal() {
+    modal.setAttribute('hidden', 'hidden');
+    lastFocused.focus();
+  }
 
   openButton.onclick = (e) => {
     lastFocused = document.activeElement;
@@ -48,11 +55,15 @@
 
   const modalButtons = modal.querySelectorAll('button');
   modalButtons.forEach((button) => {
-    button.onclick = (e) => {
-      modal.setAttribute('hidden', 'hidden');
-      lastFocused.focus();
-    }
+    button.onclick = _e => closeModal() 
   });
+
+  modal.onkeydown = (e) => {
+    if (e.keyCode === ESC_KEY) {
+      e.preventDefault();
+      closeModal();
+    }
+  }
 
   cancelButton.onkeydown = (e) => {
     if (e.shiftKey && e.keyCode === TAB_KEY) {

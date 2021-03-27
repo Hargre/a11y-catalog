@@ -20,7 +20,7 @@ Tente navegar pela página novamente, dessa vez com um leitor de tela. A situaç
 
 Para componentes nesse formato, é **essencial** que o foco dos elementos da página seja tratado corretamente. Ao abrir a modal, o foco do teclado deve ser levado para algum elemento dentro da modal, geralmente o primeiro elemento focável. Quando a modal for responsável por alguma ação destrutiva (retirar todos os itens de um carrinho de compras, por exemplo), pode ser útil levar o foco para a ação de "Cancelar", para evitar que o usuário cometa um ato irreversível por engano.
 
-Além disso, o usuário não deve poder sair acidentalmente do contexto da modal, ao navegar com `Tab`. Os únicos elementos focáveis devem pertencer à modal, enquanto a mesma estiver aberta. Deve ainda existir um botão específico que realize a ação de fechar o dialógo e retornar para o fluxo normal da página.
+Além disso, o usuário não deve poder sair acidentalmente do contexto da modal, ao navegar com `Tab`. Os únicos elementos focáveis devem pertencer à modal, enquanto a mesma estiver aberta. Deve ainda existir um botão específico que realize a ação de fechar o dialógo e retornar para o fluxo normal da página. Também deve ser possível fechar a modal apertando a tecla `Esc`.
 
 ## Exemplo acessível
 
@@ -63,3 +63,7 @@ botaoFechaModal.onclick = (e) => {
   focoAnterior.focus();
 }
 ```
+
+Para melhorar a forma com que leitores de tela interpretam e anunciam o conteúdo do diálogo, ainda foram realizados outros ajustes. A `div` que agrupa todo o conteúdo da modal foi marcada com os atributos `role=dialog` e `aria-modal=true`. Esses atributos auxiliam as tecnologias assistivas a identificarem corretamente a seção do conteúdo que corresponde à modal, e a manterem o cursor dentro da área correta.
+
+Além disso, foi adicionado uma tag `h1` descrevendo o conteúdo da modal. Essa tag será anunciada ao abrir a modal, através do atributo `aria-labeledby`, também adicionado à `div` raiz do diálogo.
