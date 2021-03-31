@@ -1,14 +1,46 @@
 ---
 title: "Menus dropdown"
-description: "."
+description: "Menus dropdown são componentes utilizados em vários contextos, seja como mecanismo de navegação ou contendo controles de configuração de uma aplicação. Independente de seu propósito, alguns cuidados devem ser tomados para serem de fato acessíveis."
 eleventyNavigation:
   key: Dropdowns
   parent: Componentes Interativos
 ---
 
+## Menus de navegação
+
+Menus com dropdown são comumente utilizados para implementar seções de navegação em websites. O exemplo apresentado aqui é simples, mas acessível. Alguns pontos importantes serão destacados a seguir.
+
+[Exemplo de menu de navegação]({{ '/examples/components/dropdowns/nav_dropdown' | url }})
+
+### Semântica padrão
+
+Mais uma vez, o uso semântico adequado dos elementos do HTML facilita o desenvolvimento de uma solução acessível. Foram utilizadas listas tanto para os botões do menu, quanto para cada submenu de links. Os botões foram implementados utilizando o elemento `button` e apenas os links de fato foram definidos com tags `a`. 
+
+### Alternando visibilidade
+
+Dois atributos importantes foram utilizados para esconder ou exibir corretamente cada submenu. O primeiro é o atributo `hidden`, que esconde o elemento tanto visualmente quanto para usuários de tecnologias assistivas. Dessa forma, os links do submenu não serão anunciados por leitores de tela nem navegáveis por teclado enquanto o menu estiver oculto. Além disso, utiliza o atributo ARIA `aria-expanded`, que informa para tecnologias assistivas se o conteúdo controlado por aquele botão está visível ou não. O valor desses atributos é alterado via JavaScript, de acordo com a visibilidade do menu.
+
+```js
+toggleButton.onclick = (e) => {
+  const links = toggleButton.parentElement.querySelector('.sublinks');
+  if (buttonWasActive(toggleButton)) {
+    toggleButton.setAttribute('aria-expanded', 'false');
+    links.setAttribute('hidden', 'hidden');
+  } else {
+    links.removeAttribute('hidden');
+    toggleButton.setAttribute('aria-expanded', 'true');
+  }
+  toggleButtonsState[i] = !toggleButtonsState[i];
+}
+```
+
+### Outras observações
+
+- Nesse exemplo, manteve-se a navegação padrão dos links através da tecla `Tab`. Em menus com muitos elementos isso pode gerar um problema sério de usabilidade, exigindo que o usuário navegue desnecessariamente por uma quantidade grande de elementos até alcançar outra seção da página. O próximo exemplo mostra outra forma de tratar a navegação dentro de menus dropdown.
+
 ## Exemplo mais complexo: Um menu "real"
 
-O próximo exemplo adiciona algumas camadas de complexidade, demonstrando um [menu com configurações de uma aplicação](), ao invés de navegação. Alguns pontos de destaque dessa implementação são:
+O próximo exemplo adiciona algumas camadas de complexidade, demonstrando um [menu com configurações de uma aplicação]({{ '/examples/components/dropdowns/menu_dropdown' | url }}), ao invés de navegação. Alguns pontos de destaque dessa implementação são detalhados a seguir.
 
 ### Uso de roles
 
