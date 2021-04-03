@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <label for="team-input">Nome do Time</label>
+  <div class="input-container">
+    <input id="team-input" type="text" autocomplete="off">
+    <ul hidden id="suggestions"></ul>
+  </div>
+
+  <script>
+    const UP = 38;
+    const DOWN = 40;
+
+    const teams = [
+      'América-MG',
+      'Athletico-PR',
+      'Atlético-GO',
+      'Atlético-MG',
+      'Bahia',
+      'Bragantino',
+      'Ceará',
+      'Chapecoense',
+      'Corinthians',
+      'Cuiabá',
+      'Flamengo',
+      'Fluminense',
+      'Fortaleza',
+      'Grêmio',
+      'Internacional',
+      'Juventude',
+      'Palmeiras',
+      'Santos',
+      'São Paulo',
+      'Sport'
+    ];
+
+    let activeIndex = -1;
+
+    const normalizeString = (str) => {
+      return str
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "");
+    }
+
+    const filterList = (input) => {
+      return teams.filter((team) => {
+        const normalizedTeam = normalizeString(team);
+        const normalizedInput = normalizeString(input);
+        return normalizedTeam.includes(normalizedInput);
+      })
+    }
+
+    const teamInput = document.getElementById('team-input');
+    const teamsList = document.getElementById('suggestions');
+    let teamsListItems = [];
+
+    teamInput.oninput = (e) => {
+      teamsList.removeAttribute('hidden');
+      teamsList.innerHTML = "";
+      teamsListItems = [];
+
+      if (teamInput.value !== "") {
+        filteredTeams = filterList(teamInput.value);
+        filteredTeams.forEach((team, i) => {
+          const item = document.createElement("li");
+          item.id = `item-${i}`
+          item.appendChild(document.createTextNode(team));
+          teamsList.appendChild(item);
+        })
+        teamsListItems = [...teamsList.querySelectorAll('li')];
+      } else {
+        teamsList.setAttribute('hidden', 'hidden');
+      }
+    }
+    teamInput.onkeydown = (e) => {
+      const prevActive = teamsListItems[activeIndex];
+
+      if (e.keyCode === DOWN) {
+        if (activeIndex + 1 === teamsListItems.length) {
+          activeIndex = 0;
+        } else {
+          activeIndex++;
+        }
+      } else if (e.keyCode === UP) {
+        if (activeIndex === 0) {
+          activeIndex = teamsListItems.length - 1;
+        } else {
+          activeIndex--;
+        }
+      } else {
+        return;
+      }
+      teamsListItems[activeIndex].classList.add('focused');
+      prevActive.classList.remove('focused');
+      teamInput.setAttribute('aria-activedescendant', `item-${activeIndex}`);
+    }
+    
+
+  </script>
+</body>
+
+</html>
+
+<style>
+  body {
+    box-sizing: border-box;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    border: 1px solid black;
+    position: absolute;
+    min-width: 140px;
+  }
+
+  li {
+    cursor: default;
+  }
+
+  li:hover {
+    background-color: cadetblue;
+  }
+
+  input {
+    min-width: 140px;
+  }
+
+  .focused {
+    background-color: cadetblue;
+  }
+
+  .input-container {
+    display: inline-block;
+    position: relative;
+  }
+</style>
