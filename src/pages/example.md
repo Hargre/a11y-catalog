@@ -1,8 +1,6 @@
 ---
 title: "Olá, mundo!"
 description: "Página de demonstração da prova de conceito."
-eleventyNavigation:
-  key: Exemplo
 ---
 
 ## Exemplo de H2

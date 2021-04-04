@@ -8,3 +8,7 @@ eleventyNavigation:
 ## O que é Acesssibilidade?
 
 ## Recursos Importantes
+
+O padrão mais importante relacionado à Acessibilidade Digital é o WCAG (sigla para Web Content Accessibility Guidelines, ou Diretrizes para Conteúdo Acessível da Web). Organizado pelo consórcio que regulamenta a própria Web, o W3C, o WCAG apresenta recomendações reconhecidas internacionalmente para o desenvolvimento de websites acessíveis, e a conformidade com suas diretrizes é uma forma comum de se avaliar a acessibilidade de uma página.
+
+A conformidade com o WCAG é definida em 3 níveis, A, AA e AAA. De forma geral, a maioria dos sites deveria almejar o nível AA. Vale destacar ainda que alcançar um desses níveis de conformidade **não** garante a acessibilidade de sua página, embora seja um passo na direção certa.

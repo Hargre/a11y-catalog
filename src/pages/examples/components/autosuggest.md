@@ -35,7 +35,7 @@ Pontos de destaque da solução:
 </div>
 ```
 
-O exemplo utiliza um padrão conhecido por [combobox](https://www.w3.org/TR/wai-aria-practices/#combobox), que consiste de um componente com uma caixa de texto e um elemento associado que auxilia usuários a definirem o valor da caixa de texto. Neste caso, o elemento associado é uma lista de elementos. Para isso, foram utilizadas duas roles do ARIA: `combobox`, atribuída à div que contém o input, e `listbox`, associada ao `ul` que contém as sugestões. Além disso, cada elemento da lista de sugestões é marcado com a role `option`.
+O exemplo utiliza um padrão conhecido por [combobox](https://www.w3.org/TR/wai-aria-practices/#combobox), que consiste de um componente com uma caixa de texto e um elemento associado que auxilia usuários a definirem o valor do input. Neste caso, o elemento associado é uma lista de elementos. Para isso, foram utilizadas duas roles do ARIA: `combobox`, atribuída à div que contém o input, e `listbox`, associada ao `ul` que contém as sugestões. Além disso, cada elemento da lista de sugestões é marcado com a role `option`.
 
 Além das roles, esses elementos contam ainda com alguns atributos do ARIA para melhorar sua acessibilidade. Eles serão detalhados a seguir.
 
