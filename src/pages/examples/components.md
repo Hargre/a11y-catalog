@@ -4,4 +4,5 @@ description: "As seções anteriores apresentavam exemplos de acessibilidade par
 eleventyNavigation:
   key: Componentes Interativos
   parent: Exemplos
+  order: 6
 ---

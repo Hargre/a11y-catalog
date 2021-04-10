@@ -4,6 +4,7 @@ description: "."
 eleventyNavigation:
   key: Cores e Contraste
   parent: Exemplos
+  order: 3
 ---
 
 ## Contraste

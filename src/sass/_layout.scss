@@ -25,6 +25,8 @@ body {
   min-height: 5.4rem;
   border-bottom: 1px solid $color-accent;
   position: relative;
+  display: flex;
+  align-items: stretch;
 }
 
 .content {

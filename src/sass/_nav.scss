@@ -59,6 +59,22 @@
   margin-bottom: 5px;
 }
 
+.home-link {
+  display: flex;
+  align-items: center;
+  color: white;
+  padding: 2rem;
+}
+
+.home-link__anchor {
+  color: white;
+  font-size: 1.6rem;
+
+  &:focus {
+    outline: 2px dashed $color-background;
+  }
+}
+
 @media (max-width: 800px) {
   .nav {
     position: static;

@@ -7,6 +7,7 @@ apresentadas algumas dessas ferramentas."
 eleventyNavigation:
   key: Tecnologias de Apoio
   parent: Tecnologias
+  order: 0
 ---
 
 ## Verificadores de Contraste e Cores

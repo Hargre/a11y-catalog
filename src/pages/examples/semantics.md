@@ -4,6 +4,7 @@ description: "Um dos aspectos mais simples para a construção de páginas acess
 eleventyNavigation:
   key: Semântica
   parent: Exemplos
+  order: 1
 ---
 
 ## Entendendo a Semântica

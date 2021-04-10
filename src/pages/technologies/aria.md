@@ -4,6 +4,7 @@ title: "ARIA"
 eleventyNavigation:
   key: ARIA
   parent: Tecnologias
+  order: 2
 ---
 
 ## O que é ARIA?

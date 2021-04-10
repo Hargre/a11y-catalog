@@ -9,6 +9,7 @@ ferramentas utilizadas no dia a dia de usuários com deficiências."
 eleventyNavigation:
   key: Tecnologias Assistivas
   parent: Tecnologias
+  order: 1
 ---
 
 No contexto de software, tecnologias assistivas são as ferramentas de software ou hardware que facilitam ou viabilizam a interação de usuários com necessidades especiais com os produtos de software. Essas tecnologias incluem:

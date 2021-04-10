@@ -4,6 +4,7 @@ description: "."
 eleventyNavigation:
   key: Tabelas
   parent: Exemplos
+  order: 5
 ---
 
 ## Recomendações básicas

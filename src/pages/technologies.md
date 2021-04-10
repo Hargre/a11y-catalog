@@ -2,6 +2,7 @@
 title: "Tecnologias"
 eleventyNavigation:
   key: Tecnologias
+  order: 1
 ---
 
 Essa seção apresentará algumas das principais tecnologias e ferramentas que devem ser conhecidas para o desenvolvimento de interfaces acessíveis. Essas tecnologias serão apresentadas em três categorias distintas:
