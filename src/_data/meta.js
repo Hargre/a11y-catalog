@@ -1,3 +1,3 @@
 module.exports = {
-    siteName: "Prova de conceito"
+    siteName: "Apoio para a Acessibilidade da Web"
 }

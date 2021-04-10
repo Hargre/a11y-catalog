@@ -28,7 +28,12 @@ eleventyNavigation:
 
 O atributo `lang` da tag html define o idioma padrão para todo o documento. Isso é importante para que leitores de tela e outras tecnologias possam processar corretamente o documento, com a pronúncia adequada do texto.
 
-[Talvez mostrar clips de áudio com o idioma errado?]
+Os dois trechos de áudio a seguir demonstram o funcionamento do leitor de tela NVDA, lendo os cabeçalhos desta página. Em ambos os exemplos, o leitor de tela está configurado em inglês. No primeiro trecho, a página estava com `lang=pt`. Note como o áudio alterna entre duas vozes: uma em português, anunciando o conteúdo do texto, e a voz padrão em inglês anunciando o nível dos cabeçalhos.
+
+Já no segundo exemplo, a página estava com `lang=en`. Nesse caso, apenas a voz em inglês é utilizada, e a compreensão do conteúdo é prejudicada.
+
+<audio src="{{ '/audio/correct-lang.mp3' | url }}" controls></audio>
+<audio src="{{ '/audio/incorrect-lang.mp3' | url }}" controls></audio>
 
 ## Ajustar a tag de viewport do documento
 
