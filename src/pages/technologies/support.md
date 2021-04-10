@@ -15,22 +15,22 @@ eleventyNavigation:
 A escolha adequada de cores em uma página é um fator importante para a acessibilidade. A falta de
 contraste entre a cor de um texto e seu plano de fundo pode dificultar a compreensão do conteúdo
 para um grande número de usuários, impactando não apenas a acessibilidade como a usabilidade geral de
-uma página. 
+uma página.
 
 Existem várias ferramentas que auxiliam a verificar o contraste de cores em uma interface, mesmo
-antes da sua implementação em código. Por exemplo, na construção do protótipo deste apoio foi utilizado [um plugin]() na plataforma Figma que informa o contraste entre dois elementos selecionados, de acordo com os valores recomendados pelo WCAG.
+antes da sua implementação em código. Por exemplo, na construção do protótipo deste apoio foi utilizado [um plugin](https://www.figma.com/community/plugin/734693888346260052) na plataforma Figma que informa o contraste entre dois elementos selecionados, de acordo com os valores recomendados pelo WCAG.
 
 ![Execução do plugin de contraste no Figma]({{ '/images/contrast_plugin.png' | url }})
 
 
 O uso de cores para transmitir informações, sem utilizar de outros complementos visuais,
 também pode dificultar ou impossibilitar a compreensão do conteúdo por usuários com dificuldades
-para distinguir certas variações de cores. Para o protótipo deste apoio também se utilizou [outro plugin]() do Figma, que permite gerar cópias do protótipo simulando vários tipos diferentes de daltonismo. 
+para distinguir certas variações de cores. Para o protótipo deste apoio também se utilizou [outro plugin](https://www.figma.com/community/plugin/733343906244951586/Color-Blind) do Figma, que permite gerar cópias do protótipo simulando vários tipos diferentes de daltonismo.
 
 ![Execução do plugin de daltonismo no Figma]({{ '/images/deute_vision.png' | url }})
 
 
-Mais detalhes e exemplos específicos sobre o contraste e uso de cores podem ser vistos em [].
+A seção de exemplos do apoio contém ainda um tópico com [mais detalhes e exemplos específicos sobre o contraste e uso de cores]({{ '/pages/examples/colours' | url }}).
 
 ## Ferramentas de Avaliação
 

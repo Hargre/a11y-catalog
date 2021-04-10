@@ -70,4 +70,4 @@ De forma geral, esses leitores são operados através de gestos na tela, como de
 
 ## Outros Recursos
 
-- As informações sobre uso de leitores de tela em cada sistema operacional foram retiradas de []().
+- [WebAIM - Pesquisa de usuários de leitores de tela](https://webaim.org/projects/screenreadersurvey8/) (Em inglês) - Fonte para os dados de uso de leitores em cada sistema operacional.
