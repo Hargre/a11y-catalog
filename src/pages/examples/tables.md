@@ -21,10 +21,3 @@ Tabelas devem usar a tag `th` para marcar corretamente seus cabeçalhos. Isso va
 Também é útil adicionar aos cabeçalhos o atributo `scope`. Ele aceita dois valores, `row` ou `col`, e permite identificar se um cabeçalho se refere aos elementos naquela coluna ou naquela linha. Isso pode ajudar a evitar interpretações erradas de leitores de tela em situações ambíguas. A tabela dos exemplos anteriores poderia ser atualizada para considerar células da primeira coluna como cabeçalhos com `scope=row`. Veja no exemplo a seguir como as células são anunciadas com um leitor de tela ativado.
 
 - [Exemplo de tabela com scope]({{ '/examples/tables/multiple-th' | url }})
-
-
-## Responsividade
-
-Sempre que possível, evitar que a tabela exija scroll horizontal, mesmo em dispositivos com telas menores. Tabelas complexas podem ser reestruturadas em novas tabelas, ou ter sua estrutura visual alterada de forma flexível.
-
-[adicionar exemplos]
