@@ -13,7 +13,9 @@ Uma estrutura adequada de cabeçalhos permite que usuários de leitores de tela 
 
 ### Como cabeçalhos são descritos por leitores de tela
 
-Leitores de tela possuem funcionalidades específicas para a estrutura de cabeçalhos de uma página, permitindo gerar uma tabela de tópicos. [Mostrar tela do NVDA].
+Leitores de tela possuem funcionalidades específicas para a estrutura de cabeçalhos de uma página, permitindo gerar uma tabela de tópicos. Além disso, existem atalhos específicos para navegar diretamente pelos cabeçalhos. Por exemplo, no NVDA, apertar H navega para o próximo cabeçalho, e Shift H para o cabeçalho anterior. Apertar as teclas de 1 até 6 navega para o próximo cabeçalho daquele nível. Essas funcionalidades permitem aos usuários obter rapidamente as informações relevantes de uma página sem precisar navegar por todo o conteúdo.
+
+![Lista de cabeçalhos no NVDA]({{ '/images/nvda_headings.png' | url }})
 
 ### Utilizar as tags adequadas
 
@@ -21,11 +23,9 @@ Como já mencionado no [artigo sobre semântica no HTML]({{ '../semantics' | url
 
 ### Criar uma estrutura lógica de tópicos
 
-As tags de cabeçalhos devem ser utilizadas com a intenção de descrever os blocos de conteúdo seguintes, de forma a gerar uma espécie de resumo do conteúdo da página. Uma forma de pensar é de associar eles com o table of contents de um documento de texto. Essa característica também deve ser utilizada para a apresentação de hierarquia entre tópicos. Por isso, é importante que as tags sejam utilizadas respeitando essa hierarquia, sem pular níveis. Uma forma de visualizar isso é através do WAVE.
+As tags de cabeçalhos devem ser utilizadas com a intenção de descrever os blocos de conteúdo seguintes, de forma a gerar uma espécie de resumo do conteúdo da página. Essa característica também deve ser utilizada para a apresentação de hierarquia entre tópicos. Por isso, é importante que as tags sejam utilizadas respeitando essa hierarquia, sem pular níveis. Uma forma de visualizar essa estrutura e identificar possíveis erros é através do WAVE.
 
 ![Estrutura de cabeçalhos no WAVE]({{ '/images/heading-structure.png' | url }})
-
-Pensar nessa estrutura é mais simples para páginas que apresentem conteúdo principalmente textual, mas pode ser adaptada para qualquer tipo de site. Por exemplo, [adicionar exemplo menos óbvio].
 
 ## Links
 
