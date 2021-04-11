@@ -1,9 +1,14 @@
 ---
 title: "Autocomplete"
+description: "Caixas de entrada com sugestões automáticas são um padrão bastante comum para funcionalidades de busca ou preenchimento de formulários. Em comparação a outros exemplos já apresentados, sua implementação é mais complexa e aborda alguns aspectos de ARIA ainda não vistos."
 eleventyNavigation:
   key: Autocomplete
   parent: Componentes Interativos
 ---
+
+## Exemplo e Comentários
+
+- [Exemplo de input com sugestões automáticas]({{ '/examples/components/autosuggest/' | url }})
 
 Pontos de destaque da solução:
 
