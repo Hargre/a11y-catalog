@@ -45,7 +45,7 @@ a estrutura hierárquica das tags da página e verificar o contraste entre as co
 ![Execução do WAVE]({{ '/images/wave_exec.png' | url }})
 
 É importante notar, porém, que o uso dessas ferramentas não garante a acessibilidade da sua página!
-Muitos problemas de acessibilidade não podem ser identificados de forma automática, pois dependem de contexto e interpretação para serem avaliados. Mais informações sobre como avaliar a acessibilidade de um site podem ser vistas em [].
+Muitos problemas de acessibilidade não podem ser identificados de forma automática, pois dependem de contexto e interpretação para serem avaliados. Este apoio possui uma seção que trata em mais detalhes os [métodos de avaliação de acessibilidade]({{ '/pages/evaluation' | url }})
 
 ## Outros recursos
 
