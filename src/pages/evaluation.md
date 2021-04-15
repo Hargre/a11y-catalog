@@ -20,3 +20,11 @@ Esses tipos de teste são rápidos e simples de serem executados, e permitem ide
 
 ## Testes de usabilidade
 Testes com usuários são uma forma extremamente eficaz de se obter feedback sobre a usabilidade e acessibilidade de um sistema. Eles exigem maior esforço para preparação e execução em comparação às técnicas anteriores, mas permitem identificar problemas que passam despercebidos em avaliações de conformidade. Por causa disso, é interessante realizar esse tipo de teste após a aplicação de algumas das outras técnicas, já havendo garantido um nível mínimo de acesso ao sistema de forma geral. Dessa forma, as sessões com os usuários podem ser mais bem aproveitadas para investigar questões mais específicas.
+
+A seguir são apresentadas algumas referências e guias para a condução de testes de usabilidade, tanto no contexto específico da acessibilidade quanto de forma mais geral:
+
+- [Web Accessibility Initiative - Involving Users in Evaluating Web Accessibility](https://www.w3.org/WAI/test-evaluate/involving-users/)
+
+- [Accessibility in User-Centered Design: Usability Testing](http://uiaccess.com/accessucd/ut.html)
+
+- [Guia de Contribuição para Testes de Usabilidade](https://github.com/clarissalimab/ux/blob/main/CONTRIBUTING.md)
