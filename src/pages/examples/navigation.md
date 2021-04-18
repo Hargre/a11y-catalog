@@ -53,3 +53,11 @@ Sempre que possível, o texto de um link deve conter contexto o suficiente por s
 No entanto, isso pode ser um grande inconveniente para outros usuários. Usuários de leitores de tela podem precisar ouvir uma longa sequência de elementos até alcançar o assunto principal. Usuários com deficiências motoras podem precisar pressionar repetidamente botões ou teclas dezenas ou centenas de vezes até atingir o ponto desejado na página.
 
 Uma forma simples de lidar com esse problema é criar um link no início da página, antes da seção de conteúdo repetido, que permita direcionar o usuário diretamente ao início do conteúdo principal. Isso pode ser visto em prática nesse próprio website! Recarregue a página e aperte `Tab`. Um link de "pular para o conteúdo" deve aparecer no canto superior esquerdo da tela. Ele foi implementado de forma a não aparecer por padrão, sendo visível apenas quando tiver foco do teclado e sendo anunciado por leitores de tela.
+
+
+## Referências
+
+- [Techniques for WCAG 2.0 - Organizing a page using headings](https://www.w3.org/TR/WCAG20-TECHS/G141.html), assim como os links apresentados na seção de [técnicas relacionadas](https://www.w3.org/TR/WCAG20-TECHS/G141.html#G141-related-techs).
+- [WAI - Web Accessibility Tutorials - Headings](https://www.w3.org/WAI/tutorials/page-structure/headings/)
+- [WebAIM - Links and Hypertext](https://webaim.org/techniques/hypertext/link_text)
+- [Techniques for WCAG 2.0 - Bypass Blocks](https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-skip.html#navigation-mechanisms-skip-techniques-head)

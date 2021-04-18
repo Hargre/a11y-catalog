@@ -67,3 +67,7 @@ botaoFechaModal.onclick = (e) => {
 Para melhorar a forma com que leitores de tela interpretam e anunciam o conteúdo do diálogo, ainda foram realizados outros ajustes. A `div` que agrupa todo o conteúdo da modal foi marcada com os atributos `role=dialog` e `aria-modal=true`. Esses atributos auxiliam as tecnologias assistivas a identificarem corretamente a seção do conteúdo que corresponde à modal, e a manterem o cursor dentro da área correta.
 
 Além disso, foi adicionado uma tag `h1` descrevendo o conteúdo da modal. Essa tag será anunciada ao abrir a modal, através do atributo `aria-labeledby`, também adicionado à `div` raiz do diálogo.
+
+## Referências
+
+- [ARIA practices - Dialog (Modal)](https://www.w3.org/TR/wai-aria-practices-1.1/#dialog_modal)

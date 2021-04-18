@@ -37,3 +37,10 @@ Animações são utilizadas em diversos contextos na web moderna, e podem trazer
 O uso de Captchas é problemático por uma variedade de razões. Implementações que apresentam imagens com palavras ou textos a serem digitados são obviamente inacessíveis para usuários cegos, pois a existência de um texto alternativo seria identificada por bots, quebrando o propósito do Captcha. Além disso, as distorções aplicadas às palavras podem causar grandes dificuldades para usuários com outras deficiências visuais e usuários com deficiências cognitivas. Alternativas que utilizam áudio, por sua vez, apresentam barreiras similares para usuários com deficiências auditivas.
 
 Entre as soluções existentes atualmente, o [reCAPTCHA v3](https://developers.google.com/recaptcha/docs/v3) é a menos intrusiva em termos de usabilidade. Ele analisa o comportamento do usuário no fundo, sem necessidade de interação, e atribui uma nota. Essa nota indica a probabilidade daquele usuário ser ou não um bot, e com base nesse valor o desenvolvedor pode tomar as medidas necessárias. Entretanto, vale ressaltar que essa abordagem, embora eficiente, levanta questionamentos quanto à privacidade dos usuários.
+
+## Referências
+
+- [Nielsen Norman Group - Popups: 10 Problematic Trends and Alternatives](https://www.nngroup.com/articles/popups/)
+- [A11Y Project - Designing accessible animation](https://www.a11yproject.com/posts/2020-12-22-design-accessible-animation/), bem como os links sugeridos em [mais leituras](https://www.a11yproject.com/posts/2020-12-22-design-accessible-animation/#further-reading)
+- [MDN Web Docs - prefers-reduced-motion](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion)
+- [W3C - Inaccessibility of CAPTCHA](https://www.w3.org/TR/turingtest/)

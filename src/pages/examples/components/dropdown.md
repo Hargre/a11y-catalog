@@ -55,3 +55,7 @@ Foi utilizado JavaScript para permitir um fluxo de navegação pelo teclado que 
 Além disso, removeu-se o comportamento padrão de foco via `Tab`, utilizando o atributo `tabindex=-1` nos botões. Esse atributo remove o elemento do fluxo de navegação natural da página, e deve ser utilizado com **extremo** cuidado. Nesse caso, seu uso é justificado para evitar que um usuário precise passar por toda a lista de botões dos menus até alcançar o restante dos controles da página. Além disso, os controles ainda são navegáveis, graças à implementação que permite utilizar as setas.
 
 Apenas o primeiro botão da lista de menus manteve seu comportamento padrão e ainda pode ser acessado via `Tab`. O próximo `Tab` já leva o usuário para o primeiro elemento focável fora do menu.
+
+# Referências
+- [ARIA practices - Menu or Menu bar](https://www.w3.org/TR/wai-aria-practices-1.1/#menu)
+- [ARIA practices - Menu Button](https://www.w3.org/TR/wai-aria-practices-1.1/#menubutton)

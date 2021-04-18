@@ -40,3 +40,10 @@ Já no segundo exemplo, a página estava com `lang=en`. Nesse caso, apenas a voz
 A tag de viewport é importante para definir a escala de apresentação da interface em diferentes telas. Ao utilizar `width=device-width`, o conteúdo é ajustado para a largura real do dispositivo, evitando situações como uma interface aparecendo reduzida em telas de celular, por exemplo. Além disso, é importante permitir que o usuário consiga dar zoom na tela, evitando utilizar o atributo `user-scalable=no`. Como referência, veja como esta página seria apresentada em uma tela de celular, removendo a tag de viewport.
 
 ![Página sem definição de viewport]({{ '/images/no_viewport.jpg' | url }})
+
+
+## Referências
+
+- [WAI - HTML page has lang attribute](https://www.w3.org/WAI/standards-guidelines/act/rules/html-page-lang-b5c3f8/)
+
+- [WAI - meta viewport allows for zoom](https://www.w3.org/WAI/standards-guidelines/act/rules/meta-viewport-b4f0c3/)

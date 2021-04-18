@@ -11,3 +11,10 @@ eleventyNavigation:
 
 - [Considerações Básicas]({{ 'base' | url }})
 - [Validações e Mensagens de Erro]({{ 'validations' | url }})
+
+
+## Referências
+
+- [Understanding WCAG - Labels or Instructions - Techniques](https://www.w3.org/WAI/WCAG21/Understanding/labels-or-instructions.html#techniques)
+- [Techniques for WCAG -  Providing a description for groups of form controls using fieldset and legend elements](https://www.w3.org/TR/WCAG20-TECHS/H71.html)
+- [WAI - Web Accessibility Tutorials - Forms](https://www.w3.org/WAI/tutorials/forms/)

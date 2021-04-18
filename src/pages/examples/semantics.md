@@ -62,3 +62,8 @@ Os leitores de tela permitem agilizar a navegação com atalhos para grupos espe
 
 - [Exemplo incorreto de semântica]({{ '/examples/semantics/incorrect' | url }})
 - [Exemplo correto de semântica]({{ '/examples/semantics/correct' | url }})
+
+## Referências
+
+- [Techniques for WCAG 2.0 - Using semantic elements to mark up structure](https://www.w3.org/TR/WCAG20-TECHS/G115.html), assim como os links apresentados na seção de [técnicas relacionadas](https://www.w3.org/TR/WCAG20-TECHS/G115.html#G115-related-techs).
+- [WebAIM - Semantic Structure: Regions, Headings, and Lists](https://webaim.org/techniques/semanticstructure/)

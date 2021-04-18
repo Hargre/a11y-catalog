@@ -47,3 +47,6 @@ Além das roles, esses elementos contam ainda com alguns atributos do ARIA para 
 - `aria-haspopup="listbox"` - indica que o elemento possui uma lista associada, com comportamento expandível.
 - `aria-expanded="false/true"` - indica se a lista associada está expandida ou não. É alternado via JavaScript sempre que o estado da lista muda.
 - `aria-active-descendant="<id>"` - permite indicar qual item da lista está visualmente sob foco do teclado, quando o usuário navega com as setas de cima/baixo. O foco real da DOM permanece na caixa de texto, mas tecnologias assistivas irão anunciar corretamente qual subitem da lista está ativo.
+
+# Referências
+- [ARIA practices - Combo box](https://www.w3.org/TR/wai-aria-practices-1.1/#combobox)
