@@ -81,6 +81,15 @@ a:focus {
 
 - Utilizar `skip links` para permitir que usuários passem diretamente ao conteúdo principal da página, evitando navegação por blocos repetidos.
 
+
+## Texto
+
+- Garantir que o texto possa ser aumentado em até 200% sem que exista perda de conteúdo ou funcionalidade
+
+- Utilizar um espaçamento entre linhas de no mínimo 1.5 (através do atributo `line-height` em CSS )
+
+- Evitar o uso de alinhamento justificado para textos
+
 ## Texto alternativo
 
 - **Sempre** utilizar o atributo `alt` ao declarar imagens.
