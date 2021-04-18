@@ -81,6 +81,15 @@ a:focus {
 
 - Utilizar `skip links` para permitir que usuários passem diretamente ao conteúdo principal da página, evitando navegação por blocos repetidos.
 
+## Texto alternativo
+
+- **Sempre** utilizar o atributo `alt` ao declarar imagens.
+- Utilizar `alt=''` em imagens que não necessitem de texto alternativo. Situações em que isso pode ocorrer:
+  - A imagem já é descrita em algum componente próximo (por exemplo, com uma legenda logo abaixo).
+  - A imagem tem propósito puramente decorativo, não existindo conteúdo ou funcionalidade a ser descrita. Nesse caso, considerar declarar a imagem via CSS, ao invés de HTML.
+- Adaptar a descrição da imagem ao propósito que a mesma representa na página. Uma mesma imagem pode ter descrições completamente diferentes dependendo do contexto em que está inserida.
+- Não utilizar termos como "Imagem de..." no texto alternativo.
+
 ## Cores e contraste
 
 ### Uso de cor
