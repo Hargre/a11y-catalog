@@ -1,9 +1,9 @@
 ---
 title: "Guia Rápido"
-description: "Essa é uma versão resumida das práticas descritas detalhadamente na seção de Exemplos, e pode ser usada para verificar rapidamente alguns pontos essenciais para a acessibilidade de uma página."
+description: Essa é uma versão resumida das práticas descritas detalhadamente na seção de Exemplos, e pode ser usada para verificar rapidamente alguns pontos essenciais para a acessibilidade de uma página.
 eleventyNavigation:
   key: Guia Rápido
-  order: 4
+  order: 2
 ---
 
 ## Definições básicas de HTML
@@ -79,7 +79,7 @@ a:focus {
 
 ### Pular blocos de conteúdo
 
-- Utilizar `skip links` para permitir que usuários passem diretamente ao conteúdo principal da página, evitando navegação por blocos repetidos.
+- Utilizar [`skip links`]({{ '/pages/examples/navigation#pular-blocos-de-conte%C3%BAdo' | url }}) para permitir que usuários passem diretamente ao conteúdo principal da página, evitando navegação por blocos repetidos.
 
 
 ## Texto

@@ -2,7 +2,7 @@
 title: "Exemplos"
 eleventyNavigation:
   key: Exemplos
-  order: 2
+  order: 3
 ---
 
 Essa é a seção principal deste apoio. Todos os exemplos disponibilizados aqui foram implementados com base nas recomendações do W3C e da literatura especializada. Você pode navegar pelos exemplos um a um, ou pular para um caso específico.

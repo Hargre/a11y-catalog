@@ -3,13 +3,13 @@ title: "Métodos de Avaliação"
 description: "A acessibilidade de um sistema pode ser avaliada de diversas formas. Cada uma apresenta vantagens e limitações específicas. Uma avaliação completa deve fazer uso de várias técnicas sempre que possível."
 eleventyNavigation:
   key: Métodos de Avaliação
-  order: 3
+  order: 4
 ---
 
 ## Inspeções e testes automatizados
 Inspeções de acessibilidade consistem em avaliar a conformidade de um software com um padrão definido de regras, como o WCAG. Muitas vezes, avaliações desse tipo podem ser até mesmo um requisito exigido legalmente.
 
-Nesse contexto, existem várias ferramentas automatizadas para averiguar a acessibilidade de um sistema. Exemplos dessas ferramentas incluem o WAVE, já apresentado, e o Google Lighthouse, que atribui uma nota de 0 a 100 para a acessibilidade da página.
+Nesse contexto, existem várias ferramentas automatizadas para averiguar a acessibilidade de um sistema. Exemplos dessas ferramentas incluem o [WAVE](https://wave.webaim.org/), já apresentado, e o [Google Lighthouse](https://developers.google.com/web/tools/lighthouse), que atribui uma nota de 0 a 100 para a acessibilidade da página.
 
 Embora úteis para identificar rapidamente problemas corrigíveis, essas ferramentas conseguem verificar apenas um escopo reduzido de falhas de acessibilidade, e não tem capacidade de compreender o contexto necessário para avaliações mais profundas. É importante ter em mente que os resultados de testes automatizados e de inspeções de conformidade **não** são suficientes para dizer que uma página é acessível, especialmente por tratar de um domínio naturalmente subjetivo.
 

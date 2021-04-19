@@ -18,7 +18,7 @@ Vale destacar que esses erros correspondem a uma pequena parcela de falhas que p
 
 ## Recursos Importantes
 
-O padrão mais importante relacionado à Acessibilidade Digital é o WCAG (sigla para Web Content Accessibility Guidelines, ou Diretrizes para Conteúdo Acessível da Web). Ele é organizado pela Web Accessibility Initiative (WAI), uma iniciativa que faz parte do consórcio que regulamenta a própria Web, o W3C. O WCAG apresenta recomendações reconhecidas internacionalmente para o desenvolvimento de websites acessíveis, e a conformidade com suas diretrizes é uma forma comum de se avaliar a acessibilidade de uma página.
+O padrão mais importante relacionado à Acessibilidade Digital é o [WCAG](https://www.w3.org/WAI/standards-guidelines/wcag/) (sigla para Web Content Accessibility Guidelines, ou Diretrizes para Conteúdo Acessível da Web). Ele é organizado pela Web Accessibility Initiative (WAI), uma iniciativa que faz parte do consórcio que regulamenta a própria Web, o W3C. O WCAG apresenta recomendações reconhecidas internacionalmente para o desenvolvimento de websites acessíveis, e a conformidade com suas diretrizes é uma forma comum de se avaliar a acessibilidade de uma página.
 
 As diretrizes são dispostas dentro de 4 princípios básicos. Esses princípios consideram que o conteúdo da Web deve ser:
 
