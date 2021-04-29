@@ -11,15 +11,15 @@
     <ul>
       <li>
         Tarefa 1
-        <span class="task-indicator task-indicator--done"></span>
+        <span class="task-indicator task-indicator--done">Sucesso</span>
       </li>
       <li>
         Tarefa 2
-        <span class="task-indicator task-indicator--failed"></span>
+        <span class="task-indicator task-indicator--failed">Falha</span>
       </li>
       <li>
         Tarefa 3
-        <span class="task-indicator task-indicator--done"></span>
+        <span class="task-indicator task-indicator--done">Sucesso</span>
       </li>
     </ul>
   </main>
@@ -51,14 +51,16 @@
       align-items: center;
     }
     .task-indicator {
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
+      /* width: 20px; */
+      /* height: 20px; */
+      border-radius: 10px;
+      padding: .2rem .5rem;
+      color: white;
     }
     .task-indicator--done {
       background-color: green;
     }
     .task-indicator--failed {
-      background-color: red;
+      background-color: #db0000;
     }
 </style>

@@ -36,6 +36,8 @@ Agora, considere como essa mesma tela seria visualizada por três usuários com 
 
 Uma solução simples seria adicionar ao indicador um ícone, ou até mesmo texto para cada status, permitindo identificar se uma tarefa foi ou não concluída sem depender unicamente da cor da tarefa.
 
+![Lista com indicativos de cores e descrição textual]({{ '/images/colour_alternative.PNG' | url }})
+
 Esse mesmo tipo de pensamento se aplica a elementos gráficos mais complexos, como gráficos, por exemplo.
 
 ## Referências
