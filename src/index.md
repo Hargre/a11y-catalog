@@ -3,7 +3,11 @@ title: "Apoio para a Acessibilidade da Web"
 layout: "page"
 ---
 
-Bem vindo a este apoio! Aqui você pode encontrar recursos, dicas e exemplos que visam auxiliar a criar uma Web mais acessível para todos.
+## Sobre o Apoio
+
+Bem vindo! Esse apoio reúne recursos, dicas e exemplos de boas práticas relacionadas à Acessibilidade da Web, com a intenção de auxiliar desenvolvedores a conhecer mais sobre o tema, visando construir sites e aplicativos mais acessíveis. Todas as informações contidas aqui foram obtidas a partir da literatura especializada sobre o assunto e nas principais diretrizes técnicas existentes.
+
+## Como utilizar
 
 Novo ao tema? Confira os recursos disponíveis na [Introdução]({{ 'pages/intro' | url }})!
 
