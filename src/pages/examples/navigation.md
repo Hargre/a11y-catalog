@@ -27,6 +27,8 @@ As tags de cabeçalhos devem ser utilizadas com a intenção de descrever os blo
 
 ![Estrutura de cabeçalhos no WAVE]({{ '/images/heading-structure.png' | url }})
 
+Isso também implica em não utilizar tags de headings com um propósito puramente visual. O tamanho da fonte de um bloco de texto deve ser controlado via CSS, e não por utilizar um heading de nível maior ou menor.
+
 ## Links
 
 Links são outra forma muito comum de se facilitar a navegação através de uma página. Da mesma forma que com cabeçalhos, leitores de tela permitem passar rapidamente apenas pela sequência de links do documento. Algumas considerações para garantir que os links de uma página são acessíveis incluem:

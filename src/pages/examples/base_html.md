@@ -46,7 +46,7 @@ Também é importante permitir que o usuário consiga dar zoom na tela, da forma
 - `user-scalable=no`
 - `maximum-scale=1.0`
 
-Ambos os atributos impedem usuários de aumentar a página em qualquer proporção. O minímo valor aceitável para `maximum-scale` é de 2 (isto é, o usuário consegue ampliar a interface em até 200%), mas prefencialmente deve ser ainda maior. Se nenhum desses atributos for marcado explicitamente, o usuário conseguirá ampliar a página sem restrições.
+Ambos os atributos impedem usuários de aumentar a página em qualquer proporção. O minímo valor aceitável para `maximum-scale` é de 2 (isto é, o usuário consegue ampliar a interface em até 200%), mas preferencialmente deve ser ainda maior. Se nenhum desses atributos for marcado explicitamente, o usuário conseguirá ampliar a página sem restrições.
 
 ## Referências
 
