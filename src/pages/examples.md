@@ -9,7 +9,7 @@ Essa é a seção principal deste apoio. Todos os exemplos disponibilizados aqui
 
 ## Pré-requisitos
 
-Para uma boa parte dos exemplos é recomendado estar com um leitor de tela ativo. Caso ainda não tenha visto, a seção de [Tecnologias Assistivas]({{ 'technologies/assistives' | url }}) apresenta uma introdução ao seu uso, bem como dá sugestões para vários sistemas operacionais.
+Para uma boa parte dos exemplos é recomendado estar com um leitor de tela ativo. Caso ainda não tenha visto, a seção de [Tecnologias Assistivas]({{ '/pages/technologies/assistives' | url }}) apresenta uma introdução ao seu uso, bem como dá sugestões para vários sistemas operacionais.
 
 ## Organização
 
