@@ -63,6 +63,11 @@ Os leitores de tela permitem agilizar a navegação com atalhos para grupos espe
 - [Exemplo incorreto de semântica]({{ '/examples/semantics/incorrect' | url }})
 - [Exemplo correto de semântica]({{ '/examples/semantics/correct' | url }})
 
+Caso você não tenha um leitor de tela instalado no momento, também são disponibilizados trechos de áudio demonstrando os exemplos, com o NVDA, em português. Nas duas gravações, tenta-se navegar pelos cabeçalhos e botões da página. Na primeira gravação, não é encontrado nenhum cabeçalho ou botão. Na segunda, são anunciados todos os cabeçalhos definidos, bem como o único botão.
+
+<audio src="{{ '/audio/incorrect-semantics.mp3' | url }}" controls></audio>
+<audio src="{{ '/audio/correct-semantics.mp3' | url }}" controls></audio>
+
 ## Referências
 
 - [Techniques for WCAG 2.0 - Using semantic elements to mark up structure](https://www.w3.org/TR/WCAG20-TECHS/G115.html), assim como os links apresentados na seção de [técnicas relacionadas](https://www.w3.org/TR/WCAG20-TECHS/G115.html#G115-related-techs).
