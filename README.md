@@ -2,6 +2,8 @@
 
 Esse repositório contém o apoio online desenvolvido como trabalho de conclusão do curso de Engenharia de Software na UnB. O apoio visa trazer materiais informativos, dicas e exemplos sobre o tópico da Acessibilidade em software, mais em específico, a Acessibilidade da Web.
 
+A versão mais recente do site está disponível em: https://hargre.github.io/a11y-catalog/
+
 ## Instalação e execução
 
 É necessário ter o Node.js instalado.
@@ -22,4 +24,4 @@ Para adicionar um novo artigo, basta criar um novo `.md` na pasta `pages` (ou em
 `![Descrição da Imagem]({{ '/images/<nome da imagem>' | url }})`
 `[Descrição do Link]({{ '<caminho para o documento>/<nome do documento>' | url }})`
 
-Para qualquer outro problema, sinta-se livre para abrir uma [issue](https://github.com/Hargre/a11y-catalog/issues/new)!
+Para qualquer outro problema, sinta-se livre para [abrir uma issue](https://github.com/Hargre/a11y-catalog/issues/new)!
