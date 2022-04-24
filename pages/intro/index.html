@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt"><head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Introdução
+  | Apoio para a Acessibilidade da Web</title>
+    <link rel="stylesheet" href="/a11y-catalog/css/style.css" />
+  </head>
+  <body>
+    <a href="#main" id="skip-to-content">Pular para o conteúdo</a>
+    <header class="header">
+      <div class="home-link">
+        <a class="home-link__anchor" href="/a11y-catalog/">Página Inicial</a>
+      </div>
+      <label
+        id="nav-visibility-label"
+        tabindex="0"
+        class="nav-visibility__toggle"
+        for="nav-visibility"
+        title="Abrir/Fechar Menu"
+      >
+        <span class="nav-visibility__toggle-line"></span>
+        <span class="nav-visibility__toggle-line"></span>
+        <span class="nav-visibility__toggle-line"></span>
+        <span hidden>Abrir/Fechar Menu</span>
+      </label>
+    </header>
+    <div class="content">
+      <input type="checkbox" id="nav-visibility" />
+
+      
+<nav class="nav">
+  <ul><li class="nav__navitem"><a href="/a11y-catalog/pages/intro/">Introdução</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/technologies/">Tecnologias</a><ul><li class="nav__navitem"><a href="/a11y-catalog/pages/technologies/support/">Tecnologias de Apoio</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/technologies/assistives/">Tecnologias Assistivas</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/technologies/aria/">ARIA</a></li></ul></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/quick_guide/">Guia Rápido</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/">Exemplos</a><ul><li class="nav__navitem"><a href="/a11y-catalog/pages/examples/base_html/">HTML Básico</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/semantics/">Semântica</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/navigation/">Navegação</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/colours/">Cores e Contraste</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/forms/">Formulários</a><ul><li class="nav__navitem"><a href="/a11y-catalog/pages/examples/forms/base/">Considerações Básicas</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/forms/validations/">Validações</a></li></ul></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/tables/">Tabelas</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/components/">Componentes Interativos</a><ul><li class="nav__navitem"><a href="/a11y-catalog/pages/examples/components/autosuggest/">Autocomplete</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/components/dropdown/">Dropdowns</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/components/modal/">Modais</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/components/bad_practices/">Padrões a se evitar</a></li></ul></li></ul></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/evaluation/">Métodos de Avaliação</a></li></ul>
+</nav>
+
+<main id="main" class="content__main">
+  <article>
+    <h1>Introdução</h1>
+    <p>
+      O mundo moderno cada vez mais depende de software para a realização de inúmeras atividades do cotidiano. A tecnologia, se desenvolvida corretamente, tem potencial para facilitar a vida de um número enorme de pessoas, das mais diversas origens e capacidades. Nesse contexto, a acessibilidade é um critério que tem se tornado cada vez mais relevante. No entanto, grande parte da Web, dos aplicativos de celular e programas de computador modernos ainda apresenta problemas de acessibilidade, que dificultam ou imposibilitam o uso por um grande número de usuários. Este apoio pretende reunir recursos e apresentar exemplos que possam auxiliar desenvolvedores a projetar interfaces mais acessíveis.
+    </p>
+    <nav class="toc">
+                <ol>
+                    
+                    <li><a href="#o-que-%C3%A9-acesssibilidade%3F">O que é Acesssibilidade?</a>
+            		</li>
+
+                    <li><a href="#recursos-importantes">Recursos Importantes</a>
+            		</li>
+                </ol>
+            </nav>
+
+    <h2 id="o-que-%C3%A9-acesssibilidade%3F" tabindex="-1">O que é Acesssibilidade?</h2>
+<p>No contexto desse apoio, o conceito de acessibilidade é relacionado ao uso de software por usuários com deficiências. Entende-se que sites, aplicativos e outros produtos de software devam ser projetados e desenvolvidos de forma que o maior número possível de usuários possa utilizá-los de forma adequada.</p>
+<p>De acordo com o <a href="https://educa.ibge.gov.br/jovens/conheca-o-brasil/populacao/20551-pessoas-com-deficiencia.html">Censo Demográfico de 2010</a>, cerca de 24% da população do Brasil (em torno de 46 milhões de pessoas) possui algum tipo de impedimento visual, auditivo, motor ou cognitivo. Dessas pessoas, cerca de 12 milhões (6,7% da população) possuem impedimentos graves ou totais. A Internet, e a tecnologia como um todo, tem um potencial de inclusão social enorme, mas que ainda é pouco aproveitado. Ao não considerar práticas de acessibilidade durante o desenvolvimento de software, acaba-se por alienar uma grande parcela de usuários. Esses usuários passam a ter uma experiência dificultada ou completamente inacessível para obter informaçoes e realizar tarefas muitas vezes essenciais.</p>
+<p>Uma <a href="https://webaim.org/projects/million/">pesquisa realizada em 2020 pela organização WebAIM</a> (Web accessibility in mind) analisou o nível de acessibilidade de 1 milhão das páginas iniciais mais visitadas da Web. Os resultados indicaram que 98% das páginas apresentava falhas de acessibilidade, com mais de 60 milhões de erros detectados! A grande maioria desses erros possui soluções simples, mas que já reduziriam grandes barreiras de uso.</p>
+<p>Vale destacar que esses erros correspondem a uma pequena parcela de falhas que pode ser identificada por ferramentas de análise automática, o que pode indicar que a situação real é ainda mais grave.</p>
+<h2 id="recursos-importantes" tabindex="-1">Recursos Importantes</h2>
+<p>O padrão mais importante relacionado à Acessibilidade Digital é o <a href="https://www.w3.org/WAI/standards-guidelines/wcag/">WCAG</a> (sigla para Web Content Accessibility Guidelines, ou Diretrizes para Conteúdo Acessível da Web). Ele é organizado pela Web Accessibility Initiative (WAI), uma iniciativa que faz parte do consórcio que regulamenta a própria Web, o W3C. O WCAG apresenta recomendações reconhecidas internacionalmente para o desenvolvimento de websites acessíveis, e a conformidade com suas diretrizes é uma forma comum de se avaliar a acessibilidade de uma página.</p>
+<p>As diretrizes são dispostas dentro de 4 princípios básicos. Esses princípios consideram que o conteúdo da Web deve ser:</p>
+<ul>
+<li>Perceptível - o conteúdo de uma página deve ser apresentado de tal forma que os usuários consigam percebê-lo através de seus sentidos, seja visualmente, sonoramente, ou por tato;</li>
+<li>Operável - os usuários devem ser capazes de navegar e interagir com a interface;</li>
+<li>Compreensível - tanto as informações transmitidas quanto a estrutura da interface devem ser claramente compreendidas pelos usuários, e</li>
+<li>Robusta - o conteúdo é compatível com várias tecnologias, e é capaz de continuar acessível através de evoluções dessas tecnologias.</li>
+</ul>
+<p>Esses princípios são complementares, e a acessibilidade de uma página depende de todos eles. Para cada princípio o WCAG apresenta critérios de sucesso, que devem ser cumpridos para se obter um nível de conformidade com as diretrizes.</p>
+<p>A conformidade com o WCAG é definida em 3 níveis, A, AA e AAA. De forma geral, a maioria dos sites deveria almejar o nível AA. Vale destacar ainda que alcançar um desses níveis de conformidade <strong>não</strong> garante a acessibilidade de sua página, embora seja um passo na direção certa.</p>
+
+  </article>
+</main>
+
+    </div>
+    <script>
+      var menuToggle = document.querySelector("#nav-visibility-label");
+      var menu = document.querySelector("#nav-visibility");
+
+      var enterKeyCode = 13;
+
+      menuToggle.addEventListener("keyup", function (event) {
+        if (event.keyCode == enterKeyCode) {
+          var menuOpen = menu.checked;
+
+          if (menuOpen) {
+            menu.checked = false;
+          } else {
+            menu.checked = true;
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

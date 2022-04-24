@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt"><head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Métodos de Avaliação
+  | Apoio para a Acessibilidade da Web</title>
+    <link rel="stylesheet" href="/a11y-catalog/css/style.css" />
+  </head>
+  <body>
+    <a href="#main" id="skip-to-content">Pular para o conteúdo</a>
+    <header class="header">
+      <div class="home-link">
+        <a class="home-link__anchor" href="/a11y-catalog/">Página Inicial</a>
+      </div>
+      <label
+        id="nav-visibility-label"
+        tabindex="0"
+        class="nav-visibility__toggle"
+        for="nav-visibility"
+        title="Abrir/Fechar Menu"
+      >
+        <span class="nav-visibility__toggle-line"></span>
+        <span class="nav-visibility__toggle-line"></span>
+        <span class="nav-visibility__toggle-line"></span>
+        <span hidden>Abrir/Fechar Menu</span>
+      </label>
+    </header>
+    <div class="content">
+      <input type="checkbox" id="nav-visibility" />
+
+      
+<nav class="nav">
+  <ul><li class="nav__navitem"><a href="/a11y-catalog/pages/intro/">Introdução</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/technologies/">Tecnologias</a><ul><li class="nav__navitem"><a href="/a11y-catalog/pages/technologies/support/">Tecnologias de Apoio</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/technologies/assistives/">Tecnologias Assistivas</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/technologies/aria/">ARIA</a></li></ul></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/quick_guide/">Guia Rápido</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/">Exemplos</a><ul><li class="nav__navitem"><a href="/a11y-catalog/pages/examples/base_html/">HTML Básico</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/semantics/">Semântica</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/navigation/">Navegação</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/colours/">Cores e Contraste</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/forms/">Formulários</a><ul><li class="nav__navitem"><a href="/a11y-catalog/pages/examples/forms/base/">Considerações Básicas</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/forms/validations/">Validações</a></li></ul></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/tables/">Tabelas</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/components/">Componentes Interativos</a><ul><li class="nav__navitem"><a href="/a11y-catalog/pages/examples/components/autosuggest/">Autocomplete</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/components/dropdown/">Dropdowns</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/components/modal/">Modais</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/components/bad_practices/">Padrões a se evitar</a></li></ul></li></ul></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/evaluation/">Métodos de Avaliação</a></li></ul>
+</nav>
+
+<main id="main" class="content__main">
+  <article>
+    <h1>Métodos de Avaliação</h1>
+    <p>
+      A acessibilidade de um sistema pode ser avaliada de diversas formas. Cada uma apresenta vantagens e limitações específicas. Uma avaliação completa deve fazer uso de várias técnicas sempre que possível.
+    </p>
+    <nav class="toc">
+                <ol>
+                    
+                    <li><a href="#inspe%C3%A7%C3%B5es-e-testes-automatizados">Inspeções e testes automatizados</a>
+            		</li>
+
+                    <li><a href="#screening-techniques">Screening techniques</a>
+            		</li>
+
+                    <li><a href="#testes-de-usabilidade">Testes de usabilidade</a>
+            		</li>
+                </ol>
+            </nav>
+
+    <h2 id="inspe%C3%A7%C3%B5es-e-testes-automatizados" tabindex="-1">Inspeções e testes automatizados</h2>
+<p>Inspeções de acessibilidade consistem em avaliar a conformidade de um software com um padrão definido de regras, como o WCAG. Muitas vezes, avaliações desse tipo podem ser até mesmo um requisito exigido legalmente.</p>
+<p>Nesse contexto, existem várias ferramentas automatizadas para averiguar a acessibilidade de um sistema. Exemplos dessas ferramentas incluem o <a href="https://wave.webaim.org/">WAVE</a>, já apresentado, e o <a href="https://developers.google.com/web/tools/lighthouse">Google Lighthouse</a>, que atribui uma nota de 0 a 100 para a acessibilidade da página.</p>
+<p>Embora úteis para identificar rapidamente problemas corrigíveis, essas ferramentas conseguem verificar apenas um escopo reduzido de falhas de acessibilidade, e não tem capacidade de compreender o contexto necessário para avaliações mais profundas. É importante ter em mente que os resultados de testes automatizados e de inspeções de conformidade <strong>não</strong> são suficientes para dizer que uma página é acessível, especialmente por tratar de um domínio naturalmente subjetivo.</p>
+<h2 id="screening-techniques" tabindex="-1">Screening techniques</h2>
+<p>Screening techniques são atividades realizadas de forma interna entre a equipe de desenvolvimento, que envolvem o uso do sistema a ser testado enquanto o testador tem uma ou mais de suas habilidades físicas ou sensoriais reduzidas artificialmente. Por exemplo, um testador pode desligar o monitor ou usar uma venda e tentar utilizar o software com um leitor de tela.</p>
+<p>Esses tipos de teste são rápidos e simples de serem executados, e permitem identificar falhas básicas ainda nos estágios iniciais do desenvolvimento. Apesar disso, o feedback obtido nesses testes não se compara ao obtido em testes com usuários reais, e screening techniques não devem ser vistas como simulações. Usuários reais vão possuir um nível de familiaridade e experiência muito maior com o uso de tecnologias assistivas.</p>
+<h2 id="testes-de-usabilidade" tabindex="-1">Testes de usabilidade</h2>
+<p>Testes com usuários são uma forma extremamente eficaz de se obter feedback sobre a usabilidade e acessibilidade de um sistema. Eles exigem maior esforço para preparação e execução em comparação às técnicas anteriores, mas permitem identificar problemas que passam despercebidos em avaliações de conformidade. Por causa disso, é interessante realizar esse tipo de teste após a aplicação de algumas das outras técnicas, já havendo garantido um nível mínimo de acesso ao sistema de forma geral. Dessa forma, as sessões com os usuários podem ser mais bem aproveitadas para investigar questões mais específicas.</p>
+<p>A seguir são apresentadas algumas referências e guias para a condução de testes de usabilidade, tanto no contexto específico da acessibilidade quanto de forma mais geral:</p>
+<ul>
+<li>
+<p><a href="https://www.w3.org/WAI/test-evaluate/involving-users/">Web Accessibility Initiative - Involving Users in Evaluating Web Accessibility</a></p>
+</li>
+<li>
+<p><a href="http://uiaccess.com/accessucd/ut.html">Accessibility in User-Centered Design: Usability Testing</a></p>
+</li>
+<li>
+<p><a href="https://github.com/clarissalimab/ux/blob/main/CONTRIBUTING.md">Guia de Contribuição para Testes de Usabilidade</a></p>
+</li>
+</ul>
+
+  </article>
+</main>
+
+    </div>
+    <script>
+      var menuToggle = document.querySelector("#nav-visibility-label");
+      var menu = document.querySelector("#nav-visibility");
+
+      var enterKeyCode = 13;
+
+      menuToggle.addEventListener("keyup", function (event) {
+        if (event.keyCode == enterKeyCode) {
+          var menuOpen = menu.checked;
+
+          if (menuOpen) {
+            menu.checked = false;
+          } else {
+            menu.checked = true;
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

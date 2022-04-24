@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt"><head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Autocomplete
+  | Apoio para a Acessibilidade da Web</title>
+    <link rel="stylesheet" href="/a11y-catalog/css/style.css" />
+  </head>
+  <body>
+    <a href="#main" id="skip-to-content">Pular para o conteúdo</a>
+    <header class="header">
+      <div class="home-link">
+        <a class="home-link__anchor" href="/a11y-catalog/">Página Inicial</a>
+      </div>
+      <label
+        id="nav-visibility-label"
+        tabindex="0"
+        class="nav-visibility__toggle"
+        for="nav-visibility"
+        title="Abrir/Fechar Menu"
+      >
+        <span class="nav-visibility__toggle-line"></span>
+        <span class="nav-visibility__toggle-line"></span>
+        <span class="nav-visibility__toggle-line"></span>
+        <span hidden>Abrir/Fechar Menu</span>
+      </label>
+    </header>
+    <div class="content">
+      <input type="checkbox" id="nav-visibility" />
+
+      
+<nav class="nav">
+  <ul><li class="nav__navitem"><a href="/a11y-catalog/pages/intro/">Introdução</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/technologies/">Tecnologias</a><ul><li class="nav__navitem"><a href="/a11y-catalog/pages/technologies/support/">Tecnologias de Apoio</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/technologies/assistives/">Tecnologias Assistivas</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/technologies/aria/">ARIA</a></li></ul></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/quick_guide/">Guia Rápido</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/">Exemplos</a><ul><li class="nav__navitem"><a href="/a11y-catalog/pages/examples/base_html/">HTML Básico</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/semantics/">Semântica</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/navigation/">Navegação</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/colours/">Cores e Contraste</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/forms/">Formulários</a><ul><li class="nav__navitem"><a href="/a11y-catalog/pages/examples/forms/base/">Considerações Básicas</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/forms/validations/">Validações</a></li></ul></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/tables/">Tabelas</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/components/">Componentes Interativos</a><ul><li class="nav__navitem"><a href="/a11y-catalog/pages/examples/components/autosuggest/">Autocomplete</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/components/dropdown/">Dropdowns</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/components/modal/">Modais</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/components/bad_practices/">Padrões a se evitar</a></li></ul></li></ul></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/evaluation/">Métodos de Avaliação</a></li></ul>
+</nav>
+
+<main id="main" class="content__main">
+  <article>
+    <h1>Autocomplete</h1>
+    <p>
+      Caixas de entrada com sugestões automáticas são um padrão bastante comum para funcionalidades de busca ou preenchimento de formulários. Em comparação a outros exemplos já apresentados, sua implementação é mais complexa e aborda alguns aspectos de ARIA ainda não vistos.
+    </p>
+    <nav class="toc">
+                <ol>
+                    
+                    <li><a href="#exemplo-e-coment%C3%A1rios">Exemplo e Comentários</a>
+            		</li>
+                </ol>
+            </nav>
+
+    <h2 id="exemplo-e-coment%C3%A1rios" tabindex="-1">Exemplo e Comentários</h2>
+<ul>
+<li><a href="/a11y-catalog/examples/components/autosuggest/">Exemplo de input com sugestões automáticas</a></li>
+</ul>
+<p>Pontos de destaque da solução:</p>
+<ul>
+<li>Navegação pelo teclado - após a lista de sugestões aparecer, seus elementos podem ser navegados através das setas para cima e para baixo do teclado, bem como um elemento pode ser ativado através da tecla Enter. Nesse exemplo, ao ser ativado, o texto do elemento é preenchido no input, mas esse comportamento pode ser adaptado para outros contextos.</li>
+<li>Detalhes do html - esse componente faz uso mais profundo de funcionalidades do ARIA do que outros exemplos apresentados nesse apoio. Vamos ver em mais detalhes o html relevante:</li>
+</ul>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>input-label<span class="token punctuation">"</span></span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>team-input<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Nome do Time<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>input-container<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>input-container<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><br>    <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>combobox<span class="token punctuation">"</span></span><br>    <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>combobox<span class="token punctuation">"</span></span><br>    <span class="token attr-name">aria-haspopup</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>listbox<span class="token punctuation">"</span></span><br>    <span class="token attr-name">aria-owns</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>suggestions<span class="token punctuation">"</span></span><br>    <span class="token attr-name">aria-expanded</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>false<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span><br>      <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>team-input<span class="token punctuation">"</span></span><br>      <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span><br>      <span class="token attr-name">aria-autocomplete</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>list<span class="token punctuation">"</span></span><br>      <span class="token attr-name">aria-controls</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>suggestions<span class="token punctuation">"</span></span><br>      <span class="token attr-name">aria-active-descendant</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>item-0<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span> <span class="token attr-name">aria-labelledby</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>input-label<span class="token punctuation">"</span></span> <span class="token attr-name">hidden</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>suggestions<span class="token punctuation">"</span></span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>listbox<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>option<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>item-0<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>option<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>item-1<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<p>O exemplo utiliza um padrão conhecido por <a href="https://www.w3.org/TR/wai-aria-practices/#combobox">combobox</a>, que consiste de um componente com uma caixa de texto e um elemento associado que auxilia usuários a definirem o valor do input. Neste caso, o elemento associado é uma lista de elementos. Para isso, foram utilizadas duas roles do ARIA: <code>combobox</code>, atribuída à div que contém o input, e <code>listbox</code>, associada ao <code>ul</code> que contém as sugestões. Além disso, cada elemento da lista de sugestões é marcado com a role <code>option</code>.</p>
+<p>Além das roles, esses elementos contam ainda com alguns atributos do ARIA para melhorar sua acessibilidade. Eles serão detalhados a seguir.</p>
+<ul>
+<li><code>aria-haspopup=&quot;listbox&quot;</code> - indica que o elemento possui uma lista associada, com comportamento expandível.</li>
+<li><code>aria-expanded=&quot;false/true&quot;</code> - indica se a lista associada está expandida ou não. É alternado via JavaScript sempre que o estado da lista muda.</li>
+<li><code>aria-active-descendant=&quot;&lt;id&gt;&quot;</code> - permite indicar qual item da lista está visualmente sob foco do teclado, quando o usuário navega com as setas de cima/baixo. O foco real da DOM permanece na caixa de texto, mas tecnologias assistivas irão anunciar corretamente qual subitem da lista está ativo.</li>
+</ul>
+<h1 id="refer%C3%AAncias" tabindex="-1">Referências</h1>
+<ul>
+<li><a href="https://www.w3.org/TR/wai-aria-practices-1.1/#combobox">ARIA practices - Combo box</a></li>
+</ul>
+
+  </article>
+</main>
+
+    </div>
+    <script>
+      var menuToggle = document.querySelector("#nav-visibility-label");
+      var menu = document.querySelector("#nav-visibility");
+
+      var enterKeyCode = 13;
+
+      menuToggle.addEventListener("keyup", function (event) {
+        if (event.keyCode == enterKeyCode) {
+          var menuOpen = menu.checked;
+
+          if (menuOpen) {
+            menu.checked = false;
+          } else {
+            menu.checked = true;
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

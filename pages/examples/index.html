@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt"><head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exemplos
+  | Apoio para a Acessibilidade da Web</title>
+    <link rel="stylesheet" href="/a11y-catalog/css/style.css" />
+  </head>
+  <body>
+    <a href="#main" id="skip-to-content">Pular para o conteúdo</a>
+    <header class="header">
+      <div class="home-link">
+        <a class="home-link__anchor" href="/a11y-catalog/">Página Inicial</a>
+      </div>
+      <label
+        id="nav-visibility-label"
+        tabindex="0"
+        class="nav-visibility__toggle"
+        for="nav-visibility"
+        title="Abrir/Fechar Menu"
+      >
+        <span class="nav-visibility__toggle-line"></span>
+        <span class="nav-visibility__toggle-line"></span>
+        <span class="nav-visibility__toggle-line"></span>
+        <span hidden>Abrir/Fechar Menu</span>
+      </label>
+    </header>
+    <div class="content">
+      <input type="checkbox" id="nav-visibility" />
+
+      
+<nav class="nav">
+  <ul><li class="nav__navitem"><a href="/a11y-catalog/pages/intro/">Introdução</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/technologies/">Tecnologias</a><ul><li class="nav__navitem"><a href="/a11y-catalog/pages/technologies/support/">Tecnologias de Apoio</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/technologies/assistives/">Tecnologias Assistivas</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/technologies/aria/">ARIA</a></li></ul></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/quick_guide/">Guia Rápido</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/">Exemplos</a><ul><li class="nav__navitem"><a href="/a11y-catalog/pages/examples/base_html/">HTML Básico</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/semantics/">Semântica</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/navigation/">Navegação</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/colours/">Cores e Contraste</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/forms/">Formulários</a><ul><li class="nav__navitem"><a href="/a11y-catalog/pages/examples/forms/base/">Considerações Básicas</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/forms/validations/">Validações</a></li></ul></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/tables/">Tabelas</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/components/">Componentes Interativos</a><ul><li class="nav__navitem"><a href="/a11y-catalog/pages/examples/components/autosuggest/">Autocomplete</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/components/dropdown/">Dropdowns</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/components/modal/">Modais</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/components/bad_practices/">Padrões a se evitar</a></li></ul></li></ul></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/evaluation/">Métodos de Avaliação</a></li></ul>
+</nav>
+
+<main id="main" class="content__main">
+  <article>
+    <h1>Exemplos</h1>
+    <p>
+      
+    </p>
+    <nav class="toc">
+                <ol>
+                    
+                    <li><a href="#pr%C3%A9-requisitos">Pré-requisitos</a>
+            		</li>
+
+                    <li><a href="#organiza%C3%A7%C3%A3o">Organização</a>
+            		</li>
+                </ol>
+            </nav>
+
+    <p>Essa é a seção principal deste apoio. Todos os exemplos disponibilizados aqui foram implementados com base nas recomendações do W3C e da literatura especializada. Você pode navegar pelos exemplos um a um, ou pular para um caso específico.</p>
+<h2 id="pr%C3%A9-requisitos" tabindex="-1">Pré-requisitos</h2>
+<p>Para uma boa parte dos exemplos é recomendado estar com um leitor de tela ativo. Caso ainda não tenha visto, a seção de <a href="/a11y-catalog/pages/technologies/assistives">Tecnologias Assistivas</a> apresenta uma introdução ao seu uso, bem como dá sugestões para vários sistemas operacionais.</p>
+<h2 id="organiza%C3%A7%C3%A3o" tabindex="-1">Organização</h2>
+<p>Os exemplos estão dispostos em algumas categorias, abordando vários aspectos de interfaces da Web moderna. Para vários tópicos, serão apresentados tanto exemplos de interfaces acessíveis, quanto de interfaces com problemas de acessibilidade. As categorias são:</p>
+<ul>
+<li><a href="base_html">HTML Básico</a> - Considerações iniciais sobre a estrutura base de qualquer página da Web;</li>
+<li><a href="semantics">Semântica</a> - A importância do uso correto de elementos semânticos do HTML;</li>
+<li><a href="navigation">Navegação</a> - Como permitir e facilitar a navegação através de uma página;</li>
+<li><a href="colours">Cores e Contraste</a> - Cuidados a serem tomados ao escolher as cores de uma interface;</li>
+<li><a href="forms">Formulários</a> - Apresenta tanto considerações para a compreensão e navegação correta pelos campos, quanto sobre validação de dados inseridos;</li>
+<li><a href="tables">Tabelas</a></li>
+<li><a href="components">Componentes Interativos</a> - Exemplos de componentes mais complexos, utilizando JavaScript para estender as funcionalidades padrão do HTML.</li>
+</ul>
+
+  </article>
+</main>
+
+    </div>
+    <script>
+      var menuToggle = document.querySelector("#nav-visibility-label");
+      var menu = document.querySelector("#nav-visibility");
+
+      var enterKeyCode = 13;
+
+      menuToggle.addEventListener("keyup", function (event) {
+        if (event.keyCode == enterKeyCode) {
+          var menuOpen = menu.checked;
+
+          if (menuOpen) {
+            menu.checked = false;
+          } else {
+            menu.checked = true;
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

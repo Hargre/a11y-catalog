@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt"><head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulários
+  | Apoio para a Acessibilidade da Web</title>
+    <link rel="stylesheet" href="/a11y-catalog/css/style.css" />
+  </head>
+  <body>
+    <a href="#main" id="skip-to-content">Pular para o conteúdo</a>
+    <header class="header">
+      <div class="home-link">
+        <a class="home-link__anchor" href="/a11y-catalog/">Página Inicial</a>
+      </div>
+      <label
+        id="nav-visibility-label"
+        tabindex="0"
+        class="nav-visibility__toggle"
+        for="nav-visibility"
+        title="Abrir/Fechar Menu"
+      >
+        <span class="nav-visibility__toggle-line"></span>
+        <span class="nav-visibility__toggle-line"></span>
+        <span class="nav-visibility__toggle-line"></span>
+        <span hidden>Abrir/Fechar Menu</span>
+      </label>
+    </header>
+    <div class="content">
+      <input type="checkbox" id="nav-visibility" />
+
+      
+<nav class="nav">
+  <ul><li class="nav__navitem"><a href="/a11y-catalog/pages/intro/">Introdução</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/technologies/">Tecnologias</a><ul><li class="nav__navitem"><a href="/a11y-catalog/pages/technologies/support/">Tecnologias de Apoio</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/technologies/assistives/">Tecnologias Assistivas</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/technologies/aria/">ARIA</a></li></ul></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/quick_guide/">Guia Rápido</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/">Exemplos</a><ul><li class="nav__navitem"><a href="/a11y-catalog/pages/examples/base_html/">HTML Básico</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/semantics/">Semântica</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/navigation/">Navegação</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/colours/">Cores e Contraste</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/forms/">Formulários</a><ul><li class="nav__navitem"><a href="/a11y-catalog/pages/examples/forms/base/">Considerações Básicas</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/forms/validations/">Validações</a></li></ul></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/tables/">Tabelas</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/components/">Componentes Interativos</a><ul><li class="nav__navitem"><a href="/a11y-catalog/pages/examples/components/autosuggest/">Autocomplete</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/components/dropdown/">Dropdowns</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/components/modal/">Modais</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/components/bad_practices/">Padrões a se evitar</a></li></ul></li></ul></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/evaluation/">Métodos de Avaliação</a></li></ul>
+</nav>
+
+<main id="main" class="content__main">
+  <article>
+    <h1>Formulários</h1>
+    <p>
+      Os exemplos das seções anteriores se preocupavam principalmente em garantir a percepção correta do conteúdo de um site, bem como de seus mecanismos de navegação. Essa seção tem por foco principal questões de interação com a interface. Para facilitar a leitura, as informações são apresentadas em duas páginas. A primeira possui considerações básicas sobre a implementação e uso correto dos elementos de um formulário, enquanto a segunda apresenta dicas e exemplos para a validação de campos.
+    </p>
+    <nav class="toc">
+                <ol>
+                    
+                    <li><a href="#t%C3%B3picos">Tópicos</a>
+            		</li>
+
+                    <li><a href="#refer%C3%AAncias">Referências</a>
+            		</li>
+                </ol>
+            </nav>
+
+    <h2 id="t%C3%B3picos" tabindex="-1">Tópicos</h2>
+<ul>
+<li><a href="base">Considerações Básicas</a></li>
+<li><a href="validations">Validações e Mensagens de Erro</a></li>
+</ul>
+<h2 id="refer%C3%AAncias" tabindex="-1">Referências</h2>
+<ul>
+<li><a href="https://www.w3.org/WAI/WCAG21/Understanding/labels-or-instructions.html#techniques">Understanding WCAG - Labels or Instructions - Techniques</a></li>
+<li><a href="https://www.w3.org/TR/WCAG20-TECHS/H71.html">Techniques for WCAG -  Providing a description for groups of form controls using fieldset and legend elements</a></li>
+<li><a href="https://www.w3.org/WAI/tutorials/forms/">WAI - Web Accessibility Tutorials - Forms</a></li>
+</ul>
+
+  </article>
+</main>
+
+    </div>
+    <script>
+      var menuToggle = document.querySelector("#nav-visibility-label");
+      var menu = document.querySelector("#nav-visibility");
+
+      var enterKeyCode = 13;
+
+      menuToggle.addEventListener("keyup", function (event) {
+        if (event.keyCode == enterKeyCode) {
+          var menuOpen = menu.checked;
+
+          if (menuOpen) {
+            menu.checked = false;
+          } else {
+            menu.checked = true;
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

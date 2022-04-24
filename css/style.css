@@ -1,0 +1,413 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&family=Roboto:wght@400;700&display=swap");
+img {
+  border: 1px solid #333;
+}
+
+/*
+ * [Modified] Modern CSS Reset
+ * @link https://github.com/hankchizljaw/modern-css-reset
+*/
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-size: 100%;
+  line-height: 1.5;
+  text-rendering: optimizeSpeed;
+}
+
+/* Make images easier to work with */
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  *,
+*::before,
+*::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  html {
+    scroll-behavior: initial;
+  }
+}
+h1,
+h2,
+h3 {
+  margin-bottom: 1.5rem;
+  font-weight: 300;
+  overflow-wrap: break-word;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-family: "Roboto Slab", serif;
+  font-size: clamp(2.8rem, 10vw, 5.2rem);
+  margin: 6rem auto 3rem auto;
+}
+
+h2 {
+  font-family: "Roboto Slab", serif;
+  font-size: clamp(2.4rem, 5vw, 3.2rem);
+}
+
+h3 {
+  font-size: 2.4rem;
+}
+
+h4 {
+  font-size: 1.6rem;
+}
+
+p {
+  font-size: 1.4rem;
+}
+
+a {
+  color: #0072b2;
+}
+a:focus {
+  outline: 2px solid #004a40;
+}
+
+ul {
+  font-size: 1.4rem;
+}
+
+.nav {
+  background-color: #ebf2f2;
+  border-right: 1px solid #e1be6a;
+  position: sticky;
+  position: -webkit-sticky;
+  align-self: flex-start;
+  top: 0;
+  height: 100vh;
+}
+.nav > ul {
+  list-style: none;
+  padding: 2rem;
+  padding-right: 5rem;
+}
+.nav > ul ul {
+  padding-left: 1rem;
+}
+.nav > ul ul li {
+  font-size: 1.2rem;
+}
+
+.nav__navitem {
+  font-size: 1.6rem;
+}
+.nav__navitem > a {
+  color: #004a40;
+}
+.nav__navitem > a:focus {
+  outline: 2px dashed #004a40;
+}
+
+#nav-visibility {
+  display: none;
+}
+
+.nav-visibility__toggle {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  cursor: pointer;
+  right: 0;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 0.5rem;
+}
+.nav-visibility__toggle:focus {
+  outline: 2px dashed #fffafa;
+}
+
+.nav-visibility__toggle-line {
+  display: inline-block;
+  background-color: white;
+  height: 4px;
+  width: 35px;
+  margin-bottom: 5px;
+}
+
+.home-link {
+  display: flex;
+  align-items: center;
+  color: white;
+  padding: 2rem;
+}
+
+.home-link__anchor {
+  color: white;
+  font-size: 1.6rem;
+}
+.home-link__anchor:focus {
+  outline: 2px dashed #fffafa;
+}
+
+@media (max-width: 800px) {
+  .nav {
+    position: static;
+    align-self: initial;
+    height: unset;
+    display: none;
+  }
+
+  #nav-visibility:checked ~ .nav {
+    display: block;
+  }
+
+  .nav-visibility__toggle {
+    display: flex;
+  }
+}
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+  background-color: #fffafa;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+}
+
+#skip-to-content {
+  z-index: -1;
+  position: absolute;
+  color: #004a40;
+  background-color: #fffafa;
+  padding: 0.5rem;
+  vertical-align: center;
+}
+#skip-to-content:focus {
+  z-index: 2;
+}
+
+.header {
+  background-color: #2D7B74;
+  min-height: 5.4rem;
+  border-bottom: 1px solid #e1be6a;
+  position: relative;
+  display: flex;
+  align-items: stretch;
+}
+
+.content {
+  display: flex;
+  flex-grow: 1;
+}
+
+.content__main {
+  margin: 0 auto 2rem auto;
+  max-width: 50rem;
+}
+
+@media (max-width: 1200px) {
+  .content__main {
+    padding: 0 2rem;
+    margin: 0;
+  }
+}
+@media (max-width: 800px) {
+  .content {
+    flex-direction: column;
+  }
+}
+/**
+ * Slightly modified version of the a11y-light theme by ericwbailey: https://github.com/ericwbailey/a11y-syntax-highlighting/blob/main/dist/prism/a11y-light.css
+ */
+code[class*=language-],
+pre[class*=language-] {
+  color: #545454;
+  background: none;
+  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: break-word;
+  line-height: 1.5;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*=language-] {
+  padding: 1em;
+  margin: 2rem 0;
+  overflow: auto;
+  border-radius: 0.5em;
+  border: 1px solid #333;
+}
+
+:not(pre) > code[class*=language-],
+pre[class*=language-] {
+  background: #fefefe;
+}
+
+/* Inline code */
+:not(pre) > code[class*=language-] {
+  padding: 0.1em;
+  border-radius: 0.3em;
+  white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #696969;
+}
+
+.token.punctuation {
+  color: #545454;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: #007faa;
+}
+
+.token.boolean,
+.token.number {
+  color: #008000;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: #aa5d00;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+  color: #008000;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function {
+  color: #aa5d00;
+}
+
+.token.keyword {
+  color: #d91e18;
+}
+
+.token.regex,
+.token.important {
+  color: #d91e18;
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+@media screen and (-ms-high-contrast: active) {
+  code[class*=language-],
+pre[class*=language-] {
+    color: windowText;
+    background: window;
+  }
+
+  :not(pre) > code[class*=language-],
+pre[class*=language-] {
+    background: window;
+  }
+
+  .token.important {
+    background: highlight;
+    color: window;
+    font-weight: normal;
+  }
+
+  .token.atrule,
+.token.attr-value,
+.token.function,
+.token.keyword,
+.token.operator,
+.token.selector {
+    font-weight: bold;
+  }
+
+  .token.attr-value,
+.token.comment,
+.token.doctype,
+.token.function,
+.token.keyword,
+.token.operator,
+.token.property,
+.token.string {
+    color: highlight;
+  }
+
+  .token.attr-value,
+.token.url {
+    font-weight: normal;
+  }
+}

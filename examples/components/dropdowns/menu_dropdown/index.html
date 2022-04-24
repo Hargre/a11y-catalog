@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exemplo de Menu Dropdown</title>
+</head>
+<body>
+  <ul role="menubar" class="menubar">
+    <li role="none">
+      <button class="top-level-toggle" role="menuitem" aria-haspopup="true" aria-expanded="false" tabindex="0">Arquivo</button>
+      <ul class="submenu" role="menu" tabindex="-1" hidden>
+        <li role="none"><button role="menuitem" tabindex="-1" >Novo</button></li>
+        <li role="none"><button role="menuitem" tabindex="-1" >Abrir</button></li>
+      </ul>
+    </li>
+    <li role="none">
+      <button class="top-level-toggle" role="menuitem" aria-haspopup="true" aria-expanded="false" tabindex="-1">Editar</button>
+      <ul class="submenu" role="menu" tabindex="-1" hidden>
+        <li role="none"><button role="menuitem" tabindex="-1" >Reverter</button></li>
+        <li role="none"><button role="menuitem" tabindex="-1" >Refazer</button></li>
+        <li role="none"><button role="menuitem" tabindex="-1" >Copiar</button></li>
+        <li role="none"><button role="menuitem" tabindex="-1" >Colar</button></li>
+      </ul>
+    </li>
+    <li role="none">
+      <button class="top-level-toggle" role="menuitem" aria-haspopup="true" aria-expanded="false" tabindex="-1">Inserir</button>
+      <ul class="submenu" role="menu" tabindex="-1" hidden>
+        <li role="none"><button role="menuitem" tabindex="-1" >Imagem</button></li>
+        <li role="none"><button role="menuitem" tabindex="-1" >Tabela</button></li>
+        <li role="none"><button role="menuitem" tabindex="-1" >Gráfico</button></li>
+      </ul>
+    </li>
+  </ul>
+  <div>
+    <a href="#">Exemplo de link após o menu</a>
+  </div>
+  <hr>
+  <div>
+    <a href="/pages/examples/components/dropdown">Retornar para Exemplos de Dropdowns</a>
+  </div>
+</body>
+<script>
+  const LEFT = 37;
+  const UP = 38;
+  const RIGHT = 39;
+  const DOWN = 40;
+
+  function togglePrevMenu(toggleButtons, i) {
+    let prev =  [...toggleButtons][i - 1];
+    if (i === 0) {
+      prev = [...toggleButtons][toggleButtons.length - 1];
+    }
+    let prevSubmenu = prev.parentElement.querySelector('.submenu');
+    prev.focus();
+    prev.setAttribute('aria-expanded', 'true');
+    prevSubmenu.removeAttribute('hidden');
+  }
+
+  function toggleNextMenu(toggleButtons, i) {
+    let next = [...toggleButtons][i + 1];
+    if (i === (toggleButtons.length - 1)) {
+      next = [...toggleButtons][0];
+    }
+    let nextSubmenu = next.parentElement.querySelector('.submenu');
+    next.focus();
+    next.setAttribute('aria-expanded', 'true');
+    nextSubmenu.removeAttribute('hidden');
+  }
+
+  const toggleButtons = document.querySelectorAll('.top-level-toggle');
+  const toggleButtonsState = [...toggleButtons].map((_) => false);
+  toggleButtons.forEach((toggleButton, i) => {
+    const links = toggleButton.parentElement.querySelector('.submenu');
+    const submenuControls = links.querySelectorAll('button');
+
+    toggleButton.onclick = (e) => {
+      if (toggleButtonsState[i]) {
+        toggleButton.setAttribute('aria-expanded', 'false');
+        links.setAttribute('hidden', 'hidden');
+      } else {
+        links.removeAttribute('hidden');
+        toggleButton.setAttribute('aria-expanded', 'true');
+      }
+      toggleButtonsState[i] = !toggleButtonsState[i];
+    }
+    toggleButton.onkeydown = (e) => {
+      switch (e.keyCode) {
+        case RIGHT:
+          toggleNextMenu(toggleButtons, i);
+
+          toggleButton.setAttribute('aria-expanded', 'false');
+          links.setAttribute('hidden', 'hidden');
+          break;
+        case LEFT:
+          togglePrevMenu(toggleButtons, i);
+
+          toggleButton.setAttribute('aria-expanded', 'false');
+          links.setAttribute('hidden', 'hidden');
+          break;
+        case DOWN:
+          links.removeAttribute('hidden');
+          toggleButton.setAttribute('aria-expanded', 'true');
+          links.querySelector('button').focus();
+          break;
+        case UP:
+          links.removeAttribute('hidden');
+          toggleButton.setAttribute('aria-expanded', 'true');
+          links.querySelector('button:last-child').focus();
+          break;
+        default:
+          break;
+      }
+    }
+
+    submenuControls.forEach((control, control_i) => {
+      control.onkeydown = (e) => {
+        switch (e.keyCode) {
+        case RIGHT:
+          toggleNextMenu(toggleButtons, i);
+
+          toggleButton.setAttribute('aria-expanded', 'false');
+          links.setAttribute('hidden', 'hidden');
+          break;
+        case LEFT:
+          togglePrevMenu(toggleButtons, i);
+
+          toggleButton.setAttribute('aria-expanded', 'false');
+          links.setAttribute('hidden', 'hidden');
+          break;
+        case DOWN:
+          let next = [...submenuControls][control_i + 1];
+          if (control_i + 1 === submenuControls.length) {
+            next = [...submenuControls][0];
+          }
+          next.focus();
+          break;
+        case UP:
+          let prev = [...submenuControls][control_i - 1];
+          if (control_i === 0) {
+            prev = [...submenuControls][submenuControls.length - 1];
+          }
+          prev.focus();
+          break;
+        default:
+          break;
+      }
+      }
+    })
+  })
+</script>
+</html>
+
+<style>
+  .menubar {
+    display: flex;
+    list-style-type: none;
+  }
+  .submenu {
+    list-style-type: none;
+  }
+  button {
+    background-color: blue;
+    color: white;
+    padding: .5rem 1rem;
+    font-size: 1rem;
+    border: 1px solid white;
+    cursor: pointer;
+  }
+  button:focus {
+    color: blue;
+    background-color: white;
+    border: 1px solid black;
+  }
+</style>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt"><head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tecnologias de Apoio
+  | Apoio para a Acessibilidade da Web</title>
+    <link rel="stylesheet" href="/a11y-catalog/css/style.css" />
+  </head>
+  <body>
+    <a href="#main" id="skip-to-content">Pular para o conteúdo</a>
+    <header class="header">
+      <div class="home-link">
+        <a class="home-link__anchor" href="/a11y-catalog/">Página Inicial</a>
+      </div>
+      <label
+        id="nav-visibility-label"
+        tabindex="0"
+        class="nav-visibility__toggle"
+        for="nav-visibility"
+        title="Abrir/Fechar Menu"
+      >
+        <span class="nav-visibility__toggle-line"></span>
+        <span class="nav-visibility__toggle-line"></span>
+        <span class="nav-visibility__toggle-line"></span>
+        <span hidden>Abrir/Fechar Menu</span>
+      </label>
+    </header>
+    <div class="content">
+      <input type="checkbox" id="nav-visibility" />
+
+      
+<nav class="nav">
+  <ul><li class="nav__navitem"><a href="/a11y-catalog/pages/intro/">Introdução</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/technologies/">Tecnologias</a><ul><li class="nav__navitem"><a href="/a11y-catalog/pages/technologies/support/">Tecnologias de Apoio</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/technologies/assistives/">Tecnologias Assistivas</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/technologies/aria/">ARIA</a></li></ul></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/quick_guide/">Guia Rápido</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/">Exemplos</a><ul><li class="nav__navitem"><a href="/a11y-catalog/pages/examples/base_html/">HTML Básico</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/semantics/">Semântica</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/navigation/">Navegação</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/colours/">Cores e Contraste</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/forms/">Formulários</a><ul><li class="nav__navitem"><a href="/a11y-catalog/pages/examples/forms/base/">Considerações Básicas</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/forms/validations/">Validações</a></li></ul></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/tables/">Tabelas</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/components/">Componentes Interativos</a><ul><li class="nav__navitem"><a href="/a11y-catalog/pages/examples/components/autosuggest/">Autocomplete</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/components/dropdown/">Dropdowns</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/components/modal/">Modais</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/components/bad_practices/">Padrões a se evitar</a></li></ul></li></ul></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/evaluation/">Métodos de Avaliação</a></li></ul>
+</nav>
+
+<main id="main" class="content__main">
+  <article>
+    <h1>Tecnologias de Apoio</h1>
+    <p>
+      Existem várias ferramentas que podem auxiliar com questões de acessibilidade ao longo do ciclo de desenvolvimento. Algumas podem ser aplicadas desde o protótipo da interface, outras permitem verificar a conformidade das páginas com as normas existentes. A seguir serão apresentadas algumas dessas ferramentas.
+    </p>
+    <nav class="toc">
+                <ol>
+                    
+                    <li><a href="#verificadores-de-contraste-e-cores">Verificadores de Contraste e Cores</a>
+            		</li>
+
+                    <li><a href="#ferramentas-de-avalia%C3%A7%C3%A3o">Ferramentas de Avaliação</a>
+            		</li>
+
+                    <li><a href="#outros-recursos">Outros recursos</a>
+            		</li>
+                </ol>
+            </nav>
+
+    <h2 id="verificadores-de-contraste-e-cores" tabindex="-1">Verificadores de Contraste e Cores</h2>
+<p>A escolha adequada de cores em uma página é um fator importante para a acessibilidade. A falta de
+contraste entre a cor de um texto e seu plano de fundo pode dificultar a compreensão do conteúdo
+para um grande número de usuários, impactando não apenas a acessibilidade como a usabilidade geral de
+uma página.</p>
+<p>Existem várias ferramentas que auxiliam a verificar o contraste de cores em uma interface, mesmo
+antes da sua implementação em código. Por exemplo, na construção do protótipo deste apoio foi utilizado <a href="https://www.figma.com/community/plugin/734693888346260052">um plugin</a> na plataforma Figma que informa o contraste entre dois elementos selecionados, de acordo com os valores recomendados pelo WCAG.</p>
+<p><img src="/a11y-catalog/images/contrast_plugin.png" alt="Execução do plugin de contraste no Figma"></p>
+<p>O uso de cores para transmitir informações, sem utilizar de outros complementos visuais,
+também pode dificultar ou impossibilitar a compreensão do conteúdo por usuários com dificuldades
+para distinguir certas variações de cores. Para o protótipo deste apoio também se utilizou <a href="https://www.figma.com/community/plugin/733343906244951586/Color-Blind">outro plugin</a> do Figma, que permite gerar cópias do protótipo simulando vários tipos diferentes de daltonismo.</p>
+<p><img src="/a11y-catalog/images/deute_vision.png" alt="Execução do plugin de daltonismo no Figma"></p>
+<p>A seção de exemplos do apoio contém ainda um tópico com <a href="/a11y-catalog/pages/examples/colours">mais detalhes e exemplos específicos sobre o contraste e uso de cores</a>.</p>
+<h2 id="ferramentas-de-avalia%C3%A7%C3%A3o" tabindex="-1">Ferramentas de Avaliação</h2>
+<p>Algumas normas de acessibilidade podem ser verificadas com o auxílio de software especializado,
+que analisa o conteúdo e estrutura de uma página e informam possíveis falhas.</p>
+<p>Uma dessas ferramentas é o WAVE, que pode ser instalado como uma extensão de navegador e permite a
+avaliação automática de qualquer página, de acordo com as normas do WCAG. Para cada possível falha
+identificada, é apresentado um resumo da norma relevante. O plugin também permite visualizar
+a estrutura hierárquica das tags da página e verificar o contraste entre as cores de texto e de fundo.</p>
+<p><img src="/a11y-catalog/images/wave_exec.png" alt="Execução do WAVE"></p>
+<p>É importante notar, porém, que o uso dessas ferramentas não garante a acessibilidade da sua página!
+Muitos problemas de acessibilidade não podem ser identificados de forma automática, pois dependem de contexto e interpretação para serem avaliados. Este apoio possui uma seção que trata em mais detalhes os <a href="/a11y-catalog/pages/evaluation">métodos de avaliação de acessibilidade</a></p>
+<h2 id="outros-recursos" tabindex="-1">Outros recursos</h2>
+<ul>
+<li>O W3C disponiliza uma relação detalhada de <a href="https://www.w3.org/WAI/ER/tools/">ferramentas de avaliação de acessibilidade</a>.</li>
+</ul>
+
+  </article>
+</main>
+
+    </div>
+    <script>
+      var menuToggle = document.querySelector("#nav-visibility-label");
+      var menu = document.querySelector("#nav-visibility");
+
+      var enterKeyCode = 13;
+
+      menuToggle.addEventListener("keyup", function (event) {
+        if (event.keyCode == enterKeyCode) {
+          var menuOpen = menu.checked;
+
+          if (menuOpen) {
+            menu.checked = false;
+          } else {
+            menu.checked = true;
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <main>
+    <ul>
+      <li>
+        Tarefa 1
+        <span class="task-indicator task-indicator--done">Sucesso</span>
+      </li>
+      <li>
+        Tarefa 2
+        <span class="task-indicator task-indicator--failed">Falha</span>
+      </li>
+      <li>
+        Tarefa 3
+        <span class="task-indicator task-indicator--done">Sucesso</span>
+      </li>
+    </ul>
+  </main>
+</body>
+</html>
+
+<style>
+    body {
+        line-height: 1.5;
+    }
+    main {
+      margin: auto;
+      display: flex;
+      justify-content: center;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+      border: 1px solid black;
+      max-width: 600px;
+      min-width: 300px;
+      flex: 1;
+    }
+    li {
+      padding: 1rem;
+      border: 1px solid black;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .task-indicator {
+      /* width: 20px; */
+      /* height: 20px; */
+      border-radius: 10px;
+      padding: .2rem .5rem;
+      color: white;
+    }
+    .task-indicator--done {
+      background-color: green;
+    }
+    .task-indicator--failed {
+      background-color: #db0000;
+    }
+</style>

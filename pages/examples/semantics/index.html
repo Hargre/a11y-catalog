@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt"><head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Escrevendo HTML Semântico
+  | Apoio para a Acessibilidade da Web</title>
+    <link rel="stylesheet" href="/a11y-catalog/css/style.css" />
+  </head>
+  <body>
+    <a href="#main" id="skip-to-content">Pular para o conteúdo</a>
+    <header class="header">
+      <div class="home-link">
+        <a class="home-link__anchor" href="/a11y-catalog/">Página Inicial</a>
+      </div>
+      <label
+        id="nav-visibility-label"
+        tabindex="0"
+        class="nav-visibility__toggle"
+        for="nav-visibility"
+        title="Abrir/Fechar Menu"
+      >
+        <span class="nav-visibility__toggle-line"></span>
+        <span class="nav-visibility__toggle-line"></span>
+        <span class="nav-visibility__toggle-line"></span>
+        <span hidden>Abrir/Fechar Menu</span>
+      </label>
+    </header>
+    <div class="content">
+      <input type="checkbox" id="nav-visibility" />
+
+      
+<nav class="nav">
+  <ul><li class="nav__navitem"><a href="/a11y-catalog/pages/intro/">Introdução</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/technologies/">Tecnologias</a><ul><li class="nav__navitem"><a href="/a11y-catalog/pages/technologies/support/">Tecnologias de Apoio</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/technologies/assistives/">Tecnologias Assistivas</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/technologies/aria/">ARIA</a></li></ul></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/quick_guide/">Guia Rápido</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/">Exemplos</a><ul><li class="nav__navitem"><a href="/a11y-catalog/pages/examples/base_html/">HTML Básico</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/semantics/">Semântica</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/navigation/">Navegação</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/colours/">Cores e Contraste</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/forms/">Formulários</a><ul><li class="nav__navitem"><a href="/a11y-catalog/pages/examples/forms/base/">Considerações Básicas</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/forms/validations/">Validações</a></li></ul></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/tables/">Tabelas</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/components/">Componentes Interativos</a><ul><li class="nav__navitem"><a href="/a11y-catalog/pages/examples/components/autosuggest/">Autocomplete</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/components/dropdown/">Dropdowns</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/components/modal/">Modais</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/components/bad_practices/">Padrões a se evitar</a></li></ul></li></ul></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/evaluation/">Métodos de Avaliação</a></li></ul>
+</nav>
+
+<main id="main" class="content__main">
+  <article>
+    <h1>Escrevendo HTML Semântico</h1>
+    <p>
+      Um dos aspectos mais simples para a construção de páginas acessíveis, porém muitas vezes esquecido, diz respeito ao uso adequado dos elementos semânticos do HTML. Páginas que ignoram esses elementos, ou os usam de forma incorreta podem dificultar o acesso, compreensão e interação com o conteúdo para um grande número de usuários.
+    </p>
+    <nav class="toc">
+                <ol>
+                    
+                    <li><a href="#entendendo-a-sem%C3%A2ntica">Entendendo a Semântica</a>
+            		</li>
+
+                    <li><a href="#exemplos">Exemplos</a>
+            		</li>
+
+                    <li><a href="#refer%C3%AAncias">Referências</a>
+            		</li>
+                </ol>
+            </nav>
+
+    <h2 id="entendendo-a-sem%C3%A2ntica" tabindex="-1">Entendendo a Semântica</h2>
+<p>A maior parte das tags existentes em HTML possui sentido específico. Esse sentido pode interferir na apresentação visual de um elemento, em suas funcionalidades padrão e em como esse elemento é apresentado para tecnologias assistivas, como leitores de tela. Embora seja possível manipular elementos como <code>div</code> e <code>span</code>, que não tem um significado especial, para se comportar como outros elementos, sempre que possível é mais vantajoso fazer uso da estrutura já existente. Por exemplo, é possível criar um componente com aparência de um botão utilizando uma <code>span</code>:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Clique aqui<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span></code></pre>
+<p>É comum encontrar situações desse tipo em muitas páginas. Mas para esse elemento realmente se comportar como um botão, é preciso garantir que seja possível navegar até ele e ativá-lo pelo teclado. Isso exige implementar controles customizados. Além disso, o elemento não será anunciado como um botão para um usuário de leitor de tela. Por outro lado, se o mesmo componente fosse criado como:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Clique aqui<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span></code></pre>
+<p>Todas as funcionalidades mencionadas já existiriam por padrão, e o elemento seria claramente compreendido por um usuário de leitor de tela. O único esforço adicional de implementação em comparação ao uso da <code>div</code> seria de possivelmente redefinir o estilo padrão de um botão através de CSS. Mas os ganhos de semântica são superiores aos de apresentação.</p>
+<p>A semântica do HTML também auxilia na navegação e compreensão da estrutura de uma página. Por exemplo, não é incomum encontrar páginas que definam os cabeçalhos de uma página através de <code>divs</code>, com classes em CSS simulando a aparência de um <code>h1</code>, <code>h2</code>, e demais níveis:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>heading-1<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Países de Língua Portuguesa<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>heading-2<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Europa<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>heading-3<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Portugal<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>heading-2<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Américas<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>heading-3<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Brasil<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>heading-2<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>África<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>heading-3<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Angola<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>heading-3<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Moçambique<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br>...</code></pre>
+<p>Visualmente, essa página pode fazer sentido. Para um leitor de tela, no entanto, os elementos destacados não serão apresentados como cabeçalhos. A relação e estrutura entre cada elemento é perdida, e um usuário pode ter dificuldades para navegar pela página.
+Por outro lado, uma implementação que faça uso das tags adequadas:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span>Países de Língua Portuguesa<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">></span></span>Europa<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h3</span><span class="token punctuation">></span></span>Portugal<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h3</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">></span></span>Américas<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h3</span><span class="token punctuation">></span></span>Brasil<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h3</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">></span></span>África<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h3</span><span class="token punctuation">></span></span>Angola<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h3</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h3</span><span class="token punctuation">></span></span>Moçambique<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h3</span><span class="token punctuation">></span></span><br>...</code></pre>
+<p>Nesse caso, um leitor de tela informaria ao usuário os cabeçalhos, e permitiria identificar e navegar através da estrutura hierárquica da página.</p>
+<h2 id="exemplos" tabindex="-1">Exemplos</h2>
+<p>Os links a seguir contém a implementação dos trechos de código apresentados. Tente acessar cada página com um leitor de tela ativado e preste atenção nas diferenças. Note também como é possível alcançar o botão através do teclado em apenas um dos exemplos.</p>
+<p>Os leitores de tela permitem agilizar a navegação com atalhos para grupos específicos de elementos. Por exemplo, apertar a tecla <code>H</code> com o NVDA ativo fará com que o próximo cabeçalho na página seja lido. De forma similar, <code>Ctrl H</code> lê o cabeçalho anterior. Confira o atalho equivalente do seu leitor de tela e veja a diferença de resultados entre os exemplos.</p>
+<ul>
+<li><a href="/a11y-catalog/examples/semantics/incorrect">Exemplo incorreto de semântica</a></li>
+<li><a href="/a11y-catalog/examples/semantics/correct">Exemplo correto de semântica</a></li>
+</ul>
+<p>Caso você não tenha um leitor de tela instalado no momento, também são disponibilizados trechos de áudio demonstrando os exemplos, com o NVDA, em português. Nas duas gravações, tenta-se navegar pelos cabeçalhos e botões da página. Na primeira gravação, não é encontrado nenhum cabeçalho ou botão. Na segunda, são anunciados todos os cabeçalhos definidos, bem como o único botão.</p>
+<p><audio src="/a11y-catalog/audio/incorrect-semantics.mp3" controls></audio>
+<audio src="/a11y-catalog/audio/correct-semantics.mp3" controls></audio></p>
+<h2 id="refer%C3%AAncias" tabindex="-1">Referências</h2>
+<ul>
+<li><a href="https://www.w3.org/TR/WCAG20-TECHS/G115.html">Techniques for WCAG 2.0 - Using semantic elements to mark up structure</a>, assim como os links apresentados na seção de <a href="https://www.w3.org/TR/WCAG20-TECHS/G115.html#G115-related-techs">técnicas relacionadas</a>.</li>
+<li><a href="https://webaim.org/techniques/semanticstructure/">WebAIM - Semantic Structure: Regions, Headings, and Lists</a></li>
+</ul>
+
+  </article>
+</main>
+
+    </div>
+    <script>
+      var menuToggle = document.querySelector("#nav-visibility-label");
+      var menu = document.querySelector("#nav-visibility");
+
+      var enterKeyCode = 13;
+
+      menuToggle.addEventListener("keyup", function (event) {
+        if (event.keyCode == enterKeyCode) {
+          var menuOpen = menu.checked;
+
+          if (menuOpen) {
+            menu.checked = false;
+          } else {
+            menu.checked = true;
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

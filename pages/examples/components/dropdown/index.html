@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt"><head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menus dropdown
+  | Apoio para a Acessibilidade da Web</title>
+    <link rel="stylesheet" href="/a11y-catalog/css/style.css" />
+  </head>
+  <body>
+    <a href="#main" id="skip-to-content">Pular para o conteúdo</a>
+    <header class="header">
+      <div class="home-link">
+        <a class="home-link__anchor" href="/a11y-catalog/">Página Inicial</a>
+      </div>
+      <label
+        id="nav-visibility-label"
+        tabindex="0"
+        class="nav-visibility__toggle"
+        for="nav-visibility"
+        title="Abrir/Fechar Menu"
+      >
+        <span class="nav-visibility__toggle-line"></span>
+        <span class="nav-visibility__toggle-line"></span>
+        <span class="nav-visibility__toggle-line"></span>
+        <span hidden>Abrir/Fechar Menu</span>
+      </label>
+    </header>
+    <div class="content">
+      <input type="checkbox" id="nav-visibility" />
+
+      
+<nav class="nav">
+  <ul><li class="nav__navitem"><a href="/a11y-catalog/pages/intro/">Introdução</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/technologies/">Tecnologias</a><ul><li class="nav__navitem"><a href="/a11y-catalog/pages/technologies/support/">Tecnologias de Apoio</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/technologies/assistives/">Tecnologias Assistivas</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/technologies/aria/">ARIA</a></li></ul></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/quick_guide/">Guia Rápido</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/">Exemplos</a><ul><li class="nav__navitem"><a href="/a11y-catalog/pages/examples/base_html/">HTML Básico</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/semantics/">Semântica</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/navigation/">Navegação</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/colours/">Cores e Contraste</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/forms/">Formulários</a><ul><li class="nav__navitem"><a href="/a11y-catalog/pages/examples/forms/base/">Considerações Básicas</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/forms/validations/">Validações</a></li></ul></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/tables/">Tabelas</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/components/">Componentes Interativos</a><ul><li class="nav__navitem"><a href="/a11y-catalog/pages/examples/components/autosuggest/">Autocomplete</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/components/dropdown/">Dropdowns</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/components/modal/">Modais</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/components/bad_practices/">Padrões a se evitar</a></li></ul></li></ul></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/evaluation/">Métodos de Avaliação</a></li></ul>
+</nav>
+
+<main id="main" class="content__main">
+  <article>
+    <h1>Menus dropdown</h1>
+    <p>
+      Menus dropdown são componentes utilizados em vários contextos, seja como mecanismo de navegação ou contendo controles de configuração de uma aplicação. Independente de seu propósito, alguns cuidados devem ser tomados para serem de fato acessíveis.
+    </p>
+    <nav class="toc">
+                <ol>
+                    
+                    <li><a href="#menus-de-navega%C3%A7%C3%A3o">Menus de navegação</a>
+            
+                <ol>
+                    
+                    <li><a href="#sem%C3%A2ntica-padr%C3%A3o">Semântica padrão</a>
+            		</li>
+
+                    <li><a href="#alternando-visibilidade">Alternando visibilidade</a>
+            		</li>
+
+                    <li><a href="#outras-observa%C3%A7%C3%B5es">Outras observações</a>
+            		</li>
+                </ol>
+            		</li>
+
+                    <li><a href="#exemplo-mais-complexo%3A-um-menu-%22real%22">Exemplo mais complexo: Um menu "real"</a>
+            
+                <ol>
+                    
+                    <li><a href="#uso-de-roles">Uso de roles</a>
+            		</li>
+
+                    <li><a href="#navega%C3%A7%C3%A3o">Navegação</a>
+            		</li>
+                </ol>
+            		</li>
+                </ol>
+            </nav>
+
+    <h2 id="menus-de-navega%C3%A7%C3%A3o" tabindex="-1">Menus de navegação</h2>
+<p>Menus com dropdown são comumente utilizados para implementar seções de navegação em websites. O exemplo apresentado aqui é simples, mas acessível. Alguns pontos importantes serão destacados a seguir.</p>
+<p><a href="/a11y-catalog/examples/components/dropdowns/nav_dropdown">Exemplo de menu de navegação</a></p>
+<h3 id="sem%C3%A2ntica-padr%C3%A3o" tabindex="-1">Semântica padrão</h3>
+<p>Mais uma vez, o uso semântico adequado dos elementos do HTML facilita o desenvolvimento de uma solução acessível. Foram utilizadas listas tanto para os botões do menu, quanto para cada submenu de links. Os botões foram implementados utilizando o elemento <code>button</code> e apenas os links de fato foram definidos com tags <code>a</code>.</p>
+<h3 id="alternando-visibilidade" tabindex="-1">Alternando visibilidade</h3>
+<p>Dois atributos importantes foram utilizados para esconder ou exibir corretamente cada submenu. O primeiro é o atributo <code>hidden</code>, que esconde o elemento tanto visualmente quanto para usuários de tecnologias assistivas. Dessa forma, os links do submenu não serão anunciados por leitores de tela nem navegáveis por teclado enquanto o menu estiver oculto. Além disso, utiliza o atributo ARIA <code>aria-expanded</code>, que informa para tecnologias assistivas se o conteúdo controlado por aquele botão está visível ou não. O valor desses atributos é alterado via JavaScript, de acordo com a visibilidade do menu.</p>
+<pre class="language-js"><code class="language-js">toggleButton<span class="token punctuation">.</span><span class="token function-variable function">onclick</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span><br>  <span class="token keyword">const</span> links <span class="token operator">=</span> toggleButton<span class="token punctuation">.</span>parentElement<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'.sublinks'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">buttonWasActive</span><span class="token punctuation">(</span>toggleButton<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>    toggleButton<span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span><span class="token string">'aria-expanded'</span><span class="token punctuation">,</span> <span class="token string">'false'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>    links<span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span><span class="token string">'hidden'</span><span class="token punctuation">,</span> <span class="token string">'hidden'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span><br>    links<span class="token punctuation">.</span><span class="token function">removeAttribute</span><span class="token punctuation">(</span><span class="token string">'hidden'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>    toggleButton<span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span><span class="token string">'aria-expanded'</span><span class="token punctuation">,</span> <span class="token string">'true'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>  <span class="token punctuation">}</span><br>  toggleButtonsState<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token operator">!</span>toggleButtonsState<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
+<h3 id="outras-observa%C3%A7%C3%B5es" tabindex="-1">Outras observações</h3>
+<ul>
+<li>Nesse exemplo, manteve-se a navegação padrão dos links através da tecla <code>Tab</code>. Em menus com muitos elementos isso pode gerar um problema sério de usabilidade, exigindo que o usuário navegue desnecessariamente por uma quantidade grande de elementos até alcançar outra seção da página. O próximo exemplo mostra outra forma de tratar a navegação dentro de menus dropdown.</li>
+</ul>
+<h2 id="exemplo-mais-complexo%3A-um-menu-%22real%22" tabindex="-1">Exemplo mais complexo: Um menu &quot;real&quot;</h2>
+<p>O próximo exemplo adiciona algumas camadas de complexidade, demonstrando um <a href="/a11y-catalog/examples/components/dropdowns/menu_dropdown">menu com configurações de uma aplicação</a>, ao invés de navegação. Alguns pontos de destaque dessa implementação são detalhados a seguir.</p>
+<h3 id="uso-de-roles" tabindex="-1">Uso de roles</h3>
+<p>O exemplo utiliza três <code>roles</code> distintas do ARIA para a implementação correta do menu: <code>menubar</code>, <code>menu</code> e <code>menuitem</code>. O <code>menubar</code> corresponde à lista exterior do componente, que contém os botões responsáveis por abrir cada submenu. A role <code>menu</code> é aplicada para cada submenu, e por fim, a role <code>menuitem</code> é aplicada para os controles, tanto os botões que abrem os submenus, quanto os botões de configuração.</p>
+<p>Essas estruturas são importantes para que os elementos sejam anunciados corretamente por tecnologias assistivas.</p>
+<h3 id="navega%C3%A7%C3%A3o" tabindex="-1">Navegação</h3>
+<p>Foi utilizado JavaScript para permitir um fluxo de navegação pelo teclado que simule o de um menu nativo ao Desktop. Dessa forma, foram implementadas ações para os eventos <code>onkeydown</code> dos botões do menu, definindo o comportamento de navegação pelas setas do teclado.</p>
+<p>Além disso, removeu-se o comportamento padrão de foco via <code>Tab</code>, utilizando o atributo <code>tabindex=-1</code> nos botões. Esse atributo remove o elemento do fluxo de navegação natural da página, e deve ser utilizado com <strong>extremo</strong> cuidado. Nesse caso, seu uso é justificado para evitar que um usuário precise passar por toda a lista de botões dos menus até alcançar o restante dos controles da página. Além disso, os controles ainda são navegáveis, graças à implementação que permite utilizar as setas.</p>
+<p>Apenas o primeiro botão da lista de menus manteve seu comportamento padrão e ainda pode ser acessado via <code>Tab</code>. O próximo <code>Tab</code> já leva o usuário para o primeiro elemento focável fora do menu.</p>
+<h1 id="refer%C3%AAncias" tabindex="-1">Referências</h1>
+<ul>
+<li><a href="https://www.w3.org/TR/wai-aria-practices-1.1/#menu">ARIA practices - Menu or Menu bar</a></li>
+<li><a href="https://www.w3.org/TR/wai-aria-practices-1.1/#menubutton">ARIA practices - Menu Button</a></li>
+</ul>
+
+  </article>
+</main>
+
+    </div>
+    <script>
+      var menuToggle = document.querySelector("#nav-visibility-label");
+      var menu = document.querySelector("#nav-visibility");
+
+      var enterKeyCode = 13;
+
+      menuToggle.addEventListener("keyup", function (event) {
+        if (event.keyCode == enterKeyCode) {
+          var menuOpen = menu.checked;
+
+          if (menuOpen) {
+            menu.checked = false;
+          } else {
+            menu.checked = true;
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

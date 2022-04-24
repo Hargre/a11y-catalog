@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt"><head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navegação
+  | Apoio para a Acessibilidade da Web</title>
+    <link rel="stylesheet" href="/a11y-catalog/css/style.css" />
+  </head>
+  <body>
+    <a href="#main" id="skip-to-content">Pular para o conteúdo</a>
+    <header class="header">
+      <div class="home-link">
+        <a class="home-link__anchor" href="/a11y-catalog/">Página Inicial</a>
+      </div>
+      <label
+        id="nav-visibility-label"
+        tabindex="0"
+        class="nav-visibility__toggle"
+        for="nav-visibility"
+        title="Abrir/Fechar Menu"
+      >
+        <span class="nav-visibility__toggle-line"></span>
+        <span class="nav-visibility__toggle-line"></span>
+        <span class="nav-visibility__toggle-line"></span>
+        <span hidden>Abrir/Fechar Menu</span>
+      </label>
+    </header>
+    <div class="content">
+      <input type="checkbox" id="nav-visibility" />
+
+      
+<nav class="nav">
+  <ul><li class="nav__navitem"><a href="/a11y-catalog/pages/intro/">Introdução</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/technologies/">Tecnologias</a><ul><li class="nav__navitem"><a href="/a11y-catalog/pages/technologies/support/">Tecnologias de Apoio</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/technologies/assistives/">Tecnologias Assistivas</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/technologies/aria/">ARIA</a></li></ul></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/quick_guide/">Guia Rápido</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/">Exemplos</a><ul><li class="nav__navitem"><a href="/a11y-catalog/pages/examples/base_html/">HTML Básico</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/semantics/">Semântica</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/navigation/">Navegação</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/colours/">Cores e Contraste</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/forms/">Formulários</a><ul><li class="nav__navitem"><a href="/a11y-catalog/pages/examples/forms/base/">Considerações Básicas</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/forms/validations/">Validações</a></li></ul></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/tables/">Tabelas</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/components/">Componentes Interativos</a><ul><li class="nav__navitem"><a href="/a11y-catalog/pages/examples/components/autosuggest/">Autocomplete</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/components/dropdown/">Dropdowns</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/components/modal/">Modais</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/components/bad_practices/">Padrões a se evitar</a></li></ul></li></ul></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/evaluation/">Métodos de Avaliação</a></li></ul>
+</nav>
+
+<main id="main" class="content__main">
+  <article>
+    <h1>Navegação</h1>
+    <p>
+      Permitir que usuários consigam navegar corretamente pelos elementos de uma página é algo básico para qualquer website. Essa seção mostra alguns cuidados para garantir que usuários com deficiências consigam localizar e interagir com mais facilidade pelos elementos da interface.
+    </p>
+    <nav class="toc">
+                <ol>
+                    
+                    <li><a href="#headings">Headings</a>
+            
+                <ol>
+                    
+                    <li><a href="#como-cabe%C3%A7alhos-s%C3%A3o-descritos-por-leitores-de-tela">Como cabeçalhos são descritos por leitores de tela</a>
+            		</li>
+
+                    <li><a href="#utilizar-as-tags-adequadas">Utilizar as tags adequadas</a>
+            		</li>
+
+                    <li><a href="#criar-uma-estrutura-l%C3%B3gica-de-t%C3%B3picos">Criar uma estrutura lógica de tópicos</a>
+            		</li>
+                </ol>
+            		</li>
+
+                    <li><a href="#links">Links</a>
+            
+                <ol>
+                    
+                    <li><a href="#controle-de-foco">Controle de foco</a>
+            		</li>
+
+                    <li><a href="#n%C3%A3o-usar-links-vazios">Não usar links vazios</a>
+            		</li>
+
+                    <li><a href="#identificar-a-finalidade-do-link">Identificar a finalidade do link</a>
+            		</li>
+                </ol>
+            		</li>
+
+                    <li><a href="#pular-blocos-de-conte%C3%BAdo">Pular blocos de conteúdo</a>
+            		</li>
+
+                    <li><a href="#refer%C3%AAncias">Referências</a>
+            		</li>
+                </ol>
+            </nav>
+
+    <h2 id="headings" tabindex="-1">Headings</h2>
+<p>Uma estrutura adequada de cabeçalhos permite que usuários de leitores de tela consigam obter um resumo rápido de uma página, ou navegar com mais facilidade para um tópico específico. Para que essa estrutura seja de fato acessível, alguns pontos importantes devem ser mencionados.</p>
+<h3 id="como-cabe%C3%A7alhos-s%C3%A3o-descritos-por-leitores-de-tela" tabindex="-1">Como cabeçalhos são descritos por leitores de tela</h3>
+<p>Leitores de tela possuem funcionalidades específicas para a estrutura de cabeçalhos de uma página, permitindo gerar uma tabela de tópicos. Além disso, existem atalhos específicos para navegar diretamente pelos cabeçalhos. Por exemplo, no NVDA, apertar H navega para o próximo cabeçalho, e Shift H para o cabeçalho anterior. Apertar as teclas de 1 até 6 navega para o próximo cabeçalho daquele nível. Essas funcionalidades permitem aos usuários obter rapidamente as informações relevantes de uma página sem precisar navegar por todo o conteúdo.</p>
+<p><img src="/a11y-catalog/images/nvda_headings.png" alt="Lista de cabeçalhos no NVDA"></p>
+<h3 id="utilizar-as-tags-adequadas" tabindex="-1">Utilizar as tags adequadas</h3>
+<p>Como já mencionado no <a href="../semantics">artigo sobre semântica no HTML</a>, é essencial utilizar as tags com o sentido apropriado para cabeçalhos. Nesse caso, essas tags correspondem ao conjunto de <code>h1</code> até <code>h6</code>.</p>
+<h3 id="criar-uma-estrutura-l%C3%B3gica-de-t%C3%B3picos" tabindex="-1">Criar uma estrutura lógica de tópicos</h3>
+<p>As tags de cabeçalhos devem ser utilizadas com a intenção de descrever os blocos de conteúdo seguintes, de forma a gerar uma espécie de resumo do conteúdo da página. Essa característica também deve ser utilizada para a apresentação de hierarquia entre tópicos. Por isso, é importante que as tags sejam utilizadas respeitando essa hierarquia, sem pular níveis. Uma forma de visualizar essa estrutura e identificar possíveis erros é através do WAVE.</p>
+<p><img src="/a11y-catalog/images/heading-structure.png" alt="Estrutura de cabeçalhos no WAVE"></p>
+<p>Isso também implica em não utilizar tags de headings com um propósito puramente visual. O tamanho da fonte de um bloco de texto deve ser controlado via CSS, e não por utilizar um heading de nível maior ou menor.</p>
+<h2 id="links" tabindex="-1">Links</h2>
+<p>Links são outra forma muito comum de se facilitar a navegação através de uma página. Da mesma forma que com cabeçalhos, leitores de tela permitem passar rapidamente apenas pela sequência de links do documento. Algumas considerações para garantir que os links de uma página são acessíveis incluem:</p>
+<h3 id="controle-de-foco" tabindex="-1">Controle de foco</h3>
+<p>Por padrão, links criados com a tag <code>a</code> vão possuir controle de foco adequado. Isto é, é possível alcançar um link através da tecla <code>Tab</code> e ativá-lo através da tecla <code>Enter</code>. No entanto, pode ser interessante modificar ligeiramente o estilo padrão de links em foco, de forma a melhorar sua visibilidade. Isso pode ser feito definindo um <code>outline</code> para o elemento em foco, via CSS. Por exemplo, os links da barra de navegação desse apoio possuem a seguinte folha de estilo:</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">a:focus</span> <span class="token punctuation">{</span><br>  <span class="token property">outline</span><span class="token punctuation">:</span> 2px dashed #004a40<span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
+<h3 id="n%C3%A3o-usar-links-vazios" tabindex="-1">Não usar links vazios</h3>
+<p>Um padrão muito comum é de utilizar links vazios, como <code>&lt;a href=&quot;#&quot;&gt;</code>, para ativar ações via JavaScript, como abrir um menu ou dropdown. Esse tipo de construção prejudica usuários de teclado e leitores de tela. Em situações desse tipo seria mais apropriado o uso de um <code>button</code>.</p>
+<h3 id="identificar-a-finalidade-do-link" tabindex="-1">Identificar a finalidade do link</h3>
+<p>Sempre que possível, o texto de um link deve conter contexto o suficiente por si só. Isso melhora a experiência de usuários de leitores de tela que estejam passando rapidamente pela relação de links da página, sem ler todo o conteúdo que precede o link. Na prática, isso quer dizer que links genéricos como &quot;Clique aqui&quot; ou &quot;Mais&quot; devem ser evitados.</p>
+<h2 id="pular-blocos-de-conte%C3%BAdo" tabindex="-1">Pular blocos de conteúdo</h2>
+<p>É comum que sites possuam seções de conteúdo repetido, muitas vezes antes do conteúdo principal da página. Para usuários com visão e que não dependam do teclado para navegar, isso não é um problema. As seções menos relevantes são facilmente ignoradas e a atenção visual é quase imediatamente concentrada no bloco principal de conteúdo.</p>
+<p>No entanto, isso pode ser um grande inconveniente para outros usuários. Usuários de leitores de tela podem precisar ouvir uma longa sequência de elementos até alcançar o assunto principal. Usuários com deficiências motoras podem precisar pressionar repetidamente botões ou teclas dezenas ou centenas de vezes até atingir o ponto desejado na página.</p>
+<p>Uma forma simples de lidar com esse problema é criar um link no início da página, antes da seção de conteúdo repetido, que permita direcionar o usuário diretamente ao início do conteúdo principal. Isso pode ser visto em prática nesse próprio website! Recarregue a página e aperte <code>Tab</code>. Um link de &quot;pular para o conteúdo&quot; deve aparecer no canto superior esquerdo da tela. Ele foi implementado de forma a não aparecer por padrão, sendo visível apenas quando tiver foco do teclado e sendo anunciado por leitores de tela.</p>
+<h2 id="refer%C3%AAncias" tabindex="-1">Referências</h2>
+<ul>
+<li><a href="https://www.w3.org/TR/WCAG20-TECHS/G141.html">Techniques for WCAG 2.0 - Organizing a page using headings</a>, assim como os links apresentados na seção de <a href="https://www.w3.org/TR/WCAG20-TECHS/G141.html#G141-related-techs">técnicas relacionadas</a>.</li>
+<li><a href="https://www.w3.org/WAI/tutorials/page-structure/headings/">WAI - Web Accessibility Tutorials - Headings</a></li>
+<li><a href="https://webaim.org/techniques/hypertext/link_text">WebAIM - Links and Hypertext</a></li>
+<li><a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-skip.html#navigation-mechanisms-skip-techniques-head">Techniques for WCAG 2.0 - Bypass Blocks</a></li>
+</ul>
+
+  </article>
+</main>
+
+    </div>
+    <script>
+      var menuToggle = document.querySelector("#nav-visibility-label");
+      var menu = document.querySelector("#nav-visibility");
+
+      var enterKeyCode = 13;
+
+      menuToggle.addEventListener("keyup", function (event) {
+        if (event.keyCode == enterKeyCode) {
+          var menuOpen = menu.checked;
+
+          if (menuOpen) {
+            menu.checked = false;
+          } else {
+            menu.checked = true;
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

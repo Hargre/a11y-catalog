@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>Exemplo de Autosuggest</h1>
+  <div>
+    <a href="#">controle anterior</a>
+  </div>
+  <div>
+    <label id="input-label" for="team-input">Nome do Time</label>
+  </div>
+  <div class="input-container" id="input-container">
+    <div class="combobox" role="combobox" aria-haspopup="listbox" aria-owns="suggestions" aria-expanded="false">
+      <input id="team-input" type="text" aria-autocomplete="list" aria-controls="suggestions">
+    </div>
+    <ul aria-labelledby="input-label" hidden id="suggestions" role="listbox"></ul>
+  </div>
+
+  <script>
+    const UP = 38;
+    const DOWN = 40;
+    const ENTER = 13;
+    const TAB = 9;
+
+    const teams = [
+      'América-MG',
+      'Athletico-PR',
+      'Atlético-GO',
+      'Atlético-MG',
+      'Bahia',
+      'Bragantino',
+      'Ceará',
+      'Chapecoense',
+      'Corinthians',
+      'Cuiabá',
+      'Flamengo',
+      'Fluminense',
+      'Fortaleza',
+      'Grêmio',
+      'Internacional',
+      'Juventude',
+      'Palmeiras',
+      'Santos',
+      'São Paulo',
+      'Sport'
+    ];
+
+    let activeIndex = -1;
+
+    const normalizeString = (str) => {
+      return str
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "");
+    }
+
+    const filterList = (input) => {
+      return teams.filter((team) => {
+        const normalizedTeam = normalizeString(team);
+        const normalizedInput = normalizeString(input);
+        return normalizedTeam.includes(normalizedInput);
+      })
+    }
+
+    const teamInput = document.getElementById('team-input');
+    const teamsList = document.getElementById('suggestions');
+    let teamsListItems = [];
+
+    const selectItem = (value) => {
+      teamInput.value = value;
+      teamsList.setAttribute('hidden', 'hidden');
+      teamsList.innerHTML = "";
+      teamsListItems = [];
+      activeIndex = -1;
+    }
+
+    document.addEventListener('click', (ev) => {
+      if (teamsListItems.includes(ev.target)) {
+        selectItem(ev.target.innerHTML);
+      }
+    })
+
+    teamInput.oninput = (e) => {
+      teamsList.removeAttribute('hidden');
+      teamsList.innerHTML = "";
+      teamsListItems = [];
+
+      const combobox = document.querySelector('.combobox');
+
+      if (teamInput.value !== "") {
+        filteredTeams = filterList(teamInput.value);
+        filteredTeams.forEach((team, i) => {
+          const item = document.createElement("li");
+          item.id = `item-${i}`;
+          item.setAttribute('role', 'option');
+          item.appendChild(document.createTextNode(team));
+          teamsList.appendChild(item);
+        })
+        if (teamsListItems.length) {
+          combobox.setAttribute('aria-expanded', 'true');
+        }
+        teamsListItems = [...teamsList.querySelectorAll('li')];
+        activeIndex = -1;
+        teamInput.removeAttribute('aria-activedescendant');
+      } else {
+        teamsList.setAttribute('hidden', 'hidden');
+        combobox.setAttribute('aria-expanded', 'false');
+      }
+    }
+
+    teamInput.onkeydown = (e) => {
+      if (teamsListItems.length === 0) return;
+      const prevActive = teamsListItems[activeIndex];
+
+      if (e.keyCode === DOWN) {
+        if (activeIndex + 1 === teamsListItems.length) {
+          activeIndex = 0;
+        } else {
+          activeIndex++;
+        }
+      } else if (e.keyCode === UP) {
+        if (activeIndex === 0) {
+          activeIndex = teamsListItems.length - 1;
+        } else {
+          activeIndex--;
+        }
+      } else if ([ENTER, TAB].includes(e.keyCode)) {
+        selectItem(teamsListItems[activeIndex].innerHTML);
+        return;
+      } else {
+        return;
+      }
+      teamsListItems[activeIndex].classList.add('focused');
+      teamInput.setAttribute('aria-activedescendant', `item-${activeIndex}`);
+      if (prevActive) {
+        prevActive.classList.remove('focused');
+      }
+    }
+    
+
+  </script>
+</body>
+
+</html>
+
+<style>
+  body {
+    box-sizing: border-box;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    border: 1px solid black;
+    position: absolute;
+    min-width: 140px;
+  }
+
+  li {
+    cursor: default;
+  }
+
+  li:hover {
+    background-color: cadetblue;
+  }
+
+  input {
+    min-width: 140px;
+  }
+
+  .focused {
+    background-color: cadetblue;
+  }
+
+  .input-container {
+    display: inline-block;
+    position: relative;
+  }
+</style>

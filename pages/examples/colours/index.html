@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt"><head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cores e Contraste
+  | Apoio para a Acessibilidade da Web</title>
+    <link rel="stylesheet" href="/a11y-catalog/css/style.css" />
+  </head>
+  <body>
+    <a href="#main" id="skip-to-content">Pular para o conteúdo</a>
+    <header class="header">
+      <div class="home-link">
+        <a class="home-link__anchor" href="/a11y-catalog/">Página Inicial</a>
+      </div>
+      <label
+        id="nav-visibility-label"
+        tabindex="0"
+        class="nav-visibility__toggle"
+        for="nav-visibility"
+        title="Abrir/Fechar Menu"
+      >
+        <span class="nav-visibility__toggle-line"></span>
+        <span class="nav-visibility__toggle-line"></span>
+        <span class="nav-visibility__toggle-line"></span>
+        <span hidden>Abrir/Fechar Menu</span>
+      </label>
+    </header>
+    <div class="content">
+      <input type="checkbox" id="nav-visibility" />
+
+      
+<nav class="nav">
+  <ul><li class="nav__navitem"><a href="/a11y-catalog/pages/intro/">Introdução</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/technologies/">Tecnologias</a><ul><li class="nav__navitem"><a href="/a11y-catalog/pages/technologies/support/">Tecnologias de Apoio</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/technologies/assistives/">Tecnologias Assistivas</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/technologies/aria/">ARIA</a></li></ul></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/quick_guide/">Guia Rápido</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/">Exemplos</a><ul><li class="nav__navitem"><a href="/a11y-catalog/pages/examples/base_html/">HTML Básico</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/semantics/">Semântica</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/navigation/">Navegação</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/colours/">Cores e Contraste</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/forms/">Formulários</a><ul><li class="nav__navitem"><a href="/a11y-catalog/pages/examples/forms/base/">Considerações Básicas</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/forms/validations/">Validações</a></li></ul></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/tables/">Tabelas</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/components/">Componentes Interativos</a><ul><li class="nav__navitem"><a href="/a11y-catalog/pages/examples/components/autosuggest/">Autocomplete</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/components/dropdown/">Dropdowns</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/components/modal/">Modais</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/components/bad_practices/">Padrões a se evitar</a></li></ul></li></ul></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/evaluation/">Métodos de Avaliação</a></li></ul>
+</nav>
+
+<main id="main" class="content__main">
+  <article>
+    <h1>Cores e Contraste</h1>
+    <p>
+      
+    </p>
+    <nav class="toc">
+                <ol>
+                    
+                    <li><a href="#contraste">Contraste</a>
+            
+                <ol>
+                    
+                    <li><a href="#texto">Texto</a>
+            		</li>
+
+                    <li><a href="#componentes-da-interface">Componentes da Interface</a>
+            		</li>
+                </ol>
+            		</li>
+
+                    <li><a href="#alternativas-ao-uso-de-cores">Alternativas ao Uso de Cores</a>
+            		</li>
+
+                    <li><a href="#refer%C3%AAncias">Referências</a>
+            		</li>
+                </ol>
+            </nav>
+
+    <h2 id="contraste" tabindex="-1">Contraste</h2>
+<p>O contraste de cores é um dos fatores essenciais para a percepção adequada dos elementos em uma interface. Uma página que utilize uma cor de fundo muito próxima à cor do texto dificulta a leitura para qualquer usuário que esteja consumindo o conteúdo visualmente. Considerações parecidas se aplicam a outros componentes de uma página, como links, formulários e outros elementos de interação. Garantir o contraste suficiente é algo tão importante para a acessibilidade e a usabilidade de uma forma mais geral que o WCAG define valores mínimos de conformidade para vários componentes de uma página da Web.</p>
+<p>Caso você ainda não tenha visto, a seção de <a href="../../technologies/support">Tecnologias de Apoio</a> contém dicas de ferramentas para avaliar o contraste entre elementos em uma página da Web.</p>
+<h3 id="texto" tabindex="-1">Texto</h3>
+<p>Para a apresentação de texto em uma página, o WCAG considera que a relação de contraste deve ser de no mínimo 4.5:1 entre cores adjacentes. Para texto considerado grande (a partir de 24 pixels, ou 18.5 pixels em negrito) esse valor é reduzido para 3:1, por se considerar que texto grande é mais facilmente percebido. A imagem a seguir mostra três trechos de texto em uma página da web. No primeiro parágrafo, o contraste entre texto e plano de fundo é inferior ao valor mínimo recomendado. No segundo o contraste está exatamente na proporção de 4.5:1, e no terceiro, de 7:1, que representa o nível mínimo de contraste para a conformidade AAA.</p>
+<p><img src="/a11y-catalog/images/contrast-text.png" alt="Comparação de contraste entre texto e plano de fundo"></p>
+<p>A proporção máxima de contraste possível é de 21:1, e corresponde ao contraste entre preto (<code>#000</code>) e branco (<code>#fff</code>).</p>
+<h3 id="componentes-da-interface" tabindex="-1">Componentes da Interface</h3>
+<p>Para os demais componentes, se define que a relação de contraste deve ser de 3:1.</p>
+<h2 id="alternativas-ao-uso-de-cores" tabindex="-1">Alternativas ao Uso de Cores</h2>
+<p>Outra consideração importante é de não utilizar a cor de um elemento como a única forma visual de transmitir uma informação. Dessa forma, usuários que tenham dificuldade para distinguir entre certas cores não são prejudicados. Como exemplo, considere uma página que exibe uma lista de tarefas. Cada tarefa possui ainda um indicador visual, que informa se a tarefa foi realizada ou não com sucesso. Em tarefa bem sucedida o indicador é verde, em caso de falha, vermelho. Essa lista poderia inicialmente ser projetada como na imagem a seguir:</p>
+<p><img src="/a11y-catalog/images/alt_color_base.png" alt="Lista com indicativos de cores"></p>
+<p>Agora, considere como essa mesma tela seria visualizada por três usuários com tipos diferentes de daltonismo. O primeiro possui protanopia, onde há dificuldade em distinguir cores vermelhas. O segundo possui deuteranopia, onde há dificuldade em distinguir cores verdes. Por fim, o último usuário possui acromatopsia, uma forma mais rara de daltonismo onde não é possível perceber cores.</p>
+<p><img src="/a11y-catalog/images/colorblind_view.png" alt="Lista com indicativos de cores, simulação de daltonismo"></p>
+<p>Uma solução simples seria adicionar ao indicador um ícone, ou até mesmo texto para cada status, permitindo identificar se uma tarefa foi ou não concluída sem depender unicamente da cor da tarefa.</p>
+<p><img src="/a11y-catalog/images/colour_alternative.PNG" alt="Lista com indicativos de cores e descrição textual"></p>
+<p>Esse mesmo tipo de pensamento se aplica a elementos gráficos mais complexos, como gráficos, por exemplo.</p>
+<h2 id="refer%C3%AAncias" tabindex="-1">Referências</h2>
+<ul>
+<li>
+<p><a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html">Understanding WCAG 2.0 - Contrast (Minimum)</a>, bem como os links na seção de <a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html#visual-audio-contrast-contrast-techniques-head">técnicas e falhas</a>.</p>
+</li>
+<li>
+<p><a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html">Understanding WCAG 2.0 - Use of Color</a>, bem como os links na seção de <a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-without-color.html#visual-audio-contrast-without-color-techniques-head">técnicas e falhas</a>.</p>
+</li>
+</ul>
+
+  </article>
+</main>
+
+    </div>
+    <script>
+      var menuToggle = document.querySelector("#nav-visibility-label");
+      var menu = document.querySelector("#nav-visibility");
+
+      var enterKeyCode = 13;
+
+      menuToggle.addEventListener("keyup", function (event) {
+        if (event.keyCode == enterKeyCode) {
+          var menuOpen = menu.checked;
+
+          if (menuOpen) {
+            menu.checked = false;
+          } else {
+            menu.checked = true;
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

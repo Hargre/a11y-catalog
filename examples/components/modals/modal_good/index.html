@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exemplo de Modal - Acessível</title>
+</head>
+<body>
+  <h1 id="start">Algum conteúdo</h1>
+  <p>Algum conteúdo</p>
+  <a href="#link">Elemento focável</a>
+  <button id="open">Abrir modal</button>
+  <p id="link">Mais conteúdo</p>
+  <a href="#start">Outro Elemento focável</a>
+  <form action="">
+    <label for="input-1">Algum input</label>
+    <input type="text" id="input-1">
+    <label for="input-2">Outro input</label>
+    <input type="text" id="input-2">
+    <button type="submit">Enviar dados</button>
+  </form>
+
+  <div hidden id="modal-container" role="dialog" aria-modal="true" aria-labelledby="modal__confirm-label">
+    <div class="overlay"></div>
+    <div class="modal">
+      <h1 id="modal__confirm-label">Confirmar Ação</h1>
+      <p>Dentro da modal</p>
+      <button id="modal__cancel-button">Cancelar</button>
+      <button id="modal__confirm-button">Confirmar</button>
+    </div>
+  </div>
+</body>
+<script>
+  const TAB_KEY = 9;
+  const ESC_KEY = 27;
+
+  const openButton = document.getElementById('open');
+  const modal = document.getElementById('modal-container');
+  const cancelButton = document.getElementById('modal__cancel-button');
+  const confirmButton = document.getElementById('modal__confirm-button');
+
+  let lastFocused;
+
+  function closeModal() {
+    modal.setAttribute('hidden', 'hidden');
+    lastFocused.focus();
+  }
+
+  openButton.onclick = (e) => {
+    lastFocused = document.activeElement;
+    modal.removeAttribute('hidden');
+    cancelButton.focus();
+  }
+
+  const modalButtons = modal.querySelectorAll('button');
+  modalButtons.forEach((button) => {
+    button.onclick = _e => closeModal() 
+  });
+
+  modal.onkeydown = (e) => {
+    if (e.keyCode === ESC_KEY) {
+      e.preventDefault();
+      closeModal();
+    }
+  }
+
+  cancelButton.onkeydown = (e) => {
+    if (e.shiftKey && e.keyCode === TAB_KEY) {
+      e.preventDefault();
+      confirmButton.focus();
+    }
+  }
+  confirmButton.onkeydown = (e) => {
+    if (!e.shiftKey && e.keyCode == TAB_KEY) {
+      e.preventDefault();
+      cancelButton.focus();
+    }
+  }
+</script>
+</html>
+<style>
+  .overlay {
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .modal {
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20rem;
+    padding: 3rem;
+  }
+</style>

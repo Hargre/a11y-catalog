@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt"><head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulários - Validações e Mensagens de Erro
+  | Apoio para a Acessibilidade da Web</title>
+    <link rel="stylesheet" href="/a11y-catalog/css/style.css" />
+  </head>
+  <body>
+    <a href="#main" id="skip-to-content">Pular para o conteúdo</a>
+    <header class="header">
+      <div class="home-link">
+        <a class="home-link__anchor" href="/a11y-catalog/">Página Inicial</a>
+      </div>
+      <label
+        id="nav-visibility-label"
+        tabindex="0"
+        class="nav-visibility__toggle"
+        for="nav-visibility"
+        title="Abrir/Fechar Menu"
+      >
+        <span class="nav-visibility__toggle-line"></span>
+        <span class="nav-visibility__toggle-line"></span>
+        <span class="nav-visibility__toggle-line"></span>
+        <span hidden>Abrir/Fechar Menu</span>
+      </label>
+    </header>
+    <div class="content">
+      <input type="checkbox" id="nav-visibility" />
+
+      
+<nav class="nav">
+  <ul><li class="nav__navitem"><a href="/a11y-catalog/pages/intro/">Introdução</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/technologies/">Tecnologias</a><ul><li class="nav__navitem"><a href="/a11y-catalog/pages/technologies/support/">Tecnologias de Apoio</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/technologies/assistives/">Tecnologias Assistivas</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/technologies/aria/">ARIA</a></li></ul></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/quick_guide/">Guia Rápido</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/">Exemplos</a><ul><li class="nav__navitem"><a href="/a11y-catalog/pages/examples/base_html/">HTML Básico</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/semantics/">Semântica</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/navigation/">Navegação</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/colours/">Cores e Contraste</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/forms/">Formulários</a><ul><li class="nav__navitem"><a href="/a11y-catalog/pages/examples/forms/base/">Considerações Básicas</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/forms/validations/">Validações</a></li></ul></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/tables/">Tabelas</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/components/">Componentes Interativos</a><ul><li class="nav__navitem"><a href="/a11y-catalog/pages/examples/components/autosuggest/">Autocomplete</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/components/dropdown/">Dropdowns</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/components/modal/">Modais</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/components/bad_practices/">Padrões a se evitar</a></li></ul></li></ul></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/evaluation/">Métodos de Avaliação</a></li></ul>
+</nav>
+
+<main id="main" class="content__main">
+  <article>
+    <h1>Formulários - Validações e Mensagens de Erro</h1>
+    <p>
+      
+    </p>
+    <nav class="toc">
+                <ol>
+                    
+                    <li><a href="#informando-campos-obrigat%C3%B3rios">Informando campos obrigatórios</a>
+            		</li>
+
+                    <li><a href="#informando-valida%C3%A7%C3%B5es-server-side">Informando validações server-side</a>
+            
+                <ol>
+                    
+                    <li><a href="#erros-descritos-ao-topo-da-p%C3%A1gina">Erros descritos ao topo da página</a>
+            		</li>
+
+                    <li><a href="#erros-descritos-ao-lado-dos-controles">Erros descritos ao lado dos controles</a>
+            		</li>
+                </ol>
+            		</li>
+                </ol>
+            </nav>
+
+    <h2 id="informando-campos-obrigat%C3%B3rios" tabindex="-1">Informando campos obrigatórios</h2>
+<p>Utilizando funcionalidades modernas do HTML, marcar campos como obrigatórios e realizar validação client-side de forma acessível é simples. Basta apenas marcar um campo com o atributo <code>required</code>.</p>
+<form>
+<label for="email">E-mail: </label>
+<input type="text" id="email" required>
+<input type="submit" value="Enviar">
+</form>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>email<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>E-mail: <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>email<span class="token punctuation">"</span></span> <span class="token attr-name">required</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>submit<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Enviar<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span></code></pre>
+<p>Ao navegar pelo campo, um usuário de leitor de tela será informado que o campo é obrigatório. Ao tentar submeter o formulário sem preenchê-lo, será informado novamente. Para usuários com visão, uma mensagem padrão do navegador também é informada automaticamente.</p>
+<p>Atualmente esse atributo é reconhecido corretamente pela <a href="https://caniuse.com/mdn-api_htmlinputelement_required">grande maioria dos navegadores</a>. Ainda assim, o exemplo acima pode ser ligeiramente melhorado, para garantir compatibilidade com mais dispositivos.</p>
+<form>
+<label for="email-1">E-mail (obrigatório): </label>
+<input type="text" id="email-1" required aria-required="true">
+<input type="submit" value="Enviar">
+</form>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>email<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>E-mail (obrigatório): <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>email<span class="token punctuation">"</span></span> <span class="token attr-name">required</span> <span class="token attr-name">aria-required</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>true<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>submit<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Enviar<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span></code></pre>
+<p>O atributo <code>aria-required=true</code> informa a leitores de tela que o campo é obrigatório. Ao marcar o campo com <code>required</code>, a maioria dos navegadores ativa esse atributo implicitamente. Mas utilizá-lo explicitamente pode ser útil por questões de compatibilidade.</p>
+<p>Também se modificou a label do controle com o texto <code>(obrigatório)</code>, para informar usuários com visão. Nesses casos, um padrão mais comum é de usar um asterisco (*) para informar a necessidade do campo. Não existem maiores problemas em fazer o uso desse caracter, mas alguns cuidados podem ser tomados para não prejudicar a acessibilidade.</p>
+<p>Alguns leitores de tela ignoram caracteres especiais por padrão, outros podem anunciar o caracter literalmente (lendo algo como &quot;email asterisco&quot;). Nesse caso, uma possível solução seria utilizar o atributo <code>aria-hidden=true</code>, que faz com que um elemento não seja anunciado por tecnologias assistivas, embora ainda apareça visualmente na tela.</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>email<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>E-mail <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">aria-hidden</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>true<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>(*)<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>: <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>email<span class="token punctuation">"</span></span> <span class="token attr-name">required</span> <span class="token attr-name">aria-required</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>true<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>submit<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Enviar<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span></code></pre>
+<h2 id="informando-valida%C3%A7%C3%B5es-server-side" tabindex="-1">Informando validações server-side</h2>
+<p>Independente das validações realizadas do lado do cliente, é essencial que os dados enviados em um form também sejam validados do lado do servidor. Quando isso acontece, novos erros podem ser identificados, e devem ser apresentados ao usuário.</p>
+<p>De forma geral, existem duas técnicas principais para a apresentação de erros após o envio de um formulário: exibir todos os erros agrupados, no topo da página, ou exibir cada erro junto ao input ou controle que exige revisão. Cada uma possui vantagens e desvantagens, e sua escolha varia de acordo com o contexto.</p>
+<p>Do ponto de vista da acessibilidade, algumas técnicas devem ser levadas em conta, independente da abordagem. As mensagens de erro devem estar relacionadas a seus respectivos inputs através do atributo <code>aria-describedby</code>. Dessa forma, ao navegar por um input, o leitor de tela informará o usuário do erro descrito, independente de sua posição real na página. Além disso, os campos podem ser marcados com o atributo <code>aria-invalid</code>.</p>
+<fieldset>
+<legend>Erros</legend>
+<ul>
+  <li id="error-password"> Senha deve conter pelo menos um caracter especial. </li>
+  <li id="error-date"> Ano de nascimento deve ser superior a 1900. </li>
+</ul>
+</fieldset>
+<form>
+<div>
+  <label for="password">Senha</label>
+  <input id="password" type="password" aria-describedby="error-password" invalid>
+</div>
+<div>
+  <label for="birthday">Data de nascimento</label>
+  <input id="birthday" type="date" aria-describedby="error-date" invalid>
+</div>
+</form>
+<h3 id="erros-descritos-ao-topo-da-p%C3%A1gina" tabindex="-1">Erros descritos ao topo da página</h3>
+<p>Ao descrever todos os erros agrupados no topo da página, é importante que cada mensagem de erro seja um link, apontando para o input relacionado. Também é importante que ao link ser ativado, o controle associado fique sob foco. Para isso é necessário um pouco de JavaScript:</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> errorLink <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'a#error'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token keyword">const</span> referencedControl <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'#some_input'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><br>errorLink<span class="token punctuation">.</span><span class="token function-variable function">onclick</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">event</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span><br>  referencedControl<span class="token punctuation">.</span><span class="token function">focus</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>  <span class="token keyword">return</span> event<span class="token punctuation">.</span><span class="token function">preventDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
+<p><a href="/a11y-catalog/examples/forms/errors_top">Exemplo de form com erros ao topo da página</a></p>
+<h3 id="erros-descritos-ao-lado-dos-controles" tabindex="-1">Erros descritos ao lado dos controles</h3>
+<p>Neste caso, as instruções gerais já são praticamente suficientes. Para que o usuário se oriente com mais facilidade, no entanto, é útil que o foco da página seja direcionado ao primeiro controle com uma mensagem de erro.</p>
+<p><a href="/a11y-catalog/examples/forms/errors_inline">Exemplo de form com erros ao lado dos controles</a></p>
+
+  </article>
+</main>
+
+    </div>
+    <script>
+      var menuToggle = document.querySelector("#nav-visibility-label");
+      var menu = document.querySelector("#nav-visibility");
+
+      var enterKeyCode = 13;
+
+      menuToggle.addEventListener("keyup", function (event) {
+        if (event.keyCode == enterKeyCode) {
+          var menuOpen = menu.checked;
+
+          if (menuOpen) {
+            menu.checked = false;
+          } else {
+            menu.checked = true;
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

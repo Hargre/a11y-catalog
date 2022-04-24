@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt"><head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Padrões a se evitar
+  | Apoio para a Acessibilidade da Web</title>
+    <link rel="stylesheet" href="/a11y-catalog/css/style.css" />
+  </head>
+  <body>
+    <a href="#main" id="skip-to-content">Pular para o conteúdo</a>
+    <header class="header">
+      <div class="home-link">
+        <a class="home-link__anchor" href="/a11y-catalog/">Página Inicial</a>
+      </div>
+      <label
+        id="nav-visibility-label"
+        tabindex="0"
+        class="nav-visibility__toggle"
+        for="nav-visibility"
+        title="Abrir/Fechar Menu"
+      >
+        <span class="nav-visibility__toggle-line"></span>
+        <span class="nav-visibility__toggle-line"></span>
+        <span class="nav-visibility__toggle-line"></span>
+        <span hidden>Abrir/Fechar Menu</span>
+      </label>
+    </header>
+    <div class="content">
+      <input type="checkbox" id="nav-visibility" />
+
+      
+<nav class="nav">
+  <ul><li class="nav__navitem"><a href="/a11y-catalog/pages/intro/">Introdução</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/technologies/">Tecnologias</a><ul><li class="nav__navitem"><a href="/a11y-catalog/pages/technologies/support/">Tecnologias de Apoio</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/technologies/assistives/">Tecnologias Assistivas</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/technologies/aria/">ARIA</a></li></ul></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/quick_guide/">Guia Rápido</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/">Exemplos</a><ul><li class="nav__navitem"><a href="/a11y-catalog/pages/examples/base_html/">HTML Básico</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/semantics/">Semântica</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/navigation/">Navegação</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/colours/">Cores e Contraste</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/forms/">Formulários</a><ul><li class="nav__navitem"><a href="/a11y-catalog/pages/examples/forms/base/">Considerações Básicas</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/forms/validations/">Validações</a></li></ul></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/tables/">Tabelas</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/components/">Componentes Interativos</a><ul><li class="nav__navitem"><a href="/a11y-catalog/pages/examples/components/autosuggest/">Autocomplete</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/components/dropdown/">Dropdowns</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/components/modal/">Modais</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/components/bad_practices/">Padrões a se evitar</a></li></ul></li></ul></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/evaluation/">Métodos de Avaliação</a></li></ul>
+</nav>
+
+<main id="main" class="content__main">
+  <article>
+    <h1>Padrões a se evitar</h1>
+    <p>
+      Os exemplos dessa página não tratam de um componente específico, mas sim de grupos de práticas mais gerais, que ainda assim tem um impacto considerável na acessibilidade e na usabilidade dos sistemas como um todo.
+    </p>
+    <nav class="toc">
+                <ol>
+                    
+                    <li><a href="#popups">Popups</a>
+            
+                <ol>
+                    
+                    <li><a href="#mostrar-popups-apenas-em-momentos-que-fazem-sentido">Mostrar popups apenas em momentos que fazem sentido</a>
+            		</li>
+
+                    <li><a href="#considerar-alternativas-menos-intrusivas">Considerar alternativas menos intrusivas</a>
+            		</li>
+                </ol>
+            		</li>
+
+                    <li><a href="#anima%C3%A7%C3%B5es">Animações</a>
+            		</li>
+
+                    <li><a href="#captchas">Captchas</a>
+            		</li>
+
+                    <li><a href="#refer%C3%AAncias">Referências</a>
+            		</li>
+                </ol>
+            </nav>
+
+    <h2 id="popups" tabindex="-1">Popups</h2>
+<p>O uso inadequado de popups é uma das práticas mais comuns e incômodas da internet moderna. Popups são utilizados para uma grande variedade de propósitos, mas muitas vezes acabam por irritar e distrair usuários.</p>
+<p>A seguir são apresentadas algumas considerações gerais sobre seu uso.</p>
+<h3 id="mostrar-popups-apenas-em-momentos-que-fazem-sentido" tabindex="-1">Mostrar popups apenas em momentos que fazem sentido</h3>
+<p>Na maior parte das vezes, popups não devem ser exibidos repentinamente, sem uma ação coerente que leve à sua exibição. Seu disparo deve ser relacionado à alguma interação ocorrida na interface, e não arbitrariamente ao carregar a página ou no meio da leitura de um texto, por exemplo.</p>
+<p>Apesar disso, existe uma exceção: situações em que uma ação imediata do usuário é necessária para poder utilizar a página. Um exemplo relevante atualmente é quanto ao uso de avisos de cookies. Em vários lugares, esses avisos são considerados obrigatórios por lei, e a permissão ou não do usuário pode ser necessária para o funcionamento correto da página. Em algumas implementações, usuários de tecnologias assistivas nem mesmo ficam cientes da existência do aviso. Nesses casos, pode-se considerar exibir o aviso imediatamente como uma modal, trazendo o foco diretamente para o início da mensagem. Este apoio contém um <a href="modal">exemplo de implementação de uma modal acessível</a>.</p>
+<h3 id="considerar-alternativas-menos-intrusivas" tabindex="-1">Considerar alternativas menos intrusivas</h3>
+<p>De forma geral, popups modais devem ser apresentados para exibir informações essenciais ou exigir algum tipo de interação necessária para a execução de uma tarefa no site ou aplicativo. Como sua presença interrompe o fluxo normal da página e retira a atenção do usuário, seu uso deve ser restrito a esse tipo de cenário. Em situações menos drásticas podem ser usados popups não-modais, que ocupem um pequeno espaço da página sem obstruir o conteúdo principal, ou simplesmente apresentar a informação no próprio conteúdo, de forma destacada.</p>
+<h2 id="anima%C3%A7%C3%B5es" tabindex="-1">Animações</h2>
+<p>Animações são utilizadas em diversos contextos na web moderna, e podem trazer benefícios de usabilidade. Se implementadas sem cuidado, no entanto, podem causar vários tipos de problemas. Usuários com distúrbios de equilíbrio podem se sentir desorientados, ter náusea e dores de cabeça com certos tipos de animações. Usuários com epilepsia e enxaquecas também são suscetíveis a crises. Pessoas com transtornos como déficit de atenção podem ter dificuldades de concentração com animações excessivas. Alguns cuidados gerais incluem:</p>
+<ul>
+<li>Evitar movimentos bruscos, rápidos ou que movimentam uma grande área da tela. Movimentos de scroll no sentido horizontal são especialmente ruins.</li>
+<li>Permitir que o usuário tenha controle sobre as animações da página. Isso pode incluir medidas como adicionar controles de pause/stop para uma animação específica, ou configurações que reduzam ou desabilitem o uso de animações no site como um todo.</li>
+<li>Utilizar a media query <code>prefers-reduced-motion</code> para remover ou reduzir a duração de animações. Essa media query consulta as preferências de animação configuradas pelo usuário no sistema operacional.</li>
+</ul>
+<h2 id="captchas" tabindex="-1">Captchas</h2>
+<p>O uso de Captchas é problemático por uma variedade de razões. Implementações que apresentam imagens com palavras ou textos a serem digitados são obviamente inacessíveis para usuários cegos, pois a existência de um texto alternativo seria identificada por bots, quebrando o propósito do Captcha. Além disso, as distorções aplicadas às palavras podem causar grandes dificuldades para usuários com outras deficiências visuais e usuários com deficiências cognitivas. Alternativas que utilizam áudio, por sua vez, apresentam barreiras similares para usuários com deficiências auditivas.</p>
+<p>Entre as soluções existentes atualmente, o <a href="https://developers.google.com/recaptcha/docs/v3">reCAPTCHA v3</a> é a menos intrusiva em termos de usabilidade. Ele analisa o comportamento do usuário no fundo, sem necessidade de interação, e atribui uma nota. Essa nota indica a probabilidade daquele usuário ser ou não um bot, e com base nesse valor o desenvolvedor pode tomar as medidas necessárias. Entretanto, vale ressaltar que essa abordagem, embora eficiente, levanta questionamentos quanto à privacidade dos usuários.</p>
+<h2 id="refer%C3%AAncias" tabindex="-1">Referências</h2>
+<ul>
+<li><a href="https://www.nngroup.com/articles/popups/">Nielsen Norman Group - Popups: 10 Problematic Trends and Alternatives</a></li>
+<li><a href="https://www.a11yproject.com/posts/2020-12-22-design-accessible-animation/">A11Y Project - Designing accessible animation</a>, bem como os links sugeridos em <a href="https://www.a11yproject.com/posts/2020-12-22-design-accessible-animation/#further-reading">mais leituras</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion">MDN Web Docs - prefers-reduced-motion</a></li>
+<li><a href="https://www.w3.org/TR/turingtest/">W3C - Inaccessibility of CAPTCHA</a></li>
+</ul>
+
+  </article>
+</main>
+
+    </div>
+    <script>
+      var menuToggle = document.querySelector("#nav-visibility-label");
+      var menu = document.querySelector("#nav-visibility");
+
+      var enterKeyCode = 13;
+
+      menuToggle.addEventListener("keyup", function (event) {
+        if (event.keyCode == enterKeyCode) {
+          var menuOpen = menu.checked;
+
+          if (menuOpen) {
+            menu.checked = false;
+          } else {
+            menu.checked = true;
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt"><head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ARIA
+  | Apoio para a Acessibilidade da Web</title>
+    <link rel="stylesheet" href="/a11y-catalog/css/style.css" />
+  </head>
+  <body>
+    <a href="#main" id="skip-to-content">Pular para o conteúdo</a>
+    <header class="header">
+      <div class="home-link">
+        <a class="home-link__anchor" href="/a11y-catalog/">Página Inicial</a>
+      </div>
+      <label
+        id="nav-visibility-label"
+        tabindex="0"
+        class="nav-visibility__toggle"
+        for="nav-visibility"
+        title="Abrir/Fechar Menu"
+      >
+        <span class="nav-visibility__toggle-line"></span>
+        <span class="nav-visibility__toggle-line"></span>
+        <span class="nav-visibility__toggle-line"></span>
+        <span hidden>Abrir/Fechar Menu</span>
+      </label>
+    </header>
+    <div class="content">
+      <input type="checkbox" id="nav-visibility" />
+
+      
+<nav class="nav">
+  <ul><li class="nav__navitem"><a href="/a11y-catalog/pages/intro/">Introdução</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/technologies/">Tecnologias</a><ul><li class="nav__navitem"><a href="/a11y-catalog/pages/technologies/support/">Tecnologias de Apoio</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/technologies/assistives/">Tecnologias Assistivas</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/technologies/aria/">ARIA</a></li></ul></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/quick_guide/">Guia Rápido</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/">Exemplos</a><ul><li class="nav__navitem"><a href="/a11y-catalog/pages/examples/base_html/">HTML Básico</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/semantics/">Semântica</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/navigation/">Navegação</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/colours/">Cores e Contraste</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/forms/">Formulários</a><ul><li class="nav__navitem"><a href="/a11y-catalog/pages/examples/forms/base/">Considerações Básicas</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/forms/validations/">Validações</a></li></ul></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/tables/">Tabelas</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/components/">Componentes Interativos</a><ul><li class="nav__navitem"><a href="/a11y-catalog/pages/examples/components/autosuggest/">Autocomplete</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/components/dropdown/">Dropdowns</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/components/modal/">Modais</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/components/bad_practices/">Padrões a se evitar</a></li></ul></li></ul></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/evaluation/">Métodos de Avaliação</a></li></ul>
+</nav>
+
+<main id="main" class="content__main">
+  <article>
+    <h1>ARIA</h1>
+    <p>
+      
+    </p>
+    <nav class="toc">
+                <ol>
+                    
+                    <li><a href="#o-que-%C3%A9-aria%3F">O que é ARIA?</a>
+            		</li>
+
+                    <li><a href="#cuidados-de-uso">Cuidados de uso</a>
+            		</li>
+                </ol>
+            </nav>
+
+    <h2 id="o-que-%C3%A9-aria%3F" tabindex="-1">O que é ARIA?</h2>
+<p>ARIA (sigla em inglês para Aplicações de Internet Rica Acessíveis, ou Accessible Rich Internet Applications) é uma especificação do W3C para melhorar a acessibilidade de páginas da Web com conteúdo dinâmico e interfaces complexas, onde nem sempre os mecanismos existentes no HTML são suficientes para garantir o acesso através de tecnologias assistivas.</p>
+<p>De forma geral, os elementos padrão do HTML são naturalmente acessíveis, quando utilizados com sua semântica pretentida. Mas para muitas situações na Web moderna, é necessário criar elementos customizados para um caso de uso, com funcionalidades que vão além do que o HTML básico pode proporcionar. A ARIA atua no sentido de melhorar a acessibilidade de elementos desse tipo. Exemplos de componentes comumente vistos na maior parte da Web atual, que podem ser beneficiados pelo uso de ARIA incluem:</p>
+<ul>
+<li>Carousels</li>
+<li>Menus pop-up</li>
+<li>Seções de uma página que são atualizadas automaticamente</li>
+<li>Dropdowns</li>
+<li>Formulários com autocomplete</li>
+</ul>
+<p>Alguns dos principais recursos que a ARIA proporcionam incluem:</p>
+<ul>
+<li>
+<p><strong>Roles</strong> (papéis, ou funções) que permitem definir semanticamente um elemento. Essa definição impacta na forma que um leitor de tela apresenta o elemento para o usuário. Por exemplo, uma span declarada como <code>&lt;span role=&quot;button&quot;&gt;</code> vai ser apresentada como um botão por um leitor de tela. Esses papéis podem se referir a componentes existentes em HTML (como botões e formulários), mas também permitem definir funções mais específicas, como <code>progressbar</code> ou <code>menu</code>.</p>
+</li>
+<li>
+<p><strong>Roles</strong> também ajudam a demarcar áreas específicas de uma página, facilitando sua localização e melhorando a navegação através de leitores de tela. Por exemplo, marcar uma tag com a função <code>role=search</code> indica que a seção da página composta por aquela tag possui funcionalidades de busca. Existem papeis semelhantes para indicar áreas como headers, links de navegação, conteúdo principal da página, entre outros. Essas funções são conhecidas como <strong>landmarks</strong>.</p>
+</li>
+<li>
+<p><strong>Propriedades</strong> que permitem descrever o estado atual de um componente. Por exemplo, informar se um botão está pressionado ou não, ou se o valor informado em um input é válido.</p>
+</li>
+<li>
+<p><strong>Propriedades</strong> que permitem definir regiões de uma página propensas a serem atualizadas, melhorando a compatibilidade dessas regiões com o funcionamento dos leitores de tela.</p>
+</li>
+</ul>
+<h2 id="cuidados-de-uso" tabindex="-1">Cuidados de uso</h2>
+<p>ARIA é uma ferramenta poderosa. Mas se utilizada de forma incorreta, pode acabar criando problemas de acessibilidade ao invés de resolvê-los. Uma das recomendações do próprio W3C em relação ao seu uso é que &quot;Zero ARIA é melhor que ARIA errado&quot;. Como ARIA permite alterar a semântica dos elementos HTML em uma página, essas mudanças podem acabar por retirar ou modificar um sentido que já era correto e não necessitava de alterações. Por exemplo:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>navigation<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>...<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Link 1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>...<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Link 2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span><br>  ...<br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span></code></pre>
+<p>Adicionar um papel de <code>role=navigation</code> faz com que o elemento seja apresentado para leitores de tela como uma região de navegação. Ao fazer isso, no entanto, a semântica existente indicando uma lista de elementos é perdida. Exemplos mais corretos seriam:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>navigation<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>...<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Link 1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>...<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Link 2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span><br>    ...<br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nav</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>...<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Link 1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>...<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Link 2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span><br>    ...<br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nav</span><span class="token punctuation">></span></span></code></pre>
+<p>No primeiro exemplo, a semântica de lista é mantida ao se incluir o <code>ul</code> dentro de uma div (que por padrão não possui significado) com o papel de <code>navigation</code>. O segundo exemplo faz uso da tag <strong>nav</strong>, que já possui a semântica adequada.</p>
+<p>Outro engano comum quanto ao uso de ARIA é de achar que o seu uso automaticamente altera o comportamento dos elementos afetados. Por exemplo, é possível marcar um elemento qualquer como <code>role=button</code>.  Isso não faz com que o elemento passe a ter as mesmas funcionalidades de um botão, como ser focável e ativável. Isso muda apenas a <strong>semântica</strong> da tag, fazendo que um leitor de tela a anuncie como um botão. Garantir que o comportamento e aparência do elemento seja coerente com o que é esperado de um botão é responsabilidade do desenvolvedor, através de JavaScript e CSS.</p>
+<p>A ARIA será utilizada pontualmente ao longo da seção de exemplos deste apoio, com suas particularidades sendo explicadas em mais detalhes.</p>
+
+  </article>
+</main>
+
+    </div>
+    <script>
+      var menuToggle = document.querySelector("#nav-visibility-label");
+      var menu = document.querySelector("#nav-visibility");
+
+      var enterKeyCode = 13;
+
+      menuToggle.addEventListener("keyup", function (event) {
+        if (event.keyCode == enterKeyCode) {
+          var menuOpen = menu.checked;
+
+          if (menuOpen) {
+            menu.checked = false;
+          } else {
+            menu.checked = true;
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exemplo de Dropdown de Navegação</title>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li>
+        <button class="top-level-toggle" aria-expanded="false">Menu 1</button>
+        <ul hidden class="sublinks">
+          <li><a href="">Link 1</a></li>
+          <li><a href="">Link 2</a></li>
+          <li><a href="">Link 3</a></li>
+        </ul>
+      </li>
+      <li>
+        <button class="top-level-toggle" aria-expanded="false">Menu 2</button>
+        <ul hidden class="sublinks">
+          <li><a href="">Link 4</a></li>
+          <li><a href="">Link 5</a></li>
+          <li><a href="">Link 6</a></li>
+        </ul>
+      </li>
+      <li>
+        <button class="top-level-toggle" aria-expanded="false">Menu 3</button>
+        <ul hidden class="sublinks">
+          <li><a href="">Link 7</a></li>
+          <li><a href="">Link 8</a></li>
+          <li><a href="">Link 9</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+  <hr>
+  <div>
+    <a href="/pages/examples/components/dropdown">Retornar para Exemplos de Dropdowns</a>
+  </div>
+</body>
+<script>
+  const toggleButtons = document.querySelectorAll('.top-level-toggle');
+  const toggleButtonsState = [...toggleButtons].map((_) => false);
+  toggleButtons.forEach((toggleButton, i) => {
+    toggleButton.onclick = (e) => {
+      const links = toggleButton.parentElement.querySelector('.sublinks');
+      if (toggleButtonsState[i]) {
+        toggleButton.setAttribute('aria-expanded', 'false');
+        links.setAttribute('hidden', 'hidden');
+      } else {
+        links.removeAttribute('hidden');
+        toggleButton.setAttribute('aria-expanded', 'true');
+      }
+      toggleButtonsState[i] = !toggleButtonsState[i];
+    }
+  })
+</script>
+</html>
+
+<style>
+  nav > ul {
+    display: flex;
+    list-style-type: none;
+  }
+  button {
+    background-color: blue;
+    color: white;
+    padding: .5rem 1rem;
+    font-size: 1rem;
+    border: 1px solid white;
+    cursor: pointer;
+  }
+  button:focus {
+    color: blue;
+    background-color: white;
+    border: 1px solid black;
+  }
+</style>

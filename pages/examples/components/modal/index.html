@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt"><head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modais
+  | Apoio para a Acessibilidade da Web</title>
+    <link rel="stylesheet" href="/a11y-catalog/css/style.css" />
+  </head>
+  <body>
+    <a href="#main" id="skip-to-content">Pular para o conteúdo</a>
+    <header class="header">
+      <div class="home-link">
+        <a class="home-link__anchor" href="/a11y-catalog/">Página Inicial</a>
+      </div>
+      <label
+        id="nav-visibility-label"
+        tabindex="0"
+        class="nav-visibility__toggle"
+        for="nav-visibility"
+        title="Abrir/Fechar Menu"
+      >
+        <span class="nav-visibility__toggle-line"></span>
+        <span class="nav-visibility__toggle-line"></span>
+        <span class="nav-visibility__toggle-line"></span>
+        <span hidden>Abrir/Fechar Menu</span>
+      </label>
+    </header>
+    <div class="content">
+      <input type="checkbox" id="nav-visibility" />
+
+      
+<nav class="nav">
+  <ul><li class="nav__navitem"><a href="/a11y-catalog/pages/intro/">Introdução</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/technologies/">Tecnologias</a><ul><li class="nav__navitem"><a href="/a11y-catalog/pages/technologies/support/">Tecnologias de Apoio</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/technologies/assistives/">Tecnologias Assistivas</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/technologies/aria/">ARIA</a></li></ul></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/quick_guide/">Guia Rápido</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/">Exemplos</a><ul><li class="nav__navitem"><a href="/a11y-catalog/pages/examples/base_html/">HTML Básico</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/semantics/">Semântica</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/navigation/">Navegação</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/colours/">Cores e Contraste</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/forms/">Formulários</a><ul><li class="nav__navitem"><a href="/a11y-catalog/pages/examples/forms/base/">Considerações Básicas</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/forms/validations/">Validações</a></li></ul></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/tables/">Tabelas</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/components/">Componentes Interativos</a><ul><li class="nav__navitem"><a href="/a11y-catalog/pages/examples/components/autosuggest/">Autocomplete</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/components/dropdown/">Dropdowns</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/components/modal/">Modais</a></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/examples/components/bad_practices/">Padrões a se evitar</a></li></ul></li></ul></li>
+<li class="nav__navitem"><a href="/a11y-catalog/pages/evaluation/">Métodos de Avaliação</a></li></ul>
+</nav>
+
+<main id="main" class="content__main">
+  <article>
+    <h1>Modais</h1>
+    <p>
+      Modais são um tipo de componente extremamente comum em páginas na Web. Se implementadas incorretamente, no entanto, podem tornar seu site praticamente inutilizável para um grande número de usuários.
+    </p>
+    <nav class="toc">
+                <ol>
+                    
+                    <li><a href="#considera%C3%A7%C3%B5es-iniciais">Considerações iniciais</a>
+            		</li>
+
+                    <li><a href="#exemplo-inacess%C3%ADvel">Exemplo inacessível</a>
+            		</li>
+
+                    <li><a href="#exemplo-acess%C3%ADvel">Exemplo acessível</a>
+            		</li>
+
+                    <li><a href="#refer%C3%AAncias">Referências</a>
+            		</li>
+                </ol>
+            </nav>
+
+    <h2 id="considera%C3%A7%C3%B5es-iniciais" tabindex="-1">Considerações iniciais</h2>
+<p>Para os fins desse exemplo, modais são definidas como caixas de diálogo customizadas, que se sobrepõem ao conteúdo principal da página. São utilizadas para uma variedade de fins, geralmente envolvendo uma ação imediata por parte do usuário para prosseguir com a navegação natural da página.</p>
+<h2 id="exemplo-inacess%C3%ADvel" tabindex="-1">Exemplo inacessível</h2>
+<p>Vamos começar apresentando um exemplo de uma <a href="/a11y-catalog/examples/components/modals/modal_bad">modal com problemas de acessibilidade</a>. Acesse o link, clique no botão para abrir a modal e tente navegar pela página com o teclado. Qual a primeira coisa que você repara?</p>
+<p>Até conseguir alcançar o primeiro botão dentro da modal, é preciso navegar por todos os links, botões e controles no conteúdo principal da página. Em uma página grande, isso pode implicar em dezenas a centenas de <code>Tabs</code> até se alcançar os controles dentro da modal, o que cria uma experiência de usuário cansativa e confusa.</p>
+<p>Tente navegar pela página novamente, dessa vez com um leitor de tela. A situação é ainda pior! Nesse caso, o usuário pode nem mesmo estar ciente da existência da modal.</p>
+<p>Para componentes nesse formato, é <strong>essencial</strong> que o foco dos elementos da página seja tratado corretamente. Ao abrir a modal, o foco do teclado deve ser levado para algum elemento dentro da modal, geralmente o primeiro elemento focável. Quando a modal for responsável por alguma ação destrutiva (retirar todos os itens de um carrinho de compras, por exemplo), pode ser útil levar o foco para a ação de &quot;Cancelar&quot;, para evitar que o usuário cometa um ato irreversível por engano.</p>
+<p>Além disso, o usuário não deve poder sair acidentalmente do contexto da modal, ao navegar com <code>Tab</code>. Os únicos elementos focáveis devem pertencer à modal, enquanto a mesma estiver aberta. Deve ainda existir um botão específico que realize a ação de fechar o dialógo e retornar para o fluxo normal da página. Também deve ser possível fechar a modal apertando a tecla <code>Esc</code>.</p>
+<h2 id="exemplo-acess%C3%ADvel" tabindex="-1">Exemplo acessível</h2>
+<p>Realize os mesmos testes nessa <a href="/a11y-catalog/examples/components/modals/modal_good">versão atualizada do exemplo</a>. O que mudou?</p>
+<p>Como discutido, o foco do teclado é imediatamente alterado para o botão de &quot;Cancelar&quot;, dentro da modal. Além disso, ao se dar <code>Tab</code> a partir do botão de confirmar, ou <code>Shift-Tab</code> a partir do botão de cancelar, o foco permanece dentro da modal, retornando ao primeiro ou último elemento. Esse tipo de lógica pode ser implementada da seguinte forma:</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> <span class="token constant">TAB</span> <span class="token operator">=</span> <span class="token number">9</span><span class="token punctuation">;</span><br><span class="token keyword">const</span> primeiroControleModal <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'modal-first-el'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token keyword">const</span> ultimoControleModal <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'modal-last-el'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><br>primeiroControleModal<span class="token punctuation">.</span><span class="token function-variable function">onkeydown</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span><br>  <span class="token keyword">if</span> <span class="token punctuation">(</span>e<span class="token punctuation">.</span>shiftKey <span class="token operator">&amp;&amp;</span> e<span class="token punctuation">.</span>keyCode <span class="token operator">===</span> <span class="token constant">TAB</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>    e<span class="token punctuation">.</span><span class="token function">preventDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>    ultimoControleModal<span class="token punctuation">.</span><span class="token function">focus</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span><br><br>ultimoControleModal<span class="token punctuation">.</span><span class="token function-variable function">onkeydown</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span><br>  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>e<span class="token punctuation">.</span>shiftKey <span class="token operator">&amp;&amp;</span> e<span class="token punctuation">.</span>keyCode <span class="token operator">===</span> <span class="token constant">TAB</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>    e<span class="token punctuation">.</span><span class="token function">preventDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>    primeiroControleModal<span class="token punctuation">.</span><span class="token function">focus</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<p>Além disso, ao fechar a modal, o foco do teclado retorna ao botão que iniciou a ação. Para isso, é necessário manter o registro do controle responsável por abrir a modal:</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">let</span> focoAnterior<span class="token punctuation">;</span><br><br>botaoAbreModal<span class="token punctuation">.</span><span class="token function-variable function">onclick</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span><br>  focoAnterior <span class="token operator">=</span> document<span class="token punctuation">.</span>activeElement<span class="token punctuation">;</span><br>  <span class="token comment">// ...</span><br><span class="token punctuation">}</span><br><br>botaoFechaModal<span class="token punctuation">.</span><span class="token function-variable function">onclick</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span><br>  <span class="token comment">// ...</span><br>  focoAnterior<span class="token punctuation">.</span><span class="token function">focus</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
+<p>Para melhorar a forma com que leitores de tela interpretam e anunciam o conteúdo do diálogo, ainda foram realizados outros ajustes. A <code>div</code> que agrupa todo o conteúdo da modal foi marcada com os atributos <code>role=dialog</code> e <code>aria-modal=true</code>. Esses atributos auxiliam as tecnologias assistivas a identificarem corretamente a seção do conteúdo que corresponde à modal, e a manterem o cursor dentro da área correta.</p>
+<p>Além disso, foi adicionado uma tag <code>h1</code> descrevendo o conteúdo da modal. Essa tag será anunciada ao abrir a modal, através do atributo <code>aria-labeledby</code>, também adicionado à <code>div</code> raiz do diálogo.</p>
+<h2 id="refer%C3%AAncias" tabindex="-1">Referências</h2>
+<ul>
+<li><a href="https://www.w3.org/TR/wai-aria-practices-1.1/#dialog_modal">ARIA practices - Dialog (Modal)</a></li>
+</ul>
+
+  </article>
+</main>
+
+    </div>
+    <script>
+      var menuToggle = document.querySelector("#nav-visibility-label");
+      var menu = document.querySelector("#nav-visibility");
+
+      var enterKeyCode = 13;
+
+      menuToggle.addEventListener("keyup", function (event) {
+        if (event.keyCode == enterKeyCode) {
+          var menuOpen = menu.checked;
+
+          if (menuOpen) {
+            menu.checked = false;
+          } else {
+            menu.checked = true;
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
