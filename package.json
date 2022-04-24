@@ -7,7 +7,7 @@
     "watch:sass": "sass --no-source-map --watch src/sass:public/css",
     "watch:eleventy": "eleventy --serve",
     "build:sass": "sass --no-source-map src/sass/style.scss public/css/style.css",
-    "build:eleventy": "eleventy",
+    "build:eleventy": "NODE_ENV=production eleventy --pathprefix 'a11y-catalog'",
     "start": "npm-run-all build:sass --parallel watch:*",
     "build": "npm-run-all build:sass build:eleventy",
     "test": "echo \"Error: no test specified\" && exit 1"
